@@ -1,3 +1,6 @@
 [submodule "Source/SoyLib"]
 	path = Source/SoyLib
 	url = https://github.com/NewChromantics/SoyLib.git
+[submodule "Source_TestApp/googletest"]
+	path = Source_TestApp/googletest
+	url = https://github.com/google/googletest.git
