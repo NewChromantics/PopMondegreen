@@ -1,0 +1,32 @@
+name: Build Android
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - '*Test*'
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+
+    - name: Build Android lib
+      id: Build
+      uses: NewChromantics/PopAction_BuildAndroid@v2.0.1
+      with:
+        buildtargetname: "PopMondegreen"
+        buildpath: "PopMondegreen.Android/libPopMondegreen"
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ steps.Build.outputs.UPLOAD_NAME }}
+        path: ${{ steps.Build.outputs.UPLOAD_DIR }}
+        if-no-files-found: error

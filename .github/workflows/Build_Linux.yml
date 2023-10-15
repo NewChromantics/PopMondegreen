@@ -1,0 +1,53 @@
+name: Build Linux
+
+env:
+  project: PopMondegreen
+
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - '*Test*'
+
+jobs:
+  Build:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      matrix:
+        config:
+          - os: ubuntu-latest
+            type: linux
+            arch: x86_64
+          
+          # nvidia temporarily disabled... compiler out of date?
+          #- os: Nvidia
+          #  type: linux
+          #  arch: arm64
+
+          #- os: ubuntu-18.04
+          #  type: linux
+          #  arch: armv8
+          #  flag: pi
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          
+      - name: Linux
+        uses: NewChromantics/PopAction_BuildLinux@v1
+        with:
+          os: ${{ matrix.config.os }}
+          project: ${{ env.project }}
+          arch: ${{ matrix.config.arch }}
+          flag: ${{ matrix.config.flag }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          # tsdk: these env vars are set in each of the actions
+          name: ${{ env.UPLOAD_NAME }}
+          path: ${{ env.UPLOAD_DIR }}

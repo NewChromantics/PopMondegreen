@@ -1,0 +1,230 @@
+name: Create Release
+
+env:
+  project: PopMondegreen
+
+on:
+  #pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+  watch:
+    types: [started]
+
+jobs:
+  Build:
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.runs_on }}
+    continue-on-error: ${{ matrix.experimental }}	# dont error if a config is set not be required
+    strategy:
+      matrix:
+        config:
+          - name: Linux x64
+            runs_on: ubuntu-latest
+            linux_target: linux
+            arch: x86_64
+            experimental: true
+            
+          #- os: ubuntu-latest
+          #  type: Wasm
+
+          # nvidia temporarily disabled... compiler out of date?
+          #- name: Nvidia Linux
+          #  runs_on: Nvidia
+          #  linux_target: Nvidia
+          #  arch: arm64
+
+          # - name: Pi4
+          #   runs_on: Raspberry Pi
+          #   linux_target: pi
+          #   arch: arm64
+
+          - name: Windows Dll x64
+            runs_on: windows-latest
+            BuildPlatform: x64
+            BuildConfiguration: Release
+            OutputDirectory: Windows/${{ env.project }}_Release_x64
+            experimental: true
+
+          - name: Windows Static x64
+            runs_on: windows-latest
+            BuildPlatform: x64
+            BuildConfiguration: Static
+            OutputDirectory: Windows/${{ env.project }}_Static_x64
+            experimental: true
+
+          - name: Windows Uwp x64
+            runs_on: windows-latest
+            BuildPlatform: "x64 Uwp" # Solution platform
+            BuildConfiguration: Release
+            OutputDirectory: Windows/${{ env.project }}_Uwp_Release_x64
+            experimental: true
+            
+          - name: Windows Uwp Arm64
+            runs_on: windows-latest
+            BuildPlatform: "ARM64 Uwp" # solution platform
+            BuildConfiguration: Release
+            OutputDirectory: Windows/${{ env.project }}_Uwp_Arm64
+            experimental: true
+            
+          - name: Windows Uwp Arm
+            runs_on: windows-latest
+            BuildPlatform: "ARM Uwp" # solution platform
+            BuildConfiguration: Release
+            OutputDirectory: Windows/${{ env.project }}_Uwp_Arm
+            experimental: true
+
+          - name: Apple Universal
+            runs_on: macos-12
+            scheme: ${{ env.project }}_Universal
+            destination: "platform=macOS" # has no effect, but gets passed to xcodebuild so will fail if empty (todo: fix in action!)
+
+          - name: Ios Framework
+            runs_on: macos-latest
+            scheme: ${{ env.project }}_Ios
+            destination: "generic/platform=iOS"
+
+          - name: Tvos Static
+            runs_on: macos-latest
+            scheme: ${{ env.project }}_TvosStatic
+            destination: "generic/platform=tvOS"
+            experimental: true
+            
+          - name: Macos Static
+            runs_on: macos-latest
+            scheme: ${{ env.project }}_MacosStatic
+            destination: "generic/platform=macOS"
+            experimental: true
+            
+          - name: Macos Dylib
+            runs_on: macos-latest
+            scheme: ${{ env.project }}_MacosDylib
+            destination: "generic/platform=macOS"
+            experimental: true
+            
+          - name: Android
+            runs_on: ubuntu-latest
+            type: Android
+            experimental: true
+            
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Configure Windows
+        if: matrix.config.BuildConfiguration != ''
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Build Windows ${{ matrix.config.BuildConfiguration }}
+        id: Windows
+        if: matrix.config.BuildConfiguration != ''
+        uses: NewChromantics/PopAction_BuildWindows@v1.3.0
+        with:
+          BuildSolution: ${{ env.project }}.visualstudio/${{ env.project }}.sln
+          BuildPlatform: ${{ matrix.config.BuildPlatform }}
+          BuildConfiguration: ${{ matrix.config.BuildConfiguration }}
+          OutputDirectory: ${{ github.workspace }}\${{ matrix.config.OutputDirectory }}\ # need an absolute path here, must end with trailing slash
+
+      - name: "Import Apple-Distriubution NewChromantics Signing Certificate"
+        if: matrix.config.scheme != ''
+        uses: NewChromantics/import-signing-certificate@v1.0.2
+        with:
+          certificate-data: ${{ secrets.APPLE_DIST_NEWCHROMANTICS_P12 }}
+          certificate-passphrase: ${{ secrets.APPLE_DIST_NEWCHROMANTICS_PASSWORD }}
+          keychain-password: "Hello"
+
+      - name: Build Apple ${{matrix.config.scheme}}
+        id: Apple
+        if: matrix.config.scheme != ''
+        uses: NewChromantics/PopAction_BuildApple@v1.2.2
+        with:
+          BuildScheme: ${{matrix.config.scheme}}
+          project: ${{ env.project }}
+          destination: ${{ matrix.config.destination }}
+
+      - name: Build Linux ${{ matrix.config.linux_target }}
+        id: Linux
+        if: matrix.config.linux_target != ''
+        uses: NewChromantics/PopAction_BuildLinux@v1.0.1
+        with:
+          os: ${{ matrix.config.linux_target }}
+          project: ${{ env.project }}
+          arch: ${{ matrix.config.arch }}
+          
+      - name: Build Android Lib
+        id: Android
+        if: matrix.config.type == 'Android'
+        uses: NewChromantics/PopAction_BuildAndroid@v2.0.1
+        with:
+          buildtargetname: ${{ env.project }}
+          buildpath: ${{ env.project }}.Android/lib${{ env.project }}
+
+      - name: Wasm setup emscripten
+        if: matrix.config.type == 'Wasm'
+        uses: mymindstorm/setup-emsdk@v7
+        with:
+          version: "latest" #"1.39.15"
+
+      - name: Build Wasm
+        id: Wasm
+        if: matrix.config.type == 'Wasm'
+        env: 
+          BUILD_TARGET_NAME: ${{ env.project }}
+        run: ${{ env.project }}.Emscripten/Build.sh ${{ env.project }}.Emscripten/ release
+
+      - name: Wasm set artifact output vars
+        if: matrix.config.type == 'Wasm'
+        run: |
+          echo "UPLOAD_NAME=${{ env.project }}.Wasm" >> $GITHUB_OUTPUT
+          echo "UPLOAD_DIR=${{ env.project }}.Emscripten/Build" >> $GITHUB_OUTPUT
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          #name: ${{ steps.Windows.outputs.UPLOAD_NAME }}
+          name: ${{ matrix.config.name }}
+          path: ${{ steps.Windows.outputs.UPLOAD_DIR || steps.Linux.outputs.UPLOAD_DIR || steps.Android.outputs.UPLOAD_DIR || steps.Apple.outputs.UPLOAD_DIR }}
+          if-no-files-found: error
+
+  publish-gpr:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      # Download project still, for package meta mostly (don't need submodules)
+      - name: Checkout repo for packaging
+        uses: actions/checkout@v2
+
+      # Download ALL artifacts into Packaging dir
+      - name: Download build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: ${{ env.project }}.Package/
+
+      # copy files we want in the release/package into the package dir
+      # we use this to collate ALL the final files!
+      - name: Copy files for packaging
+        run: |
+         echo Copying files into $PACKAGE_DIR
+         echo Project is ${{ env.project }}
+         cp Readme.md $PACKAGE_DIR
+         cp Source_CSharp/* $PACKAGE_DIR
+         rsync -avP --exclude ${{ env.project }}.xcframework/* $PACKAGE_DIR
+        env:
+          PACKAGE_DIR: ${{ env.project }}.Package/
+
+
+      # make a release
+      # needs to be after the npm package cause this step tars and deletes all the files in the dir which breaks it!       
+      - name: Make github release
+        # only try and make a release if this is a release (to help testing npm packaging)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: fnkr/github-action-ghr@v1   
+        env:
+         GHR_COMPRESS: zip
+         GHR_PATH: ${{ env.project }}.Package/
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

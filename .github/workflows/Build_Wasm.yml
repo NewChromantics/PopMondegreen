@@ -1,0 +1,40 @@
+name: Build Wasm
+
+env:
+  project: PopMondegreen
+
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Setup Emscripten
+      uses: mymindstorm/setup-emsdk@v7
+      with:
+          version: "latest" #"1.39.15"
+
+    - name: Verify Emscripten
+      run: emcc -v
+        
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+        
+    - name: Build wasm
+      env: 
+        BUILD_TARGET_NAME: PopH264
+      run: PopH264.Emscripten/Build.sh PopH264.Emscripten/ release
+      
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: PopH264.Wasm
+        path: PopH264.Emscripten/Build
