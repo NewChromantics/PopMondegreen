@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF1FA6BE28759C7E002F03C5"
-               BuildableName = "libPopMondegreen_Macos.a"
+               BuildableName = "libPopMondegreen_MacosStatic.a"
                BlueprintName = "PopMondegreen_MacosStatic"
                ReferencedContainer = "container:PopMondegreen.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF1FA6BE28759C7E002F03C5"
-            BuildableName = "libPopMondegreen_Macos.a"
+            BuildableName = "libPopMondegreen_MacosStatic.a"
             BlueprintName = "PopMondegreen_MacosStatic"
             ReferencedContainer = "container:PopMondegreen.xcodeproj">
          </BuildableReference>

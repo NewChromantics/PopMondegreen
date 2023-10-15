@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BFC4717024474FFA00A2DA70"
-               BuildableName = "PopMondegreen_TestApp"
+               BuildableName = "PopMondegreen_MacosTestApp"
                BlueprintName = "PopMondegreen_MacosTestApp"
                ReferencedContainer = "container:PopMondegreen.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF459CD421F7D5C700CED59D"
-               BuildableName = "PopMondegreen_MacosFramework.framework"
+               BuildableName = "PopMondegreen_Macos.framework"
                BlueprintName = "PopMondegreen_MacosFramework"
                ReferencedContainer = "container:PopMondegreen.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFC4717024474FFA00A2DA70"
-            BuildableName = "PopMondegreen_TestApp"
+            BuildableName = "PopMondegreen_MacosTestApp"
             BlueprintName = "PopMondegreen_MacosTestApp"
             ReferencedContainer = "container:PopMondegreen.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFC4717024474FFA00A2DA70"
-            BuildableName = "PopMondegreen_TestApp"
+            BuildableName = "PopMondegreen_MacosTestApp"
             BlueprintName = "PopMondegreen_MacosTestApp"
             ReferencedContainer = "container:PopMondegreen.xcodeproj">
          </BuildableReference>
@@ -96,7 +96,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFC4717024474FFA00A2DA70"
-            BuildableName = "PopMondegreen_TestApp"
+            BuildableName = "PopMondegreen_MacosTestApp"
             BlueprintName = "PopMondegreen_MacosTestApp"
             ReferencedContainer = "container:PopMondegreen.xcodeproj">
          </BuildableReference>

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF151FD82384786600A70EBF"
-               BuildableName = "PopMondegreen_IosFramework.framework"
+               BuildableName = "PopMondegreen_Ios.framework"
                BlueprintName = "PopMondegreen_IosFramework"
                ReferencedContainer = "container:PopMondegreen.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF151FD82384786600A70EBF"
-            BuildableName = "PopMondegreen_IosFramework.framework"
+            BuildableName = "PopMondegreen_Ios.framework"
             BlueprintName = "PopMondegreen_IosFramework"
             ReferencedContainer = "container:PopMondegreen.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF151FD82384786600A70EBF"
-            BuildableName = "PopMondegreen_IosFramework.framework"
+            BuildableName = "PopMondegreen_Ios.framework"
             BlueprintName = "PopMondegreen_IosFramework"
             ReferencedContainer = "container:PopMondegreen.xcodeproj">
          </BuildableReference>
