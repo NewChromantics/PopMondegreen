@@ -84,7 +84,7 @@ jobs:
 
           - name: Ios Framework
             runs_on: macos-latest
-            scheme: ${{ env.project }}_Ios
+            scheme: ${{ env.project }}_IosFramework
             destination: "generic/platform=iOS"
 
           - name: Tvos Static

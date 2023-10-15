@@ -3,4 +3,6 @@
 SDKROOT = iphoneos
 
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) TARGET_IOS
-INFOPLIST_FILE = $(SRCROOT)/Source_Apple/Ios_Framwork_Info.plist
+INFOPLIST_FILE = $(SRCROOT)/Source_Apple/Ios_Framework_Info.plist
+
+VALIDATE_PRODUCT = YES
