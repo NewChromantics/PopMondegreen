@@ -1,0 +1,6 @@
+#include "Apple.xcconfig"
+
+SDKROOT = iphoneos
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) TARGET_IOS
+INFOPLIST_FILE = $(SRCROOT)/Source_Apple/Ios_Framwork_Info.plist

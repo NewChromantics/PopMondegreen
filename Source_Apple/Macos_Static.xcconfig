@@ -1,0 +1,7 @@
+#include "Apple.xcconfig"
+
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) TARGET_OSX TARGET_MACOS
+
+INFOPLIST_FILE = $(SRCROOT)/Source_Apple/Macos_Static_Info.plist
+

@@ -1,0 +1,17 @@
+#include "Apple.xcconfig"
+
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) TARGET_OSX TARGET_MACOS
+
+INFOPLIST_FILE = $(SRCROOT)/Source_Apple/Macos_Framework_Info.plist
+
+
+//	default project settings, but make consistent across framework & bundle
+COMBINE_HIDPI_IMAGES = YES
+DYLIB_INSTALL_NAME_BASE = @rpath
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/Frameworks
+DEFINES_MODULE = YES
+FRAMEWORK_VERSION = A
+
+
+LIBRARY_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Source/X264/osx

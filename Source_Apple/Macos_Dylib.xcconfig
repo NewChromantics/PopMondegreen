@@ -1,0 +1,7 @@
+#include "Apple.xcconfig"
+
+//	explicit name for dylib so output ends up at libPopH264.dylib
+PRODUCT_NAME = PopMondegreen
+
+INFOPLIST_FILE = $(SRCROOT)/Source_Apple/Macos_Dylib_Info.plist
+

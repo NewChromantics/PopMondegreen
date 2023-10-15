@@ -1,0 +1,1464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		BF51B8C2256A7DBA004DE4C7 /* PopMondegreen_Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BF51B8C3256A7DBA004DE4C7 /* Build configuration list for PBXAggregateTarget "PopMondegreen_Universal" */;
+			buildPhases = (
+				BF51B8CA256A7E0E004DE4C7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = PopMondegreen_Universal;
+			productName = PopH264Aggregate;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		BF151FF02384789700A70EBF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF151FEF2384789700A70EBF /* CoreMedia.framework */; };
+		BF1D960A2850CCD7008E3758 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
+		BF1D960B2850CCDC008E3758 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719424477DE500A2DA70 /* VideoToolbox.framework */; };
+		BF1D960C2850CCE0008E3758 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
+		BF1D960D2850CCE4008E3758 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719224477DDE00A2DA70 /* CoreVideo.framework */; };
+		BF1FA6E628759C7E002F03C5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
+		BF1FA6E728759C7E002F03C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
+		BF1FA6E828759C7E002F03C5 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719424477DE500A2DA70 /* VideoToolbox.framework */; };
+		BF1FA6E928759C7E002F03C5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719224477DDE00A2DA70 /* CoreVideo.framework */; };
+		BF270E0F2ADC2939003BB81B /* libPopMondegreen_Ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */; platformFilter = ios; };
+		BF270E122ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */; };
+		BF270E132ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */; };
+		BF270E142ADC29F5003BB81B /* PopMondegreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */; };
+		BF270E152ADC29F5003BB81B /* PopMondegreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */; };
+		BF270E162ADC29F7003BB81B /* PopMondegreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */; };
+		BF270E172ADC29F8003BB81B /* PopMondegreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */; };
+		BF270E182ADC29F8003BB81B /* PopMondegreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */; };
+		BF270E252ADC2EDE003BB81B /* gtest-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = BF270E242ADC2EDE003BB81B /* gtest-all.cc */; };
+		BF270E262ADC2EDE003BB81B /* gtest-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = BF270E242ADC2EDE003BB81B /* gtest-all.cc */; };
+		BF44AAB2249FB65500C9D982 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF44AAB1249FB65500C9D982 /* AVFoundation.framework */; };
+		BF459D1A21F7DB9900CED59D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
+		BF51B8B1256A72A4004DE4C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF51B8B0256A72A4004DE4C7 /* UIKit.framework */; };
+		BF9936932930F49100B9739C /* libPopMondegreen_Macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_Macos.a */; };
+		BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
+		BF9936992930F4C600B9739C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719424477DE500A2DA70 /* VideoToolbox.framework */; };
+		BF99369A2930F4D300B9739C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719224477DDE00A2DA70 /* CoreVideo.framework */; };
+		BF99369B2930F4D900B9739C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
+		BFC4719324477DDE00A2DA70 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719224477DDE00A2DA70 /* CoreVideo.framework */; };
+		BFC4719524477DE500A2DA70 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719424477DE500A2DA70 /* VideoToolbox.framework */; };
+		BFC4719724477DEF00A2DA70 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
+		BFCAA1DF2ADC1A4900160FAA /* PopMondegreenFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DB2ADC1A4900160FAA /* PopMondegreenFramework.h */; };
+		BFCAA1E02ADC1A4900160FAA /* PopMondegreen.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFCAA1E12ADC1A4900160FAA /* InstanceManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DD2ADC1A4900160FAA /* InstanceManager.hpp */; };
+		BFCAA1E22ADC1A4900160FAA /* PopMondegreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */; };
+		BFCAA1E32ADC1A5600160FAA /* PopMondegreen.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFCAA1E42ADC1A5D00160FAA /* PopMondegreen.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFCAA1E52ADC1A5F00160FAA /* PopMondegreen.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFCAA1E62ADC1A6900160FAA /* PopMondegreenFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DB2ADC1A4900160FAA /* PopMondegreenFramework.h */; };
+		BFCAA1E92ADC1C7400160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
+		BFCAA1EA2ADC1C7400160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
+		BFCAA1EB2ADC1C7500160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
+		BFCAA1EF2ADC1C7800160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
+		BFCAA1F02ADC1C7800160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
+		BFCAA1F12ADC1C7900160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
+		BFDB2BB42449F54F009EC370 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB2BB32449F54F009EC370 /* CoreVideo.framework */; };
+		BFDB2BB62449F569009EC370 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB2BB52449F569009EC370 /* VideoToolbox.framework */; };
+		BFFBE9762458390900E9BE1B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFBE9752458390900E9BE1B /* AppKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF270E102ADC2939003BB81B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF4A6A0C1EA16D7C00613A64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF985EB42876E95700F04399;
+			remoteInfo = PopMondegreen_IosStatic;
+		};
+		BF9936952930F49100B9739C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF4A6A0C1EA16D7C00613A64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF1FA6BE28759C7E002F03C5;
+			remoteInfo = PopH264_MacosStatic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF9936972930F49100B9739C /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC4716F24474FFA00A2DA70 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		58413A0126051078008EF9F9 /* Info.plist.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Info.plist.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Resources/Info.plist.meta"; sourceTree = "<group>"; };
+		58413A04260510A6008EF9F9 /* PopH264_Osx.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264_Osx.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/PopH264_Osx.meta"; sourceTree = "<group>"; };
+		58413A05260510A6008EF9F9 /* Versions.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Versions.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions.meta"; sourceTree = "<group>"; };
+		58413A06260510A6008EF9F9 /* Headers.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Headers.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Headers.meta"; sourceTree = "<group>"; };
+		58413A07260510A6008EF9F9 /* Resources.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Resources.meta"; sourceTree = "<group>"; };
+		58413A0D260510D1008EF9F9 /* PopH264.h.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264.h.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Headers/PopH264.h.meta"; sourceTree = "<group>"; };
+		58413A10260510FD008EF9F9 /* Current.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Current.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current.meta"; sourceTree = "<group>"; };
+		58413A11260510FD008EF9F9 /* A.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = A.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A.meta"; sourceTree = "<group>"; };
+		58413A1526051123008EF9F9 /* PopH264_Osx.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264_Osx.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A/PopH264_Osx.meta"; sourceTree = "<group>"; };
+		58413A1626051123008EF9F9 /* _CodeSignature.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = _CodeSignature.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A/_CodeSignature.meta"; sourceTree = "<group>"; };
+		58413A1726051123008EF9F9 /* Headers.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Headers.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A/Headers.meta"; sourceTree = "<group>"; };
+		58413A1826051124008EF9F9 /* Resources.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A/Resources.meta"; sourceTree = "<group>"; };
+		58413A1E2605115A008EF9F9 /* CodeResources.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = CodeResources.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A/_CodeSignature/CodeResources.meta"; sourceTree = "<group>"; };
+		58413A2126051196008EF9F9 /* PopH264.h.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264.h.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A/Headers/PopH264.h.meta"; sourceTree = "<group>"; };
+		58413A24260511BA008EF9F9 /* Info.plist.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Info.plist.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/A/Resources/Info.plist.meta"; sourceTree = "<group>"; };
+		58413A27260511E6008EF9F9 /* Resources.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current/Resources.meta"; sourceTree = "<group>"; };
+		58413A28260511E6008EF9F9 /* PopH264_Osx.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264_Osx.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current/PopH264_Osx.meta"; sourceTree = "<group>"; };
+		58413A29260511E7008EF9F9 /* Headers.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Headers.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current/Headers.meta"; sourceTree = "<group>"; };
+		58413A2A260511E7008EF9F9 /* _CodeSignature.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = _CodeSignature.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current/_CodeSignature.meta"; sourceTree = "<group>"; };
+		58413A3026051210008EF9F9 /* CodeResources.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = CodeResources.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current/_CodeSignature/CodeResources.meta"; sourceTree = "<group>"; };
+		58413A332605123C008EF9F9 /* PopH264.h.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264.h.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current/Headers/PopH264.h.meta"; sourceTree = "<group>"; };
+		58413A3626051265008EF9F9 /* Info.plist.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Info.plist.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/macos-x86_64/PopH264_Osx.framework/Versions/Current/Resources/Info.plist.meta"; sourceTree = "<group>"; };
+		58413A3A2605132D008EF9F9 /* Headers.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Headers.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/ios-arm64/PopH264_Ios.framework/Headers.meta"; sourceTree = "<group>"; };
+		58413A3B2605132D008EF9F9 /* Info.plist.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = Info.plist.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/ios-arm64/PopH264_Ios.framework/Info.plist.meta"; sourceTree = "<group>"; };
+		58413A3C2605132D008EF9F9 /* PopH264_Ios.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264_Ios.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/ios-arm64/PopH264_Ios.framework/PopH264_Ios.meta"; sourceTree = "<group>"; };
+		58413A3D2605132D008EF9F9 /* _CodeSignature.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = _CodeSignature.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/ios-arm64/PopH264_Ios.framework/_CodeSignature.meta"; sourceTree = "<group>"; };
+		58413A4326051358008EF9F9 /* CodeResources.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = CodeResources.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/ios-arm64/PopH264_Ios.framework/_CodeSignature/CodeResources.meta"; sourceTree = "<group>"; };
+		58413A462605137B008EF9F9 /* PopH264.h.meta */ = {isa = PBXFileReference; lastKnownFileType = text; name = PopH264.h.meta; path = "Unity/PopH264/Assets/PopH264/PopH264.xcframework/ios-arm64/PopH264_Ios.framework/Headers/PopH264.h.meta"; sourceTree = "<group>"; };
+		BF151FD92384786600A70EBF /* PopMondegreen_IosFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopMondegreen_IosFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF151FEF2384789700A70EBF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		BF152068238589DB00A70EBF /* libml_mediacodec.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediacodec.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediacodec.dylib; sourceTree = "<group>"; };
+		BF15206A23858F2400A70EBF /* libml_mediacodeclist.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediacodeclist.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediacodeclist.dylib; sourceTree = "<group>"; };
+		BF15206C23858F2C00A70EBF /* libml_mediaformat.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediaformat.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediaformat.dylib; sourceTree = "<group>"; };
+		BF15206E23858F2F00A70EBF /* libml_media_ccparser.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_media_ccparser.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_media_ccparser.dylib; sourceTree = "<group>"; };
+		BF152076238590F100A70EBF /* libml_mediacodec.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediacodec.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediacodec.dylib; sourceTree = "<group>"; };
+		BF152078238590FE00A70EBF /* libml_mediaformat.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediaformat.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediaformat.dylib; sourceTree = "<group>"; };
+		BF15207A2385910800A70EBF /* libml_mediacodeclist.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediacodeclist.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediacodeclist.dylib; sourceTree = "<group>"; };
+		BF15207C2385930B00A70EBF /* libml_media_ccparser.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_media_ccparser.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_media_ccparser.dylib; sourceTree = "<group>"; };
+		BF1D95E02850CB69008E3758 /* libPopMondegreen.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPopMondegreen.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_Macos.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPopMondegreen_Macos.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF21AEAB24D74F010046A434 /* PopH264.Package */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PopH264.Package; sourceTree = "<group>"; };
+		BF23A41125D9415D0060DE06 /* PopMondegreen_IosTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopMondegreen_IosTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF270E242ADC2EDE003BB81B /* gtest-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "gtest-all.cc"; path = "googletest/googletest/src/gtest-all.cc"; sourceTree = "<group>"; };
+		BF32257A244609C700C74D4D /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = Source/X264/osx/libx264.a; sourceTree = "<group>"; };
+		BF32257C244609D100C74D4D /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = Source/X264/Ios/lib/libx264.a; sourceTree = "<group>"; };
+		BF44AAB1249FB65500C9D982 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		BF459CD521F7D5C700CED59D /* PopMondegreen_MacosFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopMondegreen_MacosFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF459CED21F7D73B00CED59D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BF4D032225CC85DA003FF218 /* NDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NDK; path = "../../../opt/homebrew/Caskroom/android-ndk/25/AndroidNDK8775105.app/Contents/NDK"; sourceTree = "<group>"; };
+		BF51B8B0256A72A4004DE4C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BF65D707256573A700B3EE9A /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPopMondegreen_Ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopMondegreen_TestApp.cpp; sourceTree = "<group>"; };
+		BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_TestApp.xcconfig; sourceTree = "<group>"; };
+		BF9C1E522ADC246E0051A5D5 /* Ios_TestApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Ios_TestApp.xcconfig; sourceTree = "<group>"; };
+		BF9C1E532ADC286C0051A5D5 /* Ios_TestApp_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ios_TestApp_Info.plist; sourceTree = "<group>"; };
+		BFAD0AB529C6706100CF7EA6 /* libPopMondegreen_Tvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPopMondegreen_Tvos.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFBC07F223882F9D0070BCB4 /* libml_mediaerror.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediaerror.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediaerror.dylib; sourceTree = "<group>"; };
+		BFBC07F423882FB90070BCB4 /* libml_mediaerror.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediaerror.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediaerror.dylib; sourceTree = "<group>"; };
+		BFC4717124474FFA00A2DA70 /* PopMondegreen_TestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PopMondegreen_TestApp; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC4719224477DDE00A2DA70 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		BFC4719424477DE500A2DA70 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		BFC4719624477DEF00A2DA70 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BFC4719E24477FC800A2DA70 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		BFCAA1CC2ADC19BE00160FAA /* Source_Apple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source_Apple; sourceTree = "<group>"; };
+		BFCAA1CD2ADC1A2000160FAA /* Source_CSharp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source_CSharp; sourceTree = "<group>"; };
+		BFCAA1DB2ADC1A4900160FAA /* PopMondegreenFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopMondegreenFramework.h; path = Source/PopMondegreenFramework.h; sourceTree = "<group>"; };
+		BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopMondegreen.h; path = Source/PopMondegreen.h; sourceTree = "<group>"; };
+		BFCAA1DD2ADC1A4900160FAA /* InstanceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = InstanceManager.hpp; path = Source/InstanceManager.hpp; sourceTree = "<group>"; };
+		BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PopMondegreen.cpp; path = Source/PopMondegreen.cpp; sourceTree = "<group>"; };
+		BFCAA1E72ADC1C7000160FAA /* Listener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Listener.cpp; path = Source/Listener.cpp; sourceTree = "<group>"; };
+		BFCAA1E82ADC1C7000160FAA /* Listener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Listener.hpp; path = Source/Listener.hpp; sourceTree = "<group>"; };
+		BFCAA1F22ADC1E0F00160FAA /* PopMondegreen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PopMondegreen.hpp; path = Source/PopMondegreen.hpp; sourceTree = "<group>"; };
+		BFCAA2022ADC1FF700160FAA /* BuildUniversal.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildUniversal.sh; sourceTree = "<group>"; };
+		BFCAA2032ADC1FF700160FAA /* Macos_Dylib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_Dylib.xcconfig; sourceTree = "<group>"; };
+		BFCAA2042ADC1FF700160FAA /* Macos_Static_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Macos_Static_Info.plist; sourceTree = "<group>"; };
+		BFCAA2062ADC1FF700160FAA /* Apple.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Apple.xcconfig; sourceTree = "<group>"; };
+		BFCAA2072ADC1FF700160FAA /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		BFCAA2082ADC1FF700160FAA /* Tvos.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tvos.xcconfig; sourceTree = "<group>"; };
+		BFCAA2092ADC1FF700160FAA /* Macos_Static.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_Static.xcconfig; sourceTree = "<group>"; };
+		BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_Framework.xcconfig; sourceTree = "<group>"; };
+		BFCAA20B2ADC1FF700160FAA /* Macos_Bundle_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Macos_Bundle_Info.plist; sourceTree = "<group>"; };
+		BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Ios.xcconfig; sourceTree = "<group>"; };
+		BFCAA20D2ADC1FF700160FAA /* VersionRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VersionRelease.xcconfig; sourceTree = "<group>"; };
+		BFCAA20E2ADC1FF700160FAA /* Ios_Framework_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Ios_Framework_Info.plist; sourceTree = "<group>"; };
+		BFDB2BB32449F54F009EC370 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		BFDB2BB52449F569009EC370 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		BFDBAB8624BCC4AB00E8BCE1 /* PopH264.Linux */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PopH264.Linux; sourceTree = "<group>"; };
+		BFE87C1C25E7B1AD00224AB0 /* PopH264.Emscripten */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PopH264.Emscripten; sourceTree = "<group>"; };
+		BFE87C1E25E7EE9E00224AB0 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		BFF1C6E322E377D100AFDFD5 /* PopMondegreen.Android */ = {isa = PBXFileReference; lastKnownFileType = file; path = PopMondegreen.Android; sourceTree = "<group>"; };
+		BFFBE9752458390900E9BE1B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF151FD62384786600A70EBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF44AAB2249FB65500C9D982 /* AVFoundation.framework in Frameworks */,
+				BFDB2BB62449F569009EC370 /* VideoToolbox.framework in Frameworks */,
+				BFDB2BB42449F54F009EC370 /* CoreVideo.framework in Frameworks */,
+				BF151FF02384789700A70EBF /* CoreMedia.framework in Frameworks */,
+				BF51B8B1256A72A4004DE4C7 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1D95DE2850CB69008E3758 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1D960C2850CCE0008E3758 /* CoreMedia.framework in Frameworks */,
+				BF1D960A2850CCD7008E3758 /* AVFoundation.framework in Frameworks */,
+				BF1D960B2850CCDC008E3758 /* VideoToolbox.framework in Frameworks */,
+				BF1D960D2850CCE4008E3758 /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1FA6E528759C7E002F03C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1FA6E628759C7E002F03C5 /* CoreMedia.framework in Frameworks */,
+				BF1FA6E728759C7E002F03C5 /* AVFoundation.framework in Frameworks */,
+				BF1FA6E828759C7E002F03C5 /* VideoToolbox.framework in Frameworks */,
+				BF1FA6E928759C7E002F03C5 /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF23A40E25D9415D0060DE06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF270E0F2ADC2939003BB81B /* libPopMondegreen_Ios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF459CD221F7D5C700CED59D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC4719724477DEF00A2DA70 /* AVFoundation.framework in Frameworks */,
+				BFC4719524477DE500A2DA70 /* VideoToolbox.framework in Frameworks */,
+				BFC4719324477DDE00A2DA70 /* CoreVideo.framework in Frameworks */,
+				BF459D1A21F7DB9900CED59D /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF985EB22876E95700F04399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAD0AB129C6706100CF7EA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC4716E24474FFA00A2DA70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF99369B2930F4D900B9739C /* AVFoundation.framework in Frameworks */,
+				BF99369A2930F4D300B9739C /* CoreVideo.framework in Frameworks */,
+				BF9936992930F4C600B9739C /* VideoToolbox.framework in Frameworks */,
+				BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */,
+				BFFBE9762458390900E9BE1B /* AppKit.framework in Frameworks */,
+				BF9936932930F49100B9739C /* libPopMondegreen_Macos.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		584139FC26050FFF008EF9F9 /* Metas */ = {
+			isa = PBXGroup;
+			children = (
+				58413A38260512F8008EF9F9 /* Ios */,
+				58413A0026051046008EF9F9 /* Osx */,
+			);
+			name = Metas;
+			sourceTree = "<group>";
+		};
+		58413A0026051046008EF9F9 /* Osx */ = {
+			isa = PBXGroup;
+			children = (
+				58413A29260511E7008EF9F9 /* Headers.meta */,
+				58413A28260511E6008EF9F9 /* PopH264_Osx.meta */,
+				58413A1826051124008EF9F9 /* Resources.meta */,
+				58413A3626051265008EF9F9 /* Info.plist.meta */,
+				58413A2A260511E7008EF9F9 /* _CodeSignature.meta */,
+				58413A06260510A6008EF9F9 /* Headers.meta */,
+				58413A0D260510D1008EF9F9 /* PopH264.h.meta */,
+				58413A3026051210008EF9F9 /* CodeResources.meta */,
+				58413A1626051123008EF9F9 /* _CodeSignature.meta */,
+				58413A1726051123008EF9F9 /* Headers.meta */,
+				58413A04260510A6008EF9F9 /* PopH264_Osx.meta */,
+				58413A07260510A6008EF9F9 /* Resources.meta */,
+				58413A1526051123008EF9F9 /* PopH264_Osx.meta */,
+				58413A27260511E6008EF9F9 /* Resources.meta */,
+				58413A24260511BA008EF9F9 /* Info.plist.meta */,
+				58413A332605123C008EF9F9 /* PopH264.h.meta */,
+				58413A2126051196008EF9F9 /* PopH264.h.meta */,
+				58413A1E2605115A008EF9F9 /* CodeResources.meta */,
+				58413A11260510FD008EF9F9 /* A.meta */,
+				58413A10260510FD008EF9F9 /* Current.meta */,
+				58413A05260510A6008EF9F9 /* Versions.meta */,
+				58413A0126051078008EF9F9 /* Info.plist.meta */,
+			);
+			name = Osx;
+			sourceTree = "<group>";
+		};
+		58413A38260512F8008EF9F9 /* Ios */ = {
+			isa = PBXGroup;
+			children = (
+				58413A462605137B008EF9F9 /* PopH264.h.meta */,
+				58413A4326051358008EF9F9 /* CodeResources.meta */,
+				58413A3D2605132D008EF9F9 /* _CodeSignature.meta */,
+				58413A3A2605132D008EF9F9 /* Headers.meta */,
+				58413A3B2605132D008EF9F9 /* Info.plist.meta */,
+				58413A3C2605132D008EF9F9 /* PopH264_Ios.meta */,
+			);
+			name = Ios;
+			sourceTree = "<group>";
+		};
+		BF270E232ADC2EC9003BB81B /* googletest */ = {
+			isa = PBXGroup;
+			children = (
+				BF270E242ADC2EDE003BB81B /* gtest-all.cc */,
+			);
+			name = googletest;
+			sourceTree = "<group>";
+		};
+		BF459CEC21F7D73B00CED59D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF51B8B0256A72A4004DE4C7 /* UIKit.framework */,
+				BF44AAB1249FB65500C9D982 /* AVFoundation.framework */,
+				BFFBE9752458390900E9BE1B /* AppKit.framework */,
+				BFDB2BB52449F569009EC370 /* VideoToolbox.framework */,
+				BFDB2BB32449F54F009EC370 /* CoreVideo.framework */,
+				BFC4719E24477FC800A2DA70 /* OpenGL.framework */,
+				BFC4719624477DEF00A2DA70 /* AVFoundation.framework */,
+				BFC4719424477DE500A2DA70 /* VideoToolbox.framework */,
+				BFC4719224477DDE00A2DA70 /* CoreVideo.framework */,
+				BF151FEF2384789700A70EBF /* CoreMedia.framework */,
+				BF32257C244609D100C74D4D /* libx264.a */,
+				BF32257A244609C700C74D4D /* libx264.a */,
+				BF152068238589DB00A70EBF /* libml_mediacodec.dylib */,
+				BF15206C23858F2C00A70EBF /* libml_mediaformat.dylib */,
+				BFBC07F223882F9D0070BCB4 /* libml_mediaerror.dylib */,
+				BF15206E23858F2F00A70EBF /* libml_media_ccparser.dylib */,
+				BF15206A23858F2400A70EBF /* libml_mediacodeclist.dylib */,
+				BF459CED21F7D73B00CED59D /* CoreMedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF4A6A0B1EA16D7C00613A64 = {
+			isa = PBXGroup;
+			children = (
+				584139FC26050FFF008EF9F9 /* Metas */,
+				BFE87C1E25E7EE9E00224AB0 /* .github */,
+				BFE87C1C25E7B1AD00224AB0 /* PopH264.Emscripten */,
+				BF4D032225CC85DA003FF218 /* NDK */,
+				BF65D707256573A700B3EE9A /* Readme.md */,
+				BF21AEAB24D74F010046A434 /* PopH264.Package */,
+				BFDBAB8624BCC4AB00E8BCE1 /* PopH264.Linux */,
+				BFBC07F423882FB90070BCB4 /* libml_mediaerror.dylib */,
+				BF15207C2385930B00A70EBF /* libml_media_ccparser.dylib */,
+				BF15207A2385910800A70EBF /* libml_mediacodeclist.dylib */,
+				BF152078238590FE00A70EBF /* libml_mediaformat.dylib */,
+				BF152076238590F100A70EBF /* libml_mediacodec.dylib */,
+				BFF1C6E322E377D100AFDFD5 /* PopMondegreen.Android */,
+				BFCAA1CC2ADC19BE00160FAA /* Source_Apple */,
+				BFCAA1CE2ADC1A2C00160FAA /* Source_Apple */,
+				BFCAA1CD2ADC1A2000160FAA /* Source_CSharp */,
+				BFD6076D1EA16ED20035C814 /* Source */,
+				BF9C1E4F2ADC246E0051A5D5 /* Source_TestApp */,
+				BF4A6A151EA16D7D00613A64 /* Products */,
+				BF459CEC21F7D73B00CED59D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF4A6A151EA16D7D00613A64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF459CD521F7D5C700CED59D /* PopMondegreen_MacosFramework.framework */,
+				BF151FD92384786600A70EBF /* PopMondegreen_IosFramework.framework */,
+				BFC4717124474FFA00A2DA70 /* PopMondegreen_TestApp */,
+				BF23A41125D9415D0060DE06 /* PopMondegreen_IosTestApp.app */,
+				BF1D95E02850CB69008E3758 /* libPopMondegreen.dylib */,
+				BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_Macos.a */,
+				BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */,
+				BFAD0AB529C6706100CF7EA6 /* libPopMondegreen_Tvos.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF9C1E4E2ADC233E0051A5D5 /* SoyLib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SoyLib;
+			sourceTree = "<group>";
+		};
+		BF9C1E4F2ADC246E0051A5D5 /* Source_TestApp */ = {
+			isa = PBXGroup;
+			children = (
+				BF270E232ADC2EC9003BB81B /* googletest */,
+				BF9C1E532ADC286C0051A5D5 /* Ios_TestApp_Info.plist */,
+				BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */,
+				BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */,
+				BF9C1E522ADC246E0051A5D5 /* Ios_TestApp.xcconfig */,
+			);
+			path = Source_TestApp;
+			sourceTree = "<group>";
+		};
+		BFCAA1CE2ADC1A2C00160FAA /* Source_Apple */ = {
+			isa = PBXGroup;
+			children = (
+				BFCAA2062ADC1FF700160FAA /* Apple.xcconfig */,
+				BFCAA2022ADC1FF700160FAA /* BuildUniversal.sh */,
+				BFCAA20E2ADC1FF700160FAA /* Ios_Framework_Info.plist */,
+				BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */,
+				BFCAA20B2ADC1FF700160FAA /* Macos_Bundle_Info.plist */,
+				BFCAA2032ADC1FF700160FAA /* Macos_Dylib.xcconfig */,
+				BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */,
+				BFCAA2042ADC1FF700160FAA /* Macos_Static_Info.plist */,
+				BFCAA2092ADC1FF700160FAA /* Macos_Static.xcconfig */,
+				BFCAA2082ADC1FF700160FAA /* Tvos.xcconfig */,
+				BFCAA2072ADC1FF700160FAA /* Version.xcconfig */,
+				BFCAA20D2ADC1FF700160FAA /* VersionRelease.xcconfig */,
+			);
+			path = Source_Apple;
+			sourceTree = "<group>";
+		};
+		BFD6076D1EA16ED20035C814 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BF9C1E4E2ADC233E0051A5D5 /* SoyLib */,
+				BFCAA1DD2ADC1A4900160FAA /* InstanceManager.hpp */,
+				BFCAA1E72ADC1C7000160FAA /* Listener.cpp */,
+				BFCAA1E82ADC1C7000160FAA /* Listener.hpp */,
+				BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */,
+				BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */,
+				BFCAA1F22ADC1E0F00160FAA /* PopMondegreen.hpp */,
+				BFCAA1DB2ADC1A4900160FAA /* PopMondegreenFramework.h */,
+			);
+			name = Source;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BF151FD42384786600A70EBF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1E52ADC1A5F00160FAA /* PopMondegreen.h in Headers */,
+				BFCAA1E62ADC1A6900160FAA /* PopMondegreenFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1D95DC2850CB69008E3758 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1E42ADC1A5D00160FAA /* PopMondegreen.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1FA6BF28759C7E002F03C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1E32ADC1A5600160FAA /* PopMondegreen.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF459CD021F7D5C700CED59D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1E02ADC1A4900160FAA /* PopMondegreen.h in Headers */,
+				BFCAA1E12ADC1A4900160FAA /* InstanceManager.hpp in Headers */,
+				BFCAA1DF2ADC1A4900160FAA /* PopMondegreenFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		BFE87C1825E7B19300224AB0 /* PopMondegreen_Wasm */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "PopH264.Emscripten $(ACTION)";
+			buildConfigurationList = BFE87C1B25E7B19400224AB0 /* Build configuration list for PBXLegacyTarget "PopMondegreen_Wasm" */;
+			buildPhases = (
+			);
+			buildToolPath = PopH264.Emscripten/Build.sh;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = PopMondegreen_Wasm;
+			passBuildSettingsInEnvironment = 1;
+			productName = PopH264_Wasm;
+		};
+		BFF1C6DE22E3769B00AFDFD5 /* PopMondegreen_Android */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "PopH264.Android/libPopH264 $(ACTION)";
+			buildConfigurationList = BFF1C6E122E3769B00AFDFD5 /* Build configuration list for PBXLegacyTarget "PopMondegreen_Android" */;
+			buildPhases = (
+			);
+			buildToolPath = PopH264.Android/build.sh;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = PopMondegreen_Android;
+			passBuildSettingsInEnvironment = 1;
+			productName = PopH264Android;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		BF151FD82384786600A70EBF /* PopMondegreen_IosFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF151FDE2384786600A70EBF /* Build configuration list for PBXNativeTarget "PopMondegreen_IosFramework" */;
+			buildPhases = (
+				BF151FD42384786600A70EBF /* Headers */,
+				BF151FD52384786600A70EBF /* Sources */,
+				BF151FD62384786600A70EBF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopMondegreen_IosFramework;
+			productName = PopH264_Ios;
+			productReference = BF151FD92384786600A70EBF /* PopMondegreen_IosFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BF1D95DF2850CB69008E3758 /* PopMondegreen_MacosDylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1D95E12850CB69008E3758 /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosDylib" */;
+			buildPhases = (
+				BF1D95DC2850CB69008E3758 /* Headers */,
+				BF1D95DD2850CB69008E3758 /* Sources */,
+				BF1D95DE2850CB69008E3758 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopMondegreen_MacosDylib;
+			productName = PopH264_MacosDylib;
+			productReference = BF1D95E02850CB69008E3758 /* libPopMondegreen.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		BF1FA6BE28759C7E002F03C5 /* PopMondegreen_MacosStatic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1FA6EA28759C7E002F03C5 /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosStatic" */;
+			buildPhases = (
+				BF1FA6BF28759C7E002F03C5 /* Headers */,
+				BF1FA6C028759C7E002F03C5 /* Sources */,
+				BF1FA6E528759C7E002F03C5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopMondegreen_MacosStatic;
+			productName = PopH264_MacosDylib;
+			productReference = BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_Macos.a */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		BF23A41025D9415D0060DE06 /* PopMondegreen_IosTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF23A41D25D941600060DE06 /* Build configuration list for PBXNativeTarget "PopMondegreen_IosTestApp" */;
+			buildPhases = (
+				BF23A40D25D9415D0060DE06 /* Sources */,
+				BF23A40E25D9415D0060DE06 /* Frameworks */,
+				BF23A40F25D9415D0060DE06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF270E112ADC2939003BB81B /* PBXTargetDependency */,
+			);
+			name = PopMondegreen_IosTestApp;
+			productName = PopH264_TestAppIos;
+			productReference = BF23A41125D9415D0060DE06 /* PopMondegreen_IosTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF459CD421F7D5C700CED59D /* PopMondegreen_MacosFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF459CDA21F7D5C700CED59D /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosFramework" */;
+			buildPhases = (
+				BF459CD021F7D5C700CED59D /* Headers */,
+				BF459CD121F7D5C700CED59D /* Sources */,
+				BF459CD221F7D5C700CED59D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopMondegreen_MacosFramework;
+			productName = PopH264Framework;
+			productReference = BF459CD521F7D5C700CED59D /* PopMondegreen_MacosFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BF985EB42876E95700F04399 /* PopMondegreen_IosStatic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF985EBB2876E95700F04399 /* Build configuration list for PBXNativeTarget "PopMondegreen_IosStatic" */;
+			buildPhases = (
+				BF985EB12876E95700F04399 /* Sources */,
+				BF985EB22876E95700F04399 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopMondegreen_IosStatic;
+			productName = PopH264_IosStatic;
+			productReference = BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BFAD0A8F29C6706100CF7EA6 /* PopMondegreen_TvosStatic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFAD0AB229C6706100CF7EA6 /* Build configuration list for PBXNativeTarget "PopMondegreen_TvosStatic" */;
+			buildPhases = (
+				BFAD0A9029C6706100CF7EA6 /* Sources */,
+				BFAD0AB129C6706100CF7EA6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopMondegreen_TvosStatic;
+			productName = PopH264_IosStatic;
+			productReference = BFAD0AB529C6706100CF7EA6 /* libPopMondegreen_Tvos.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BFC4717024474FFA00A2DA70 /* PopMondegreen_MacosTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC4717724474FFA00A2DA70 /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosTestApp" */;
+			buildPhases = (
+				BFC4716D24474FFA00A2DA70 /* Sources */,
+				BFC4716E24474FFA00A2DA70 /* Frameworks */,
+				BFC4716F24474FFA00A2DA70 /* CopyFiles */,
+				BFBD252E25D955E50076C307 /* Resources */,
+				BF9936972930F49100B9739C /* Embed Libraries */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF9936962930F49100B9739C /* PBXTargetDependency */,
+			);
+			name = PopMondegreen_MacosTestApp;
+			productName = PopH264_TestApp;
+			productReference = BFC4717124474FFA00A2DA70 /* PopMondegreen_TestApp */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF4A6A0C1EA16D7C00613A64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1340;
+				ORGANIZATIONNAME = NewChromantics;
+				TargetAttributes = {
+					BF151FD82384786600A70EBF = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Manual;
+					};
+					BF1D95DF2850CB69008E3758 = {
+						CreatedOnToolsVersion = 12.2;
+						DevelopmentTeam = X52DR36JY2;
+						ProvisioningStyle = Automatic;
+					};
+					BF1FA6BE28759C7E002F03C5 = {
+						DevelopmentTeam = X52DR36JY2;
+						ProvisioningStyle = Automatic;
+					};
+					BF23A41025D9415D0060DE06 = {
+						CreatedOnToolsVersion = 12.2;
+						ProvisioningStyle = Automatic;
+					};
+					BF459CD421F7D5C700CED59D = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Manual;
+					};
+					BF51B8C2256A7DBA004DE4C7 = {
+						CreatedOnToolsVersion = 12.0;
+						ProvisioningStyle = Automatic;
+					};
+					BF985EB42876E95700F04399 = {
+						CreatedOnToolsVersion = 13.4.1;
+						DevelopmentTeam = X52DR36JY2;
+						ProvisioningStyle = Automatic;
+					};
+					BFAD0A8F29C6706100CF7EA6 = {
+						DevelopmentTeam = X52DR36JY2;
+						ProvisioningStyle = Automatic;
+					};
+					BFC4717024474FFA00A2DA70 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = X52DR36JY2;
+						ProvisioningStyle = Automatic;
+					};
+					BFE87C1825E7B19300224AB0 = {
+						CreatedOnToolsVersion = 12.2;
+						DevelopmentTeam = X52DR36JY2;
+						ProvisioningStyle = Automatic;
+					};
+					BFF1C6DE22E3769B00AFDFD5 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = BF4A6A0F1EA16D7C00613A64 /* Build configuration list for PBXProject "PopMondegreen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF4A6A0B1EA16D7C00613A64;
+			productRefGroup = BF4A6A151EA16D7D00613A64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF459CD421F7D5C700CED59D /* PopMondegreen_MacosFramework */,
+				BF1D95DF2850CB69008E3758 /* PopMondegreen_MacosDylib */,
+				BF151FD82384786600A70EBF /* PopMondegreen_IosFramework */,
+				BF51B8C2256A7DBA004DE4C7 /* PopMondegreen_Universal */,
+				BFF1C6DE22E3769B00AFDFD5 /* PopMondegreen_Android */,
+				BFC4717024474FFA00A2DA70 /* PopMondegreen_MacosTestApp */,
+				BF23A41025D9415D0060DE06 /* PopMondegreen_IosTestApp */,
+				BFE87C1825E7B19300224AB0 /* PopMondegreen_Wasm */,
+				BF1FA6BE28759C7E002F03C5 /* PopMondegreen_MacosStatic */,
+				BF985EB42876E95700F04399 /* PopMondegreen_IosStatic */,
+				BFAD0A8F29C6706100CF7EA6 /* PopMondegreen_TvosStatic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF23A40F25D9415D0060DE06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFBD252E25D955E50076C307 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF51B8CA256A7E0E004DE4C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod +x ./Source_Ios/BuildUniversal.sh\n./Source_Ios/BuildUniversal.sh ${PROJECT_NAME}\n\nls -l ${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF151FD52384786600A70EBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1EB2ADC1C7500160FAA /* Listener.cpp in Sources */,
+				BF270E152ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1D95DD2850CB69008E3758 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1EA2ADC1C7400160FAA /* Listener.cpp in Sources */,
+				BF270E142ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1FA6C028759C7E002F03C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1EF2ADC1C7800160FAA /* Listener.cpp in Sources */,
+				BF270E162ADC29F7003BB81B /* PopMondegreen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF23A40D25D9415D0060DE06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF270E132ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
+				BF270E262ADC2EDE003BB81B /* gtest-all.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF459CD121F7D5C700CED59D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1E22ADC1A4900160FAA /* PopMondegreen.cpp in Sources */,
+				BFCAA1E92ADC1C7400160FAA /* Listener.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF985EB12876E95700F04399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1F02ADC1C7800160FAA /* Listener.cpp in Sources */,
+				BF270E172ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAD0A9029C6706100CF7EA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCAA1F12ADC1C7900160FAA /* Listener.cpp in Sources */,
+				BF270E182ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC4716D24474FFA00A2DA70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF270E122ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
+				BF270E252ADC2EDE003BB81B /* gtest-all.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF270E112ADC2939003BB81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = BF985EB42876E95700F04399 /* PopMondegreen_IosStatic */;
+			targetProxy = BF270E102ADC2939003BB81B /* PBXContainerItemProxy */;
+		};
+		BF9936962930F49100B9739C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF1FA6BE28759C7E002F03C5 /* PopMondegreen_MacosStatic */;
+			targetProxy = BF9936952930F49100B9739C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BF151FDF2384786600A70EBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Ios/PopH264_Ios_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source/X264/Ios/lib",
+				);
+				LLVM_LTO = NO;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewChromantics.PopH264;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+			};
+			name = Debug;
+		};
+		BF151FE02384786600A70EBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Ios/PopH264_Ios_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source/X264/Ios/lib",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewChromantics.PopH264;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+			};
+			name = Release;
+		};
+		BF1D95E22850CB69008E3758 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA2032ADC1FF700160FAA /* Macos_Dylib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_OsxBundle_Info.plist";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BF1D95E32850CB69008E3758 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA2032ADC1FF700160FAA /* Macos_Dylib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_OsxBundle_Info.plist";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BF1FA6EB28759C7E002F03C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA2092ADC1FF700160FAA /* Macos_Static.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_MacosStatic_Info.plist";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_MODULE_NAME = PopH264_Macos;
+				PRODUCT_NAME = PopMondegreen_Macos;
+			};
+			name = Debug;
+		};
+		BF1FA6EC28759C7E002F03C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA2092ADC1FF700160FAA /* Macos_Static.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_MacosStatic_Info.plist";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_MODULE_NAME = PopH264_Macos;
+				PRODUCT_NAME = PopMondegreen_Macos;
+			};
+			name = Release;
+		};
+		BF23A41E25D941600060DE06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9C1E522ADC246E0051A5D5 /* Ios_TestApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LLVM_LTO = NO;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+			};
+			name = Debug;
+		};
+		BF23A41F25D941600060DE06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9C1E522ADC246E0051A5D5 /* Ios_TestApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+			};
+			name = Release;
+		};
+		BF459CDB21F7D5C700CED59D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_Osx_Info.plist";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		BF459CDC21F7D5C700CED59D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_Osx_Info.plist";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		BF4A6A181EA16D7D00613A64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = .;
+				LLVM_LTO = YES;
+				OBJROOT = "$(SYMROOT)$(EFFECTIVE_PLATFORM_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BF4A6A191EA16D7D00613A64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = .;
+				OBJROOT = "$(SYMROOT)$(EFFECTIVE_PLATFORM_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BF51B8C4256A7DBA004DE4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				FULL_PRODUCT_NAME = "${PRODUCT_NAME}.xcframework";
+				PRODUCT_NAME = PopMondegreen;
+			};
+			name = Debug;
+		};
+		BF51B8C5256A7DBA004DE4C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				FULL_PRODUCT_NAME = "${PRODUCT_NAME}.xcframework";
+				PRODUCT_NAME = PopMondegreen;
+			};
+			name = Release;
+		};
+		BF985EBC2876E95700F04399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				LLVM_LTO = NO;
+				PRODUCT_NAME = PopMondegreen_Ios;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BF985EBD2876E95700F04399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				PRODUCT_NAME = PopMondegreen_Ios;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BFAD0AB329C6706100CF7EA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA2082ADC1FF700160FAA /* Tvos.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				INFOPLIST_FILE = "PopH264_IosStatic copy-Info.plist";
+				LLVM_LTO = NO;
+				PRODUCT_NAME = PopMondegreen_Tvos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BFAD0AB429C6706100CF7EA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCAA2082ADC1FF700160FAA /* Tvos.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				INFOPLIST_FILE = "PopH264_IosStatic copy-Info.plist";
+				PRODUCT_NAME = PopMondegreen_Tvos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BFC4717524474FFA00A2DA70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_Osx_Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = PopMondegreen_TestApp;
+			};
+			name = Debug;
+		};
+		BFC4717624474FFA00A2DA70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/PopH264_Osx_Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = PopMondegreen_TestApp;
+			};
+			name = Release;
+		};
+		BFE87C1925E7B19300224AB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BFE87C1A25E7B19300224AB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X52DR36JY2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BFF1C6DF22E3769B00AFDFD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ANDROID_ABI_ONLY = "armeabi-v7a";
+				ANDROID_NDK_HOME = "/opt/homebrew/share/android-ndk";
+				BUILD_TARGET_NAME = PopH264;
+				UNITY_ASSET_PLUGIN_PATH = "$(UNITY_OUTPUT_PATH)/Android";
+			};
+			name = Debug;
+		};
+		BFF1C6E022E3769B00AFDFD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ANDROID_ABI_ONLY = "armeabi-v7a";
+				ANDROID_NDK_HOME = "/opt/homebrew/share/android-ndk";
+				BUILD_TARGET_NAME = PopH264;
+				UNITY_ASSET_PLUGIN_PATH = "$(UNITY_OUTPUT_PATH)/Android";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF151FDE2384786600A70EBF /* Build configuration list for PBXNativeTarget "PopMondegreen_IosFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF151FDF2384786600A70EBF /* Debug */,
+				BF151FE02384786600A70EBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1D95E12850CB69008E3758 /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosDylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1D95E22850CB69008E3758 /* Debug */,
+				BF1D95E32850CB69008E3758 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1FA6EA28759C7E002F03C5 /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosStatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1FA6EB28759C7E002F03C5 /* Debug */,
+				BF1FA6EC28759C7E002F03C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF23A41D25D941600060DE06 /* Build configuration list for PBXNativeTarget "PopMondegreen_IosTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF23A41E25D941600060DE06 /* Debug */,
+				BF23A41F25D941600060DE06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF459CDA21F7D5C700CED59D /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF459CDB21F7D5C700CED59D /* Debug */,
+				BF459CDC21F7D5C700CED59D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF4A6A0F1EA16D7C00613A64 /* Build configuration list for PBXProject "PopMondegreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF4A6A181EA16D7D00613A64 /* Debug */,
+				BF4A6A191EA16D7D00613A64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF51B8C3256A7DBA004DE4C7 /* Build configuration list for PBXAggregateTarget "PopMondegreen_Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF51B8C4256A7DBA004DE4C7 /* Debug */,
+				BF51B8C5256A7DBA004DE4C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF985EBB2876E95700F04399 /* Build configuration list for PBXNativeTarget "PopMondegreen_IosStatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF985EBC2876E95700F04399 /* Debug */,
+				BF985EBD2876E95700F04399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFAD0AB229C6706100CF7EA6 /* Build configuration list for PBXNativeTarget "PopMondegreen_TvosStatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFAD0AB329C6706100CF7EA6 /* Debug */,
+				BFAD0AB429C6706100CF7EA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFC4717724474FFA00A2DA70 /* Build configuration list for PBXNativeTarget "PopMondegreen_MacosTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC4717524474FFA00A2DA70 /* Debug */,
+				BFC4717624474FFA00A2DA70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFE87C1B25E7B19400224AB0 /* Build configuration list for PBXLegacyTarget "PopMondegreen_Wasm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFE87C1925E7B19300224AB0 /* Debug */,
+				BFE87C1A25E7B19300224AB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFF1C6E122E3769B00AFDFD5 /* Build configuration list for PBXLegacyTarget "PopMondegreen_Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFF1C6DF22E3769B00AFDFD5 /* Debug */,
+				BFF1C6E022E3769B00AFDFD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF4A6A0C1EA16D7C00613A64 /* Project object */;
+}
