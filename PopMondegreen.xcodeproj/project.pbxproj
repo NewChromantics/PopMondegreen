@@ -896,6 +896,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -914,6 +915,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1030,6 +1032,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 			};
 			name = Debug;
 		};
@@ -1037,6 +1040,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 			};
 			name = Release;
 		};
