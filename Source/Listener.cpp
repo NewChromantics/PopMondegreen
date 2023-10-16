@@ -1,7 +1,7 @@
 #include "Listener.hpp"
 
 
-ListenerParams_t::ListenerParams_t(std::string_view Json)
+ListenerParams_t::ListenerParams_t(PopJson::Json_t& Params)
 {
 }
 

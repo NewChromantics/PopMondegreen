@@ -2,6 +2,9 @@
 #include "InstanceManager.hpp"
 #include "Listener.hpp"
 #include <iostream>
+#include "PopJson/PopJson.hpp"
+
+#include "FakeListener.hpp"
 
 
 namespace Soy
@@ -12,7 +15,8 @@ namespace Soy
 
 namespace PopMondegreen
 {
-	InstanceManager_t<Listener_t>		ListenerInstanceManager;
+	InstanceManager_t<Listener_t>					ListenerInstanceManager;
+	decltype(ListenerInstanceManager)::Instance_t	AllocListener(PopJson::Json_t& Params);
 
 	constexpr int	VersionMajor = VERSION_MAJOR;
 	constexpr int	VersionMinor = VERSION_MINOR;
@@ -42,8 +46,9 @@ __export int32_t PopMondegreen_CreateInstance(const char* _OptionsJson, char* Er
 		if ( !_OptionsJson )
 			_OptionsJson = "{}";
 		std::string_view OptionsJson( _OptionsJson, std::strlen(_OptionsJson) );
-		
-		auto Instance = PopMondegreen::ListenerInstanceManager.Alloc(OptionsJson);
+		PopJson::Json_t Options(OptionsJson);
+		auto Instance = PopMondegreen::AllocListener(Options);
+
 		return Instance;
 	}
 	catch (std::exception& e)
@@ -53,7 +58,7 @@ __export int32_t PopMondegreen_CreateInstance(const char* _OptionsJson, char* Er
 	}
 }
 
-__export void PopMondegreen_DestroyInstance(int32_t Instance)
+__export void PopMondegreen_FreeInstance(int32_t Instance)
 {
 	try
 	{
@@ -83,3 +88,18 @@ void Soy::StringToBuffer(const char* Source,char* Buffer,size_t BufferSize)
 	}
 	Buffer[std::min<ssize_t>(Len,BufferSize-1)] = '\0';
 }
+
+decltype(PopMondegreen::ListenerInstanceManager)::Instance_t PopMondegreen::AllocListener(PopJson::Json_t& Params)
+{
+	auto ListenerName = Params.GetValue("Name").GetString();
+	
+	ListenerParams_t ListenerParams(Params);
+	
+	if ( ListenerName == FakeListener_t::Name )
+	{
+		return PopMondegreen::ListenerInstanceManager.Alloc<FakeListener_t>(ListenerParams);
+	}
+
+	throw std::runtime_error("Don't know how to make listener");
+}
+

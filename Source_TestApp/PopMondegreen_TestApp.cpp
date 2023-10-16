@@ -62,3 +62,17 @@ TEST(PopMondegreen, GetVersion )
 }
 
 
+
+TEST(PopMondegreen, CreateInstance)
+{
+	auto* Params = "{}";
+	std::array<char,1000> ErrorBuffer;
+	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
+	PopMondegreen_FreeInstance( Instance );
+	
+	std::string Error(ErrorBuffer.data());
+	
+	EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+	
+}
+

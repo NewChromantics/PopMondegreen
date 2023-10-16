@@ -43,6 +43,18 @@
 		BF44AAB2249FB65500C9D982 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF44AAB1249FB65500C9D982 /* AVFoundation.framework */; };
 		BF459D1A21F7DB9900CED59D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
 		BF51B8B1256A72A4004DE4C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF51B8B0256A72A4004DE4C7 /* UIKit.framework */; };
+		BF770D5F2ADC3E0300AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
+		BF770D602ADC3E0400AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
+		BF770D612ADC3E0400AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
+		BF770D622ADC3E0800AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
+		BF770D632ADC3E0800AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
+		BF770D642ADC3E0900AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
+		BF770D672ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
+		BF770D682ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
+		BF770D6B2ADC3F7E00AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
+		BF770D6C2ADC3F8000AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
+		BF770D6D2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
+		BF770D6E2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
 		BF9936932930F49100B9739C /* libPopMondegreen_MacosStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_MacosStatic.a */; };
 		BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
 		BF9936992930F4C600B9739C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719424477DE500A2DA70 /* VideoToolbox.framework */; };
@@ -161,6 +173,11 @@
 		BF4D032225CC85DA003FF218 /* NDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NDK; path = "../../../opt/homebrew/Caskroom/android-ndk/25/AndroidNDK8775105.app/Contents/NDK"; sourceTree = "<group>"; };
 		BF51B8B0256A72A4004DE4C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BF65D707256573A700B3EE9A /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		BF770D5C2ADC3DFC00AC2AF5 /* PopJson.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PopJson.hpp; sourceTree = "<group>"; };
+		BF770D5D2ADC3DFC00AC2AF5 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopJson.cpp; sourceTree = "<group>"; };
+		BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FakeListener.cpp; path = Source/FakeListener.cpp; sourceTree = "<group>"; };
+		BF770D662ADC3F7800AC2AF5 /* FakeListener.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FakeListener.hpp; path = Source/FakeListener.hpp; sourceTree = "<group>"; };
 		BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPopMondegreen_Ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopMondegreen_TestApp.cpp; sourceTree = "<group>"; };
 		BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_TestApp.xcconfig; sourceTree = "<group>"; };
@@ -413,6 +430,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BF770D5B2ADC3DFC00AC2AF5 /* PopJson */ = {
+			isa = PBXGroup;
+			children = (
+				BF770D5C2ADC3DFC00AC2AF5 /* PopJson.hpp */,
+				BF770D5D2ADC3DFC00AC2AF5 /* LICENSE */,
+				BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */,
+			);
+			name = PopJson;
+			path = Source/PopJson;
+			sourceTree = "<group>";
+		};
 		BF9C1E4E2ADC233E0051A5D5 /* SoyLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,8 +482,11 @@
 		BFD6076D1EA16ED20035C814 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BF770D5B2ADC3DFC00AC2AF5 /* PopJson */,
 				BF9C1E4E2ADC233E0051A5D5 /* SoyLib */,
 				BFCAA1DD2ADC1A4900160FAA /* InstanceManager.hpp */,
+				BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */,
+				BF770D662ADC3F7800AC2AF5 /* FakeListener.hpp */,
 				BFCAA1E72ADC1C7000160FAA /* Listener.cpp */,
 				BFCAA1E82ADC1C7000160FAA /* Listener.hpp */,
 				BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */,
@@ -807,7 +838,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF770D612ADC3E0400AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1EB2ADC1C7500160FAA /* Listener.cpp in Sources */,
+				BF770D682ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */,
 				BF270E152ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -816,7 +849,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF770D602ADC3E0400AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1EA2ADC1C7400160FAA /* Listener.cpp in Sources */,
+				BF770D6B2ADC3F7E00AC2AF5 /* FakeListener.cpp in Sources */,
 				BF270E142ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,7 +860,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF770D622ADC3E0800AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1EF2ADC1C7800160FAA /* Listener.cpp in Sources */,
+				BF770D6C2ADC3F8000AC2AF5 /* FakeListener.cpp in Sources */,
 				BF270E162ADC29F7003BB81B /* PopMondegreen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,7 +880,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF770D5F2ADC3E0300AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1E22ADC1A4900160FAA /* PopMondegreen.cpp in Sources */,
+				BF770D672ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */,
 				BFCAA1E92ADC1C7400160FAA /* Listener.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,7 +891,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF770D632ADC3E0800AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1F02ADC1C7800160FAA /* Listener.cpp in Sources */,
+				BF770D6D2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */,
 				BF270E172ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -861,7 +902,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF770D642ADC3E0900AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1F12ADC1C7900160FAA /* Listener.cpp in Sources */,
+				BF770D6E2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */,
 				BF270E182ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,6 +28,6 @@ __export int32_t			PopMondegreen_GetVersionThousand();	//	1.23.456 = 100230456
 //	All options are optional
 //	returns an instance id. 0/PopMondegreen_NullInstance on error.
 __export int32_t			PopMondegreen_CreateInstance(const char* OptionsJson, char* ErrorBuffer, int32_t ErrorBufferSize);
-__export void				PopMondegreen_DestroyInstance(int32_t Instance);
+__export void				PopMondegreen_FreeInstance(int32_t Instance);
 
 
