@@ -9,6 +9,23 @@
 #endif
 #endif
 
+#include "PopJson/PopJson.hpp"
+
+void PopMondegreen_Run(PopJson::ViewBase_t& Options)
+{
+	auto Listener = Options.GetValue("Listener").GetString();
+	auto Decoder = Options.GetValue("Decoder").GetString();
+	
+}
+
+
+void PopMondegreen_Run(std::string_view SourceName,std::string_view DecoderName)
+{
+	//auto Listener
+	
+}
+
+
 int main()
 {
 	std::cout << "PopMondegreen verison " << PopMondegreen_GetVersionThousand() << std::endl;
@@ -68,6 +85,24 @@ TEST(PopMondegreen, CreateInstance)
 	auto* Params = "{\"Name\":\"Fake\"}";
 	std::array<char,1000> ErrorBuffer;
 	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
+	PopMondegreen_FreeInstance( Instance );
+	
+	std::string Error(ErrorBuffer.data());
+	
+	EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+	
+}
+
+
+TEST(PopMondegreen, CreateWhisperInstance)
+{
+	auto* Params = "{\"Name\":\"Whisper\"}";
+	std::array<char,1000> ErrorBuffer;
+	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
+	
+	//	push data in
+	//	make sure data comes out
+	
 	PopMondegreen_FreeInstance( Instance );
 	
 	std::string Error(ErrorBuffer.data());

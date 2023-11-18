@@ -10,4 +10,5 @@ public:
 	FakeListener_t(ListenerParams_t Params);
 	
 	virtual std::string	GetName() override	{	return Name;	}
+	virtual void		PushData(AudioDataView_t Data) override;
 };
