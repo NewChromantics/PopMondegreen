@@ -65,7 +65,7 @@ TEST(PopMondegreen, GetVersion )
 
 TEST(PopMondegreen, CreateInstance)
 {
-	auto* Params = "{}";
+	auto* Params = "{\"Name\":\"Fake\"}";
 	std::array<char,1000> ErrorBuffer;
 	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
 	PopMondegreen_FreeInstance( Instance );
