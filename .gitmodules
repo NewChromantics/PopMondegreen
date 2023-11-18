@@ -7,3 +7,6 @@
 [submodule "Source/PopJson"]
 	path = Source/PopJson
 	url = https://github.com/NewChromantics/PopJsonCpp.git
+[submodule "Source/Whisper"]
+	path = Source/Whisper
+	url = https://github.com/ggerganov/whisper.cpp.git
