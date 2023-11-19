@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Listener.hpp"
+#include "Decoder.hpp"
 
-class FakeListener_t : public Listener_t
+class FakeDecoder_t : public Decoder_t
 {
 public:
 	static constexpr auto	Name = "Fake";
 public:
-	FakeListener_t(ListenerParams_t Params);
+	FakeDecoder_t(DecoderParams_t Params);
 	
 	virtual std::string	GetName() override	{	return Name;	}
 	virtual void		PushData(AudioDataView_t Data) override;

@@ -1,17 +1,17 @@
 #pragma once
 
-#include "Listener.hpp"
+#include "Decoder.hpp"
 
 
 class ShazamSession_t;
 
 
-class ShazamListener_t : public Listener_t
+class ShazamDecoder_t : public Decoder_t
 {
 public:
 	static constexpr auto	Name = "Shazam";
 public:
-	ShazamListener_t(ListenerParams_t Params);
+	ShazamDecoder_t(DecoderParams_t Params);
 	
 	virtual std::string	GetName() override	{	return Name;	}
 	virtual void		PushData(AudioDataView_t Data) override;

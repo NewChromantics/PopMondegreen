@@ -30,4 +30,14 @@ __export int32_t			PopMondegreen_GetVersionThousand();	//	1.23.456 = 100230456
 __export int32_t			PopMondegreen_CreateInstance(const char* OptionsJson, char* ErrorBuffer, int32_t ErrorBufferSize);
 __export void				PopMondegreen_FreeInstance(int32_t Instance);
 
+//	sample count = time * channelcount * SampleHz
+//	timestamp is an arbritary millisecond time.
+//	ensure your data aligns to milliseconds!
+__export void				PopMondegreen_PushData(int32_t Instance,uint32_t TimestampMs,float* SampleData,int SampleCount,int ChannelCount,int SampleHz,const char* SampleMeta);
+__export void				PopMondegreen_PushEndOfStream(int32_t Instance);
+
+
+//	pop output data in json. If the data doesn't fit, error should be present, but with a .DataSize set and the data can be popped again
+__export void				PopMondegreen_PopData(int32_t Instance,char* JsonBuffer,int JsonBufferSize);
+
 

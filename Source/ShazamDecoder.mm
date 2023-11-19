@@ -1,4 +1,4 @@
-#include "ShazamListener.hpp"
+#include "ShazamDecoder.hpp"
 #import "ShazamKit/ShazamKit.h"
 #include <iostream>
 
@@ -50,11 +50,17 @@ ShazamSession_t::~ShazamSession_t()
 
 void ShazamSession_t::PushData(AudioDataView_t Samples)
 {
-	AVAudioChannelCount Channels = Samples.mChannelCount;
+	AVAudioChannelCount ChannelCount = Samples.mChannelCount;
 	double SampleRate = Samples.mSampleRate;
-	auto* Format = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:SampleRate channels:Channels];
+	AVAudioCommonFormat DataFormat = AVAudioPCMFormatFloat32;
+	bool Interleaved = true;
+	auto* Format = [[AVAudioFormat alloc] initWithCommonFormat:DataFormat sampleRate:SampleRate channels:ChannelCount interleaved:Interleaved];
+
 	AVAudioFrameCount FrameCount = Samples.mSamples.size();
 	AVAudioPCMBuffer* Buffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:Format frameCapacity:FrameCount];
+
+	//	gr: interleaved, so how many buffers?
+	Buffer.floatChannelData[0][0] = 0.f;
 	
 	//	gr: fix this
 	AVAudioTime* Time = [[AVAudioTime alloc]initWithHostTime:0];
@@ -62,13 +68,13 @@ void ShazamSession_t::PushData(AudioDataView_t Samples)
 }
 
 
-ShazamListener_t::ShazamListener_t(ListenerParams_t Params) :
-	Listener_t		( Params )
+ShazamDecoder_t::ShazamDecoder_t(DecoderParams_t Params) :
+	Decoder_t		( Params )
 {
 	mSession.reset( new ShazamSession_t );
 }
 
-void ShazamListener_t::PushData(AudioDataView_t Data)
+void ShazamDecoder_t::PushData(AudioDataView_t Data)
 {
 	mSession->PushData( Data );
 }

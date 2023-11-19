@@ -6,13 +6,12 @@ class whisper_context;
 
 
 
-//	gr: this is a decoder, not a listener
-class WhisperDecoder_t : public Listener_t
+class WhisperDecoder_t : public Decoder_t
 {
 public:
 	static constexpr auto	Name = "Whisper";
 public:
-	WhisperDecoder_t(ListenerParams_t Params);
+	WhisperDecoder_t(DecoderParams_t Params);
 	
 	virtual std::string	GetName() override	{	return Name;	}
 	

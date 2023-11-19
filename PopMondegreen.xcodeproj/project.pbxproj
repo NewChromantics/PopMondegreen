@@ -46,14 +46,14 @@
 		BF172B4E2B09265300B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
 		BF172B4F2B09265300B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
 		BF172B502B09265300B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B5C2B09451100B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
-		BF172B5D2B09451200B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
-		BF172B5E2B09451200B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
-		BF172B5F2B09451400B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
-		BF172B602B09451500B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
-		BF172B612B09451600B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
-		BF172B622B09451700B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
-		BF172B632B09451700B545CF /* ShazamListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamListener.mm */; };
+		BF172B5C2B09451100B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
+		BF172B5D2B09451200B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
+		BF172B5E2B09451200B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
+		BF172B5F2B09451400B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
+		BF172B602B09451500B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
+		BF172B612B09451600B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
+		BF172B622B09451700B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
+		BF172B632B09451700B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
 		BF172B652B09456500B545CF /* ShazamKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF172B642B09456500B545CF /* ShazamKit.framework */; };
 		BF172B662B09457E00B545CF /* ShazamKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF172B642B09456500B545CF /* ShazamKit.framework */; };
 		BF172B672B09458400B545CF /* ShazamKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF172B642B09456500B545CF /* ShazamKit.framework */; };
@@ -64,6 +64,18 @@
 		BF172B722B09617700B545CF /* Microphone_Apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B6C2B09617200B545CF /* Microphone_Apple.mm */; };
 		BF172B732B09617700B545CF /* Microphone_Apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B6C2B09617200B545CF /* Microphone_Apple.mm */; };
 		BF172B742B09617800B545CF /* Microphone_Apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B6C2B09617200B545CF /* Microphone_Apple.mm */; };
+		BF172B752B0A78A500B545CF /* ShazamKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF172B642B09456500B545CF /* ShazamKit.framework */; };
+		BF172B7D2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */; };
+		BF172B7E2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */; };
+		BF172B7F2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */; };
+		BF172B802B0AB48F00B545CF /* WaveDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */; };
+		BF172B812B0AB49000B545CF /* WaveDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */; };
+		BF172B822B0AB49000B545CF /* WaveDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */; };
+		BF172B832B0AB49400B545CF /* Timecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B762B0A8B5B00B545CF /* Timecode.cpp */; };
+		BF172B842B0AB49500B545CF /* Timecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B762B0A8B5B00B545CF /* Timecode.cpp */; };
+		BF172B852B0AB49700B545CF /* Timecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B762B0A8B5B00B545CF /* Timecode.cpp */; };
+		BF172B862B0AB49700B545CF /* Timecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B762B0A8B5B00B545CF /* Timecode.cpp */; };
+		BF172B872B0AB49800B545CF /* Timecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF172B762B0A8B5B00B545CF /* Timecode.cpp */; };
 		BF1D960A2850CCD7008E3758 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
 		BF1D960B2850CCDC008E3758 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719424477DE500A2DA70 /* VideoToolbox.framework */; };
 		BF1D960C2850CCE0008E3758 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
@@ -91,12 +103,12 @@
 		BF770D622ADC3E0800AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
 		BF770D632ADC3E0800AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
 		BF770D642ADC3E0900AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
-		BF770D672ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
-		BF770D682ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
-		BF770D6B2ADC3F7E00AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
-		BF770D6C2ADC3F8000AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
-		BF770D6D2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
-		BF770D6E2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */; };
+		BF770D672ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
+		BF770D682ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
+		BF770D6B2ADC3F7E00AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
+		BF770D6C2ADC3F8000AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
+		BF770D6D2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
+		BF770D6E2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
 		BF9936932930F49100B9739C /* libPopMondegreen_MacosStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_MacosStatic.a */; };
 		BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
 		BF99369B2930F4D900B9739C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
@@ -111,12 +123,12 @@
 		BFCAA1E42ADC1A5D00160FAA /* PopMondegreen.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFCAA1E52ADC1A5F00160FAA /* PopMondegreen.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFCAA1E62ADC1A6900160FAA /* PopMondegreenFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCAA1DB2ADC1A4900160FAA /* PopMondegreenFramework.h */; };
-		BFCAA1E92ADC1C7400160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
-		BFCAA1EA2ADC1C7400160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
-		BFCAA1EB2ADC1C7500160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
-		BFCAA1EF2ADC1C7800160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
-		BFCAA1F02ADC1C7800160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
-		BFCAA1F12ADC1C7900160FAA /* Listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Listener.cpp */; };
+		BFCAA1E92ADC1C7400160FAA /* Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */; };
+		BFCAA1EA2ADC1C7400160FAA /* Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */; };
+		BFCAA1EB2ADC1C7500160FAA /* Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */; };
+		BFCAA1EF2ADC1C7800160FAA /* Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */; };
+		BFCAA1F02ADC1C7800160FAA /* Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */; };
+		BFCAA1F12ADC1C7900160FAA /* Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */; };
 		BFDB2BB42449F54F009EC370 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB2BB32449F54F009EC370 /* CoreVideo.framework */; };
 		BFDB2BB62449F569009EC370 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB2BB52449F569009EC370 /* VideoToolbox.framework */; };
 		BFFBE9762458390900E9BE1B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFBE9752458390900E9BE1B /* AppKit.framework */; };
@@ -200,20 +212,26 @@
 		BF152078238590FE00A70EBF /* libml_mediaformat.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediaformat.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediaformat.dylib; sourceTree = "<group>"; };
 		BF15207A2385910800A70EBF /* libml_mediacodeclist.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_mediacodeclist.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_mediacodeclist.dylib; sourceTree = "<group>"; };
 		BF15207C2385930B00A70EBF /* libml_media_ccparser.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_media_ccparser.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_media_ccparser.dylib; sourceTree = "<group>"; };
-		BF172B302B09261700B545CF /* WhisperListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WhisperListener.cpp; path = Source/WhisperListener.cpp; sourceTree = "<group>"; };
-		BF172B312B09261700B545CF /* WhisperListener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = WhisperListener.hpp; path = Source/WhisperListener.hpp; sourceTree = "<group>"; };
+		BF172B302B09261700B545CF /* WhisperDecoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WhisperDecoder.cpp; path = Source/WhisperDecoder.cpp; sourceTree = "<group>"; };
+		BF172B312B09261700B545CF /* WhisperDecoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = WhisperDecoder.hpp; path = Source/WhisperDecoder.hpp; sourceTree = "<group>"; };
 		BF172B332B09264700B545CF /* whisper-encoder-impl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "whisper-encoder-impl.m"; path = "Source/Whisper/coreml/whisper-encoder-impl.m"; sourceTree = SOURCE_ROOT; };
 		BF172B342B09264700B545CF /* whisper-decoder-impl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "whisper-decoder-impl.m"; path = "Source/Whisper/coreml/whisper-decoder-impl.m"; sourceTree = SOURCE_ROOT; };
 		BF172B352B09264700B545CF /* whisper-decoder-impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "whisper-decoder-impl.h"; path = "Source/Whisper/coreml/whisper-decoder-impl.h"; sourceTree = SOURCE_ROOT; };
 		BF172B362B09264700B545CF /* whisper-encoder-impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "whisper-encoder-impl.h"; path = "Source/Whisper/coreml/whisper-encoder-impl.h"; sourceTree = SOURCE_ROOT; };
 		BF172B372B09264700B545CF /* whisper-encoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "whisper-encoder.mm"; path = "Source/Whisper/coreml/whisper-encoder.mm"; sourceTree = SOURCE_ROOT; };
 		BF172B382B09264700B545CF /* whisper-encoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "whisper-encoder.h"; path = "Source/Whisper/coreml/whisper-encoder.h"; sourceTree = SOURCE_ROOT; };
-		BF172B5A2B09450C00B545CF /* ShazamListener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ShazamListener.hpp; path = Source/ShazamListener.hpp; sourceTree = "<group>"; };
-		BF172B5B2B09450C00B545CF /* ShazamListener.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ShazamListener.mm; path = Source/ShazamListener.mm; sourceTree = "<group>"; };
+		BF172B5A2B09450C00B545CF /* ShazamDecoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ShazamDecoder.hpp; path = Source/ShazamDecoder.hpp; sourceTree = "<group>"; };
+		BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ShazamDecoder.mm; path = Source/ShazamDecoder.mm; sourceTree = "<group>"; };
 		BF172B642B09456500B545CF /* ShazamKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShazamKit.framework; path = System/Library/Frameworks/ShazamKit.framework; sourceTree = SDKROOT; };
 		BF172B692B09459B00B545CF /* ShazamKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShazamKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS17.0.sdk/System/Library/Frameworks/ShazamKit.framework; sourceTree = DEVELOPER_DIR; };
 		BF172B6C2B09617200B545CF /* Microphone_Apple.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = Microphone_Apple.mm; path = Source/Microphone_Apple.mm; sourceTree = "<group>"; };
 		BF172B6D2B09617200B545CF /* Microphone_Apple.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Microphone_Apple.hpp; path = Source/Microphone_Apple.hpp; sourceTree = "<group>"; };
+		BF172B762B0A8B5B00B545CF /* Timecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Timecode.cpp; path = Source/Timecode.cpp; sourceTree = "<group>"; };
+		BF172B772B0A8B5B00B545CF /* Timecode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Timecode.hpp; path = Source/Timecode.hpp; sourceTree = "<group>"; };
+		BF172B782B0AAAAB00B545CF /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		BF172B7A2B0AAABA00B545CF /* lana_loves_the_llama.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lana_loves_the_llama.h; path = Data/Wave/lana_loves_the_llama.h; sourceTree = "<group>"; };
+		BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WaveDecoder.cpp; path = Source/WaveDecoder.cpp; sourceTree = "<group>"; };
+		BF172B7C2B0AB48800B545CF /* WaveDecoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = WaveDecoder.hpp; path = Source/WaveDecoder.hpp; sourceTree = "<group>"; };
 		BF1D95E02850CB69008E3758 /* libPopMondegreen.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPopMondegreen.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_MacosStatic.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPopMondegreen_MacosStatic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF21AEAB24D74F010046A434 /* PopH264.Package */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PopH264.Package; sourceTree = "<group>"; };
@@ -230,8 +248,8 @@
 		BF770D5C2ADC3DFC00AC2AF5 /* PopJson.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PopJson.hpp; sourceTree = "<group>"; };
 		BF770D5D2ADC3DFC00AC2AF5 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopJson.cpp; sourceTree = "<group>"; };
-		BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FakeListener.cpp; path = Source/FakeListener.cpp; sourceTree = "<group>"; };
-		BF770D662ADC3F7800AC2AF5 /* FakeListener.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FakeListener.hpp; path = Source/FakeListener.hpp; sourceTree = "<group>"; };
+		BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FakeDecoder.cpp; path = Source/FakeDecoder.cpp; sourceTree = "<group>"; };
+		BF770D662ADC3F7800AC2AF5 /* FakeDecoder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FakeDecoder.hpp; path = Source/FakeDecoder.hpp; sourceTree = "<group>"; };
 		BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPopMondegreen_Ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopMondegreen_TestApp.cpp; sourceTree = "<group>"; };
 		BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_TestApp.xcconfig; sourceTree = "<group>"; };
@@ -251,8 +269,8 @@
 		BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopMondegreen.h; path = Source/PopMondegreen.h; sourceTree = "<group>"; };
 		BFCAA1DD2ADC1A4900160FAA /* InstanceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = InstanceManager.hpp; path = Source/InstanceManager.hpp; sourceTree = "<group>"; };
 		BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PopMondegreen.cpp; path = Source/PopMondegreen.cpp; sourceTree = "<group>"; };
-		BFCAA1E72ADC1C7000160FAA /* Listener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Listener.cpp; path = Source/Listener.cpp; sourceTree = "<group>"; };
-		BFCAA1E82ADC1C7000160FAA /* Listener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Listener.hpp; path = Source/Listener.hpp; sourceTree = "<group>"; };
+		BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Decoder.cpp; path = Source/Decoder.cpp; sourceTree = "<group>"; };
+		BFCAA1E82ADC1C7000160FAA /* Decoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Decoder.hpp; path = Source/Decoder.hpp; sourceTree = "<group>"; };
 		BFCAA1F22ADC1E0F00160FAA /* PopMondegreen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PopMondegreen.hpp; path = Source/PopMondegreen.hpp; sourceTree = "<group>"; };
 		BFCAA2022ADC1FF700160FAA /* BuildUniversal.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildUniversal.sh; sourceTree = "<group>"; };
 		BFCAA2032ADC1FF700160FAA /* Macos_Dylib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_Dylib.xcconfig; sourceTree = "<group>"; };
@@ -351,6 +369,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF172B752B0A78A500B545CF /* ShazamKit.framework in Frameworks */,
 				BF99369B2930F4D900B9739C /* AVFoundation.framework in Frameworks */,
 				BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */,
 				BFFBE9762458390900E9BE1B /* AppKit.framework in Frameworks */,
@@ -425,6 +444,14 @@
 			path = Whisper;
 			sourceTree = "<group>";
 		};
+		BF172B792B0AAAAF00B545CF /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				BF172B7A2B0AAABA00B545CF /* lana_loves_the_llama.h */,
+			);
+			name = TestData;
+			sourceTree = "<group>";
+		};
 		BF270E232ADC2EC9003BB81B /* googletest */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +506,7 @@
 				BFCAA1CC2ADC19BE00160FAA /* Source_Apple */,
 				BFCAA1CE2ADC1A2C00160FAA /* Source_Apple */,
 				BFCAA1CD2ADC1A2000160FAA /* Source_CSharp */,
+				BF172B782B0AAAAB00B545CF /* Data */,
 				BFD6076D1EA16ED20035C814 /* Source */,
 				BF9C1E4F2ADC246E0051A5D5 /* Source_TestApp */,
 				BF4A6A151EA16D7D00613A64 /* Products */,
@@ -553,24 +581,29 @@
 		BFD6076D1EA16ED20035C814 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BF172B322B09262200B545CF /* Whisper */,
-				BF770D652ADC3F7800AC2AF5 /* FakeListener.cpp */,
-				BF770D662ADC3F7800AC2AF5 /* FakeListener.hpp */,
+				BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */,
+				BFCAA1E82ADC1C7000160FAA /* Decoder.hpp */,
+				BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */,
+				BF770D662ADC3F7800AC2AF5 /* FakeDecoder.hpp */,
 				BFCAA1DD2ADC1A4900160FAA /* InstanceManager.hpp */,
-				BFCAA1E72ADC1C7000160FAA /* Listener.cpp */,
-				BFCAA1E82ADC1C7000160FAA /* Listener.hpp */,
-				BF770D5B2ADC3DFC00AC2AF5 /* PopJson */,
-				BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */,
-				BF172B5A2B09450C00B545CF /* ShazamListener.hpp */,
-				BF172B5B2B09450C00B545CF /* ShazamListener.mm */,
 				BF172B6D2B09617200B545CF /* Microphone_Apple.hpp */,
 				BF172B6C2B09617200B545CF /* Microphone_Apple.mm */,
+				BF770D5B2ADC3DFC00AC2AF5 /* PopJson */,
+				BFCAA1DE2ADC1A4900160FAA /* PopMondegreen.cpp */,
 				BFCAA1DC2ADC1A4900160FAA /* PopMondegreen.h */,
 				BFCAA1F22ADC1E0F00160FAA /* PopMondegreen.hpp */,
 				BFCAA1DB2ADC1A4900160FAA /* PopMondegreenFramework.h */,
+				BF172B5A2B09450C00B545CF /* ShazamDecoder.hpp */,
+				BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */,
 				BF9C1E4E2ADC233E0051A5D5 /* SoyLib */,
-				BF172B302B09261700B545CF /* WhisperListener.cpp */,
-				BF172B312B09261700B545CF /* WhisperListener.hpp */,
+				BF172B792B0AAAAF00B545CF /* TestData */,
+				BF172B762B0A8B5B00B545CF /* Timecode.cpp */,
+				BF172B772B0A8B5B00B545CF /* Timecode.hpp */,
+				BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */,
+				BF172B7C2B0AB48800B545CF /* WaveDecoder.hpp */,
+				BF172B322B09262200B545CF /* Whisper */,
+				BF172B302B09261700B545CF /* WhisperDecoder.cpp */,
+				BF172B312B09261700B545CF /* WhisperDecoder.hpp */,
 			);
 			name = Source;
 			sourceTree = SOURCE_ROOT;
@@ -917,14 +950,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF770D612ADC3E0400AC2AF5 /* PopJson.cpp in Sources */,
-				BFCAA1EB2ADC1C7500160FAA /* Listener.cpp in Sources */,
-				BF172B5E2B09451200B545CF /* ShazamListener.mm in Sources */,
-				BF770D682ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */,
+				BFCAA1EB2ADC1C7500160FAA /* Decoder.cpp in Sources */,
+				BF172B842B0AB49500B545CF /* Timecode.cpp in Sources */,
+				BF172B5E2B09451200B545CF /* ShazamDecoder.mm in Sources */,
+				BF770D682ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E152ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
 				BF172B3F2B09264D00B545CF /* whisper-encoder-impl.m in Sources */,
 				BF172B402B09264D00B545CF /* whisper-decoder-impl.m in Sources */,
 				BF172B412B09264D00B545CF /* whisper-encoder.mm in Sources */,
 				BF172B6F2B09617400B545CF /* Microphone_Apple.mm in Sources */,
+				BF172B7F2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,14 +968,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF770D602ADC3E0400AC2AF5 /* PopJson.cpp in Sources */,
-				BFCAA1EA2ADC1C7400160FAA /* Listener.cpp in Sources */,
-				BF172B5D2B09451200B545CF /* ShazamListener.mm in Sources */,
-				BF770D6B2ADC3F7E00AC2AF5 /* FakeListener.cpp in Sources */,
+				BFCAA1EA2ADC1C7400160FAA /* Decoder.cpp in Sources */,
+				BF172B5D2B09451200B545CF /* ShazamDecoder.mm in Sources */,
+				BF770D6B2ADC3F7E00AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E142ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
 				BF172B3C2B09264D00B545CF /* whisper-encoder-impl.m in Sources */,
 				BF172B3D2B09264D00B545CF /* whisper-decoder-impl.m in Sources */,
 				BF172B3E2B09264D00B545CF /* whisper-encoder.mm in Sources */,
 				BF172B702B09617500B545CF /* Microphone_Apple.mm in Sources */,
+				BF172B7E2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,14 +985,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF770D622ADC3E0800AC2AF5 /* PopJson.cpp in Sources */,
-				BFCAA1EF2ADC1C7800160FAA /* Listener.cpp in Sources */,
-				BF172B612B09451600B545CF /* ShazamListener.mm in Sources */,
-				BF770D6C2ADC3F8000AC2AF5 /* FakeListener.cpp in Sources */,
+				BFCAA1EF2ADC1C7800160FAA /* Decoder.cpp in Sources */,
+				BF172B852B0AB49700B545CF /* Timecode.cpp in Sources */,
+				BF172B612B09451600B545CF /* ShazamDecoder.mm in Sources */,
+				BF770D6C2ADC3F8000AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E162ADC29F7003BB81B /* PopMondegreen.cpp in Sources */,
 				BF172B482B09265200B545CF /* whisper-encoder-impl.m in Sources */,
 				BF172B492B09265200B545CF /* whisper-decoder-impl.m in Sources */,
 				BF172B4A2B09265200B545CF /* whisper-encoder.mm in Sources */,
 				BF172B722B09617700B545CF /* Microphone_Apple.mm in Sources */,
+				BF172B822B0AB49000B545CF /* WaveDecoder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,7 +1003,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF270E132ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
-				BF172B602B09451500B545CF /* ShazamListener.mm in Sources */,
+				BF172B602B09451500B545CF /* ShazamDecoder.mm in Sources */,
 				BF172B442B09265000B545CF /* whisper-encoder.mm in Sources */,
 				BF172B432B09265000B545CF /* whisper-decoder-impl.m in Sources */,
 				BF270E262ADC2EDE003BB81B /* gtest-all.cc in Sources */,
@@ -979,13 +1017,15 @@
 			files = (
 				BF770D5F2ADC3E0300AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1E22ADC1A4900160FAA /* PopMondegreen.cpp in Sources */,
-				BF172B5C2B09451100B545CF /* ShazamListener.mm in Sources */,
-				BF770D672ADC3F7800AC2AF5 /* FakeListener.cpp in Sources */,
-				BFCAA1E92ADC1C7400160FAA /* Listener.cpp in Sources */,
+				BF172B832B0AB49400B545CF /* Timecode.cpp in Sources */,
+				BF172B5C2B09451100B545CF /* ShazamDecoder.mm in Sources */,
+				BF770D672ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */,
+				BFCAA1E92ADC1C7400160FAA /* Decoder.cpp in Sources */,
 				BF172B392B09264D00B545CF /* whisper-encoder-impl.m in Sources */,
 				BF172B3A2B09264D00B545CF /* whisper-decoder-impl.m in Sources */,
 				BF172B3B2B09264D00B545CF /* whisper-encoder.mm in Sources */,
 				BF172B6E2B09617400B545CF /* Microphone_Apple.mm in Sources */,
+				BF172B7D2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,14 +1034,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF770D632ADC3E0800AC2AF5 /* PopJson.cpp in Sources */,
-				BFCAA1F02ADC1C7800160FAA /* Listener.cpp in Sources */,
-				BF172B622B09451700B545CF /* ShazamListener.mm in Sources */,
-				BF770D6D2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */,
+				BFCAA1F02ADC1C7800160FAA /* Decoder.cpp in Sources */,
+				BF172B862B0AB49700B545CF /* Timecode.cpp in Sources */,
+				BF172B622B09451700B545CF /* ShazamDecoder.mm in Sources */,
+				BF770D6D2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E172ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
 				BF172B4B2B09265200B545CF /* whisper-encoder-impl.m in Sources */,
 				BF172B4C2B09265200B545CF /* whisper-decoder-impl.m in Sources */,
 				BF172B4D2B09265200B545CF /* whisper-encoder.mm in Sources */,
 				BF172B732B09617700B545CF /* Microphone_Apple.mm in Sources */,
+				BF172B802B0AB48F00B545CF /* WaveDecoder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,14 +1052,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF770D642ADC3E0900AC2AF5 /* PopJson.cpp in Sources */,
-				BFCAA1F12ADC1C7900160FAA /* Listener.cpp in Sources */,
-				BF172B632B09451700B545CF /* ShazamListener.mm in Sources */,
-				BF770D6E2ADC3F8100AC2AF5 /* FakeListener.cpp in Sources */,
+				BFCAA1F12ADC1C7900160FAA /* Decoder.cpp in Sources */,
+				BF172B872B0AB49800B545CF /* Timecode.cpp in Sources */,
+				BF172B632B09451700B545CF /* ShazamDecoder.mm in Sources */,
+				BF770D6E2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E182ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
 				BF172B4E2B09265300B545CF /* whisper-encoder-impl.m in Sources */,
 				BF172B4F2B09265300B545CF /* whisper-decoder-impl.m in Sources */,
 				BF172B502B09265300B545CF /* whisper-encoder.mm in Sources */,
 				BF172B742B09617800B545CF /* Microphone_Apple.mm in Sources */,
+				BF172B812B0AB49000B545CF /* WaveDecoder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1026,7 +1070,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF270E122ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
-				BF172B5F2B09451400B545CF /* ShazamListener.mm in Sources */,
+				BF172B5F2B09451400B545CF /* ShazamDecoder.mm in Sources */,
 				BF172B472B09265100B545CF /* whisper-encoder.mm in Sources */,
 				BF172B462B09265100B545CF /* whisper-decoder-impl.m in Sources */,
 				BF270E252ADC2EDE003BB81B /* gtest-all.cc in Sources */,

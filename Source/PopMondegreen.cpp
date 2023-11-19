@@ -1,10 +1,11 @@
 #include "PopMondegreen.h"
 #include "InstanceManager.hpp"
-#include "Listener.hpp"
+#include "Decoder.hpp"
 #include <iostream>
 #include "PopJson/PopJson.hpp"
 
-#include "FakeListener.hpp"
+#include "FakeDecoder.hpp"
+#include "../Data/Wave/lana_loves_the_llama.h"
 
 
 namespace Soy
@@ -15,8 +16,8 @@ namespace Soy
 
 namespace PopMondegreen
 {
-	InstanceManager_t<Listener_t>					ListenerInstanceManager;
-	decltype(ListenerInstanceManager)::Instance_t	AllocListener(PopJson::Json_t& Params);
+	InstanceManager_t<Decoder_t>					DecoderInstanceManager;
+	decltype(DecoderInstanceManager)::Instance_t	AllocDecoder(PopJson::Json_t& Params);
 
 	constexpr int	VersionMajor = VERSION_MAJOR;
 	constexpr int	VersionMinor = VERSION_MINOR;
@@ -47,7 +48,7 @@ __export int32_t PopMondegreen_CreateInstance(const char* _OptionsJson, char* Er
 			_OptionsJson = "{}";
 		std::string_view OptionsJson( _OptionsJson, std::strlen(_OptionsJson) );
 		PopJson::Json_t Options(OptionsJson);
-		auto Instance = PopMondegreen::AllocListener(Options);
+		auto Instance = PopMondegreen::AllocDecoder(Options);
 
 		return Instance;
 	}
@@ -62,7 +63,7 @@ __export void PopMondegreen_FreeInstance(int32_t Instance)
 {
 	try
 	{
-		PopMondegreen::ListenerInstanceManager.Free(Instance);
+		PopMondegreen::DecoderInstanceManager.Free(Instance);
 	}
 	catch (std::exception& e)
 	{
@@ -89,17 +90,47 @@ void Soy::StringToBuffer(const char* Source,char* Buffer,size_t BufferSize)
 	Buffer[std::min<ssize_t>(Len,BufferSize-1)] = '\0';
 }
 
-decltype(PopMondegreen::ListenerInstanceManager)::Instance_t PopMondegreen::AllocListener(PopJson::Json_t& Params)
+decltype(PopMondegreen::DecoderInstanceManager)::Instance_t PopMondegreen::AllocDecoder(PopJson::Json_t& Params)
 {
-	auto ListenerName = Params.GetValue("Name").GetString();
+	auto DecoderName = Params.GetValue("Name").GetString();
 	
-	ListenerParams_t ListenerParams(Params);
+	DecoderParams_t DecoderParams(Params);
 	
-	if ( ListenerName == FakeListener_t::Name )
+	if ( DecoderName == FakeDecoder_t::Name )
 	{
-		return PopMondegreen::ListenerInstanceManager.Alloc<FakeListener_t>(ListenerParams);
+		return PopMondegreen::DecoderInstanceManager.Alloc<FakeDecoder_t>(DecoderParams);
 	}
 
-	throw std::runtime_error("Don't know how to make listener");
+	throw std::runtime_error("Don't know how to make Decoder");
+}
+
+
+void PopMondegreen::ReadFile(std::string_view Filename,std::function<void(std::span<uint8_t>,bool Eof)> OnChunk)
+{
+	if ( Filename == "test:LanaLovesTheLlama.wav" )
+	{
+		std::span File( LanaLovesTheLama );
+		OnChunk(File,true);
+		return;
+	}
+	
+	throw std::runtime_error("todo ReadFile");
+}
+
+std::vector<uint8_t> PopMondegreen::ReadFile(std::string_view Filename)
+{
+	std::vector<uint8_t> FileContents;
+	__volatile bool GotEof = false;
+	auto OnChunk = [&](std::span<uint8_t> Chunk,bool Eof)
+	{
+		std::copy( Chunk.begin(), Chunk.end(), std::back_inserter(FileContents) );
+		GotEof = Eof;
+	};
+	
+	while ( !GotEof )
+	{
+		ReadFile( Filename, OnChunk );
+	}
+	return FileContents;
 }
 

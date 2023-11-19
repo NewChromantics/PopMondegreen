@@ -10,6 +10,8 @@
 #endif
 
 #include "PopJson/PopJson.hpp"
+#include "Decoder.hpp"
+#include "WaveDecoder.hpp"
 
 void PopMondegreen_Run(PopJson::ViewBase_t& Options)
 {
@@ -96,18 +98,56 @@ TEST(PopMondegreen, CreateInstance)
 
 TEST(PopMondegreen, CreateWhisperInstance)
 {
-	auto* Params = "{\"Name\":\"Whisper\"}";
+	//	create audio decoder
+	auto* DecoderParams = "{\"Name\":\"Whisper\"}";
 	std::array<char,1000> ErrorBuffer;
-	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
+	auto Decoder = PopMondegreen_CreateInstance( DecoderParams, ErrorBuffer.data(), ErrorBuffer.size() );
+	{
+		std::string Error(ErrorBuffer.data());
+		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+	}
 	
-	//	push data in
-	//	make sure data comes out
+	auto OnWaveData = [&](AudioDataView_t Data,bool Eof)
+	{
+		PopMondegreen_PushData( Decoder, Data );
+		if ( Eof )
+			PopMondegreen_PushEndOfStream(Decoder);
+	};
+
+	//	create wav decoder
+	WaveDecoder_t WaveDecoder(OnWaveData);
 	
-	PopMondegreen_FreeInstance( Instance );
+	auto OnFileData = [&](std::span<uint8_t> Chunk,bool Eof)
+	{
+		WaveDecoder.PushData( Chunk );
+		if ( Eof )
+			WaveDecoder.PushEndOfData();
+	};
 	
-	std::string Error(ErrorBuffer.data());
+	//	load wav file
+	{
+		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama.wav");
+		OnFileData( Wav, true );
+	}
 	
-	EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+	//	read from decoder
+	std::string DecoderError;
+	while ( DecoderError.empty() )
+	{
+		std::vector<char> JsonBuffer;
+		JsonBuffer.resize( 1024 * 1024 * 1 );
+		PopMondegreen_PopData( Decoder, JsonBuffer.data(), JsonBuffer.size() );
+		std::string_view Json( JsonBuffer.data(), std::strlen(JsonBuffer.data()) );
+		
+		PopJson::Json_t Data(Json);
+		auto Error = Data.GetValue("Error").GetString();
+		if ( !Error.empty() )
+			DecoderError = Error;
+		
+		throw std::runtime_error( std::string("handle json; ") + std::string(Json) );
+	}
+	
+	PopMondegreen_FreeInstance( Decoder );
 	
 }
 
