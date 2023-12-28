@@ -1,0 +1,26 @@
+{
+  "name":"com.newchromantics.popmondegreen",
+  "oldname": "@newchromantics/popmondegreen",
+  "displayName": "PopMondegreen",
+  "publishConfig": {
+	"registry": "https://npm.pkg.github.com/@newchromantics"
+  },
+  "version": "0.0.1",
+  "description": "Wave/PCM data to text-based data, lyrics, words",
+  "main": "index.js",
+  "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+	"type": "git",
+	"url": "git+https://github.com/NewChromantics/PopMondegreen.git"
+  },
+  "keywords": [],
+  "author":
+  {
+	"name" : "New Chromantics",
+	"email" : "graham@newchromantics.com",
+	"url" : "https://github.com/NewChromantics/"
+  },
+  "license": "ISC"
+}
