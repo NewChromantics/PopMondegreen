@@ -12,6 +12,7 @@
 #include "PopJson/PopJson.hpp"
 #include "Decoder.hpp"
 #include "WaveDecoder.hpp"
+#include <thread>
 
 void PopMondegreen_Run(PopJson::ViewBase_t& Options)
 {
@@ -82,9 +83,9 @@ TEST(PopMondegreen, GetVersion )
 
 
 
-TEST(PopMondegreen, CreateInstance)
+TEST(PopMondegreen, CreateDefaultInstance)
 {
-	auto* Params = "{\"Name\":\"Fake\"}";
+	auto* Params = "{}";
 	std::array<char,1000> ErrorBuffer;
 	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
 	PopMondegreen_FreeInstance( Instance );
@@ -94,6 +95,35 @@ TEST(PopMondegreen, CreateInstance)
 	EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
 	
 }
+
+TEST(PopMondegreen, CreateFakeInstance)
+{
+	auto* Params = "{\"Name\":\"Fake\"}";
+	std::array<char,1000> ErrorBuffer;
+	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
+	
+	PopMondegreen_PushData( Instance, 1000, nullptr, 0, 0, 0, nullptr );
+	
+	//	this should keep popping data
+	for ( int it=0;	it<20;	it++ )
+	{
+		std::array<char,1000> OutputJsonBuffer;
+		PopMondegreen_PopData( Instance, OutputJsonBuffer.data(), OutputJsonBuffer.size() );
+		std::string_view OutputJson( OutputJsonBuffer.data(), std::strlen(OutputJsonBuffer.data()) );
+		PopJson::Json_t Output(OutputJson);
+		std::cerr << "Output json; " << OutputJson << std::endl;
+		std::this_thread::sleep_for( std::chrono::milliseconds(500) );
+	}
+	
+	PopMondegreen_PushEndOfStream( Instance );
+	PopMondegreen_FreeInstance( Instance );
+	
+	std::string Error(ErrorBuffer.data());
+	
+	EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+	
+}
+
 
 
 TEST(PopMondegreen, CreateWhisperInstance)

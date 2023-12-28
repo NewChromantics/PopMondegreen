@@ -27,6 +27,8 @@ public:
 	Timecode_t		mEndTime;
 	std::string		mData;
 	
+	std::string		mError;		//	is an error rather than data
+
 	PopMondegreen::EventTime_t	mOutputTime;
 };
 
@@ -52,10 +54,12 @@ public:
 	virtual std::string	GetName()=0;
 	
 	virtual void		PushData(AudioDataView_t Data)=0;
+	virtual void		PushEndOfStream()=0;
 	OutputData_t		PopData();
-	
+
 protected:
 	void				OnOutputData(OutputData_t Data);
+	void				OnError(std::string_view Error);
 	
 	DecoderParams_t		mParams;
 	

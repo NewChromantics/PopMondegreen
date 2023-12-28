@@ -6,7 +6,7 @@
 
 #include "FakeDecoder.hpp"
 #include "../Data/Wave/lana_loves_the_llama.h"
-
+#include "Json11/json11.hpp"
 
 namespace Soy
 {
@@ -133,4 +133,97 @@ std::vector<uint8_t> PopMondegreen::ReadFile(std::string_view Filename)
 	}
 	return FileContents;
 }
+
+void PopMondegreen_PushData(int32_t Instance,AudioDataView_t& Data)
+{
+	try
+	{
+		auto pInstance = PopMondegreen::DecoderInstanceManager.GetInstance(Instance);
+		pInstance->PushData(Data);
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+
+__export void PopMondegreen_PushData(int32_t Instance,uint32_t TimestampMs,float* SampleData,int SampleCount,int ChannelCount,int SampleHz,const char* SampleMeta)
+{
+	try
+	{
+		if ( SampleData == nullptr && SampleCount != 0 )
+			throw std::runtime_error("Null sample data, but count != 0");
+		
+		//	nothing to do
+		//	gr: we allow pushing nothing for fake, which just needs a timecode
+		//if ( SampleCount == 0 )
+		//	return;
+		
+		AudioDataView_t DataView;
+		DataView.mChannelCount = ChannelCount;
+		DataView.mSampleRate = SampleHz;
+		DataView.mTime = Timecode_t(TimestampMs);
+		DataView.mSamples = std::span( SampleData, SampleCount );
+		PopMondegreen_PushData( Instance, DataView );
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << __FUNCTION__ << " exception; " << e.what() << std::endl;
+	}
+}
+
+__export void PopMondegreen_PushEndOfStream(int32_t Instance)
+{
+	try
+	{
+		auto pInstance = PopMondegreen::DecoderInstanceManager.GetInstance(Instance);
+		pInstance->PushEndOfStream();
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+json11::Json::object OutputDataToJson(OutputData_t& OutputData)
+{
+	json11::Json::object Output;
+	
+	Output["StartTime"] = static_cast<int>(OutputData.mStartTime.mMilliseconds);
+	Output["EndTime"] = static_cast<int>(OutputData.mEndTime.mMilliseconds);
+	Output["Data"] = OutputData.mData;
+	
+	return Output;
+}
+
+
+__export void PopMondegreen_PopData(int32_t Instance,char* JsonBuffer,int JsonBufferSize)
+{
+	auto WriteJson = [&](json11::Json::object& Object)
+	{
+		if ( !JsonBuffer || JsonBufferSize==0 )
+			return;
+
+		auto Json = json11::Json(Object).dump();
+		Soy::StringToBuffer( Json.c_str(), JsonBuffer, JsonBufferSize );
+	};
+
+	try
+	{
+		auto pInstance = PopMondegreen::DecoderInstanceManager.GetInstance(Instance);
+
+		auto Output = pInstance->PopData();
+		auto OutputJson = OutputDataToJson(Output);
+		WriteJson( OutputJson );
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		json11::Json::object Output;
+		Output["Error"] = std::string(e.what());
+		WriteJson(Output);
+	}
+}
+
 

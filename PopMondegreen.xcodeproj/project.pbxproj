@@ -97,6 +97,14 @@
 		BF44AAB2249FB65500C9D982 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF44AAB1249FB65500C9D982 /* AVFoundation.framework */; };
 		BF459D1A21F7DB9900CED59D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
 		BF51B8B1256A72A4004DE4C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF51B8B0256A72A4004DE4C7 /* UIKit.framework */; };
+		BF5D72612B3DFA9800D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
+		BF5D72622B3DFA9D00D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
+		BF5D72632B3DFA9E00D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
+		BF5D72652B3DFA9F00D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
+		BF5D72662B3DFA9F00D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
+		BF5D72672B3DFAA000D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
+		BF5D72682B3DFAA100D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
+		BF5D72692B3DFAA100D90721 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5D725F2B3DFA9800D90721 /* json11.cpp */; };
 		BF770D5F2ADC3E0300AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
 		BF770D602ADC3E0400AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
 		BF770D612ADC3E0400AC2AF5 /* PopJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D5E2ADC3DFC00AC2AF5 /* PopJson.cpp */; };
@@ -244,6 +252,8 @@
 		BF459CED21F7D73B00CED59D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BF4D032225CC85DA003FF218 /* NDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NDK; path = "../../../opt/homebrew/Caskroom/android-ndk/25/AndroidNDK8775105.app/Contents/NDK"; sourceTree = "<group>"; };
 		BF51B8B0256A72A4004DE4C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BF5D725E2B3DFA9800D90721 /* json11.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = json11.hpp; path = Source/Json11/json11.hpp; sourceTree = "<group>"; };
+		BF5D725F2B3DFA9800D90721 /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = json11.cpp; path = Source/Json11/json11.cpp; sourceTree = "<group>"; };
 		BF65D707256573A700B3EE9A /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		BF770D5C2ADC3DFC00AC2AF5 /* PopJson.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PopJson.hpp; sourceTree = "<group>"; };
 		BF770D5D2ADC3DFC00AC2AF5 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -529,6 +539,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BF5D725D2B3DFA8800D90721 /* Json11 */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D725F2B3DFA9800D90721 /* json11.cpp */,
+				BF5D725E2B3DFA9800D90721 /* json11.hpp */,
+			);
+			name = Json11;
+			sourceTree = "<group>";
+		};
 		BF770D5B2ADC3DFC00AC2AF5 /* PopJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +600,7 @@
 		BFD6076D1EA16ED20035C814 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BF5D725D2B3DFA8800D90721 /* Json11 */,
 				BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */,
 				BFCAA1E82ADC1C7000160FAA /* Decoder.hpp */,
 				BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */,
@@ -952,6 +972,7 @@
 				BF770D612ADC3E0400AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1EB2ADC1C7500160FAA /* Decoder.cpp in Sources */,
 				BF172B842B0AB49500B545CF /* Timecode.cpp in Sources */,
+				BF5D72632B3DFA9E00D90721 /* json11.cpp in Sources */,
 				BF172B5E2B09451200B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D682ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E152ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
@@ -969,6 +990,7 @@
 			files = (
 				BF770D602ADC3E0400AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1EA2ADC1C7400160FAA /* Decoder.cpp in Sources */,
+				BF5D72622B3DFA9D00D90721 /* json11.cpp in Sources */,
 				BF172B5D2B09451200B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6B2ADC3F7E00AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E142ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
@@ -987,6 +1009,7 @@
 				BF770D622ADC3E0800AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1EF2ADC1C7800160FAA /* Decoder.cpp in Sources */,
 				BF172B852B0AB49700B545CF /* Timecode.cpp in Sources */,
+				BF5D72672B3DFAA000D90721 /* json11.cpp in Sources */,
 				BF172B612B09451600B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6C2ADC3F8000AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E162ADC29F7003BB81B /* PopMondegreen.cpp in Sources */,
@@ -1005,6 +1028,7 @@
 				BF270E132ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
 				BF172B602B09451500B545CF /* ShazamDecoder.mm in Sources */,
 				BF172B442B09265000B545CF /* whisper-encoder.mm in Sources */,
+				BF5D72652B3DFA9F00D90721 /* json11.cpp in Sources */,
 				BF172B432B09265000B545CF /* whisper-decoder-impl.m in Sources */,
 				BF270E262ADC2EDE003BB81B /* gtest-all.cc in Sources */,
 				BF172B422B09265000B545CF /* whisper-encoder-impl.m in Sources */,
@@ -1018,6 +1042,7 @@
 				BF770D5F2ADC3E0300AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1E22ADC1A4900160FAA /* PopMondegreen.cpp in Sources */,
 				BF172B832B0AB49400B545CF /* Timecode.cpp in Sources */,
+				BF5D72612B3DFA9800D90721 /* json11.cpp in Sources */,
 				BF172B5C2B09451100B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D672ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BFCAA1E92ADC1C7400160FAA /* Decoder.cpp in Sources */,
@@ -1036,6 +1061,7 @@
 				BF770D632ADC3E0800AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1F02ADC1C7800160FAA /* Decoder.cpp in Sources */,
 				BF172B862B0AB49700B545CF /* Timecode.cpp in Sources */,
+				BF5D72682B3DFAA100D90721 /* json11.cpp in Sources */,
 				BF172B622B09451700B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6D2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E172ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
@@ -1054,6 +1080,7 @@
 				BF770D642ADC3E0900AC2AF5 /* PopJson.cpp in Sources */,
 				BFCAA1F12ADC1C7900160FAA /* Decoder.cpp in Sources */,
 				BF172B872B0AB49800B545CF /* Timecode.cpp in Sources */,
+				BF5D72692B3DFAA100D90721 /* json11.cpp in Sources */,
 				BF172B632B09451700B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6E2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E182ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
@@ -1072,6 +1099,7 @@
 				BF270E122ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
 				BF172B5F2B09451400B545CF /* ShazamDecoder.mm in Sources */,
 				BF172B472B09265100B545CF /* whisper-encoder.mm in Sources */,
+				BF5D72662B3DFA9F00D90721 /* json11.cpp in Sources */,
 				BF172B462B09265100B545CF /* whisper-decoder-impl.m in Sources */,
 				BF270E252ADC2EDE003BB81B /* gtest-all.cc in Sources */,
 				BF172B452B09265100B545CF /* whisper-encoder-impl.m in Sources */,
