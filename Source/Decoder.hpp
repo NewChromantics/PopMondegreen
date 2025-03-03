@@ -41,6 +41,10 @@ public:
 	
 	//	for whisper
 	std::string		mModelUrl;
+	
+	//	for microsoft conginitive services/azure
+	std::string		mApiKey;
+	std::string		mApiRegion;
 };
 
 

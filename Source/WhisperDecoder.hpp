@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Listener.hpp"
+#include "Decoder.hpp"
 
 class whisper_context;
 

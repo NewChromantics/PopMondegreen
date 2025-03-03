@@ -4,9 +4,15 @@
 #include <iostream>
 #include "PopJson/PopJson.hpp"
 
-#include "FakeDecoder.hpp"
 #include "../Data/Wave/lana_loves_the_llama.h"
 #include "Json11/json11.hpp"
+
+
+#include "FakeDecoder.hpp"
+//#include "WhisperDecoder.hpp"
+#include "MicrosoftCognitiveDecoder.hpp"
+
+
 
 namespace Soy
 {
@@ -100,7 +106,17 @@ decltype(PopMondegreen::DecoderInstanceManager)::Instance_t PopMondegreen::Alloc
 	{
 		return PopMondegreen::DecoderInstanceManager.Alloc<FakeDecoder_t>(DecoderParams);
 	}
-
+	
+	if ( DecoderName == MicrosoftCogninitiveDecoder_t::Name )
+	{
+		return PopMondegreen::DecoderInstanceManager.Alloc<MicrosoftCogninitiveDecoder_t>(DecoderParams);
+	}
+	/*
+	if ( DecoderName == WhisperDecoder_t::Name )
+	{
+		return PopMondegreen::DecoderInstanceManager.Alloc<WhisperDecoder_t>(DecoderParams);
+	}*/
+	
 	throw std::runtime_error("Don't know how to make Decoder");
 }
 

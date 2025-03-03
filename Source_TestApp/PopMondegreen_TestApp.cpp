@@ -96,6 +96,65 @@ TEST(PopMondegreen, CreateDefaultInstance)
 	
 }
 
+
+
+TEST(PopMondegreen, CreateMicrosoftCognitiveInstance)
+{
+	//	create audio decoder
+	auto* DecoderParams = "{\"Name\":\"MicrosoftCognitive\",\"ApiKey\":\"123\",\"ApiRegion\":\"Region\"}";
+	std::array<char,1000> ErrorBuffer;
+	auto Decoder = PopMondegreen_CreateInstance( DecoderParams, ErrorBuffer.data(), ErrorBuffer.size() );
+	{
+		std::string Error(ErrorBuffer.data());
+		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+	}
+	
+	auto OnWaveData = [&](AudioDataView_t Data,bool Eof)
+	{
+		PopMondegreen_PushData( Decoder, Data );
+		if ( Eof )
+			PopMondegreen_PushEndOfStream(Decoder);
+	};
+	
+	//	create wav decoder
+	WaveDecoder_t WaveDecoder(OnWaveData);
+	
+	auto OnFileData = [&](std::span<uint8_t> Chunk,bool Eof)
+	{
+		WaveDecoder.PushData( Chunk );
+		if ( Eof )
+			WaveDecoder.PushEndOfData();
+	};
+	
+	//	load wav file
+	{
+		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama.wav");
+		OnFileData( Wav, true );
+	}
+	
+	//	read from decoder
+	std::string DecoderError;
+	while ( DecoderError.empty() )
+	{
+		std::vector<char> JsonBuffer;
+		JsonBuffer.resize( 1024 * 1024 * 1 );
+		PopMondegreen_PopData( Decoder, JsonBuffer.data(), JsonBuffer.size() );
+		std::string_view Json( JsonBuffer.data(), std::strlen(JsonBuffer.data()) );
+		
+		PopJson::Json_t Data(Json);
+		auto Error = Data.GetValue("Error").GetString();
+		if ( !Error.empty() )
+			DecoderError = Error;
+		
+		throw std::runtime_error( std::string("handle json; ") + std::string(Json) );
+	}
+	
+	PopMondegreen_FreeInstance( Decoder );
+	
+}
+
+
+
 TEST(PopMondegreen, CreateFakeInstance)
 {
 	auto* Params = "{\"Name\":\"Fake\"}";
@@ -105,14 +164,14 @@ TEST(PopMondegreen, CreateFakeInstance)
 	PopMondegreen_PushData( Instance, 1000, nullptr, 0, 0, 0, nullptr );
 	
 	//	this should keep popping data
-	for ( int it=0;	it<20;	it++ )
+	for ( int it=0;	it<10;	it++ )
 	{
 		std::array<char,1000> OutputJsonBuffer;
 		PopMondegreen_PopData( Instance, OutputJsonBuffer.data(), OutputJsonBuffer.size() );
 		std::string_view OutputJson( OutputJsonBuffer.data(), std::strlen(OutputJsonBuffer.data()) );
 		PopJson::Json_t Output(OutputJson);
 		std::cerr << "Output json; " << OutputJson << std::endl;
-		std::this_thread::sleep_for( std::chrono::milliseconds(500) );
+		std::this_thread::sleep_for( std::chrono::milliseconds(100) );
 	}
 	
 	PopMondegreen_PushEndOfStream( Instance );
@@ -128,6 +187,8 @@ TEST(PopMondegreen, CreateFakeInstance)
 
 TEST(PopMondegreen, CreateWhisperInstance)
 {
+	GTEST_SKIP() << "Whipser not implemented";
+	
 	//	create audio decoder
 	auto* DecoderParams = "{\"Name\":\"Whisper\"}";
 	std::array<char,1000> ErrorBuffer;
@@ -180,4 +241,5 @@ TEST(PopMondegreen, CreateWhisperInstance)
 	PopMondegreen_FreeInstance( Decoder );
 	
 }
+
 

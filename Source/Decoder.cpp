@@ -1,8 +1,11 @@
 #include "Decoder.hpp"
 #include <mutex>
+#include "PopMondegreen.h"
 
 DecoderParams_t::DecoderParams_t(PopJson::Json_t& Params)
 {
+	mApiKey = Params[PopMondegreen_OptionKey_ApiKey].GetString();
+	mApiRegion = Params[PopMondegreen_OptionKey_ApiRegion].GetString();
 }
 
 Decoder_t::Decoder_t(DecoderParams_t Params) :

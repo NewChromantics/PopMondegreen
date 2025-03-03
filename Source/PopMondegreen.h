@@ -22,6 +22,10 @@ enum { PopMondegreen_NullInstance=0 };
 #endif
 
 
+#define PopMondegreen_OptionKey_ApiKey	"ApiKey"
+#define PopMondegreen_OptionKey_ApiRegion	"ApiRegion"
+
+
 __export int32_t			PopMondegreen_GetVersionThousand();	//	1.23.456 = 100230456
 
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -22,30 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		BF151FF02384789700A70EBF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF151FEF2384789700A70EBF /* CoreMedia.framework */; };
-		BF172B392B09264D00B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B3A2B09264D00B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B3B2B09264D00B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B3C2B09264D00B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B3D2B09264D00B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B3E2B09264D00B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B3F2B09264D00B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B402B09264D00B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B412B09264D00B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B422B09265000B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B432B09265000B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B442B09265000B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B452B09265100B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B462B09265100B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B472B09265100B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B482B09265200B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B492B09265200B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B4A2B09265200B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B4B2B09265200B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B4C2B09265200B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B4D2B09265200B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
-		BF172B4E2B09265300B545CF /* whisper-encoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B332B09264700B545CF /* whisper-encoder-impl.m */; };
-		BF172B4F2B09265300B545CF /* whisper-decoder-impl.m in Sources */ = {isa = PBXBuildFile; fileRef = BF172B342B09264700B545CF /* whisper-decoder-impl.m */; };
-		BF172B502B09265300B545CF /* whisper-encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B372B09264700B545CF /* whisper-encoder.mm */; };
 		BF172B5C2B09451100B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
 		BF172B5D2B09451200B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
 		BF172B5E2B09451200B545CF /* ShazamDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */; };
@@ -84,6 +60,17 @@
 		BF1FA6E728759C7E002F03C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
 		BF1FA6E828759C7E002F03C5 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719424477DE500A2DA70 /* VideoToolbox.framework */; };
 		BF1FA6E928759C7E002F03C5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719224477DDE00A2DA70 /* CoreVideo.framework */; };
+		BF235B062D762A6E00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF235B042D762A5C00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C3D2D762E1300020751 /* MicrosoftCognitiveServicesSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF235B042D762A5C00020751 /* MicrosoftCognitiveServicesSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF235C422D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C432D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C442D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C452D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C462D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C482D7638BC00020751 /* PopMondegreen_Macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CD521F7D5C700CED59D /* PopMondegreen_Macos.framework */; };
+		BF235C492D76403900020751 /* MicrosoftCognitiveServicesSpeech.framework in Resources */ = {isa = PBXBuildFile; fileRef = BF235B042D762A5C00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C4D2D7640EC00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */; };
+		BF235C4E2D7640EC00020751 /* MicrosoftCognitiveServicesSpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF270E0F2ADC2939003BB81B /* libPopMondegreen_Ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */; platformFilter = ios; };
 		BF270E122ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */; };
 		BF270E132ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */; };
@@ -117,7 +104,6 @@
 		BF770D6C2ADC3F8000AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
 		BF770D6D2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
 		BF770D6E2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF770D652ADC3F7800AC2AF5 /* FakeDecoder.cpp */; };
-		BF9936932930F49100B9739C /* libPopMondegreen_MacosStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_MacosStatic.a */; };
 		BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
 		BF99369B2930F4D900B9739C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
 		BFC4719324477DDE00A2DA70 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719224477DDE00A2DA70 /* CoreVideo.framework */; };
@@ -150,24 +136,29 @@
 			remoteGlobalIDString = BF985EB42876E95700F04399;
 			remoteInfo = PopMondegreen_IosStatic;
 		};
-		BF9936952930F49100B9739C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF4A6A0C1EA16D7C00613A64 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF1FA6BE28759C7E002F03C5;
-			remoteInfo = PopH264_MacosStatic;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BF9936972930F49100B9739C /* Embed Libraries */ = {
+		BF235C3E2D762E1400020751 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BF235C3D2D762E1300020751 /* MicrosoftCognitiveServicesSpeech.framework in Embed Frameworks */,
 			);
-			name = "Embed Libraries";
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF235C4F2D7640EC00020751 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF235C4E2D7640EC00020751 /* MicrosoftCognitiveServicesSpeech.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BFC4716F24474FFA00A2DA70 /* CopyFiles */ = {
@@ -194,12 +185,6 @@
 		BF15207C2385930B00A70EBF /* libml_media_ccparser.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libml_media_ccparser.dylib; path = ../MagicLeap/mlsdk/v0.22.0/lib/osx/libml_media_ccparser.dylib; sourceTree = "<group>"; };
 		BF172B302B09261700B545CF /* WhisperDecoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WhisperDecoder.cpp; path = Source/WhisperDecoder.cpp; sourceTree = "<group>"; };
 		BF172B312B09261700B545CF /* WhisperDecoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = WhisperDecoder.hpp; path = Source/WhisperDecoder.hpp; sourceTree = "<group>"; };
-		BF172B332B09264700B545CF /* whisper-encoder-impl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "whisper-encoder-impl.m"; path = "Source/Whisper/coreml/whisper-encoder-impl.m"; sourceTree = SOURCE_ROOT; };
-		BF172B342B09264700B545CF /* whisper-decoder-impl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "whisper-decoder-impl.m"; path = "Source/Whisper/coreml/whisper-decoder-impl.m"; sourceTree = SOURCE_ROOT; };
-		BF172B352B09264700B545CF /* whisper-decoder-impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "whisper-decoder-impl.h"; path = "Source/Whisper/coreml/whisper-decoder-impl.h"; sourceTree = SOURCE_ROOT; };
-		BF172B362B09264700B545CF /* whisper-encoder-impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "whisper-encoder-impl.h"; path = "Source/Whisper/coreml/whisper-encoder-impl.h"; sourceTree = SOURCE_ROOT; };
-		BF172B372B09264700B545CF /* whisper-encoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "whisper-encoder.mm"; path = "Source/Whisper/coreml/whisper-encoder.mm"; sourceTree = SOURCE_ROOT; };
-		BF172B382B09264700B545CF /* whisper-encoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "whisper-encoder.h"; path = "Source/Whisper/coreml/whisper-encoder.h"; sourceTree = SOURCE_ROOT; };
 		BF172B5A2B09450C00B545CF /* ShazamDecoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ShazamDecoder.hpp; path = Source/ShazamDecoder.hpp; sourceTree = "<group>"; };
 		BF172B5B2B09450C00B545CF /* ShazamDecoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ShazamDecoder.mm; path = Source/ShazamDecoder.mm; sourceTree = "<group>"; };
 		BF172B642B09456500B545CF /* ShazamKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShazamKit.framework; path = System/Library/Frameworks/ShazamKit.framework; sourceTree = SDKROOT; };
@@ -215,6 +200,9 @@
 		BF1D95E02850CB69008E3758 /* libPopMondegreen.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPopMondegreen.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1FA6ED28759C7E002F03C5 /* libPopMondegreen_MacosStatic.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPopMondegreen_MacosStatic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF21AEAB24D74F010046A434 /* PopH264.Package */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PopH264.Package; sourceTree = "<group>"; };
+		BF235B032D76297E00020751 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		BF235B042D762A5C00020751 /* MicrosoftCognitiveServicesSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftCognitiveServicesSpeech.framework; path = "MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64/MicrosoftCognitiveServicesSpeech.framework"; sourceTree = "<group>"; };
+		BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftCognitiveServicesSpeech.framework; path = Source_Apple/MicrosoftCognitiveServicesSpeech.framework; sourceTree = "<group>"; };
 		BF23A41125D9415D0060DE06 /* PopMondegreen_IosTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopMondegreen_IosTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF270E242ADC2EDE003BB81B /* gtest-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "gtest-all.cc"; path = "googletest/googletest/src/gtest-all.cc"; sourceTree = "<group>"; };
 		BF32257A244609C700C74D4D /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = Source/X264/osx/libx264.a; sourceTree = "<group>"; };
@@ -276,6 +264,34 @@
 		BFFBE9752458390900E9BE1B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BF235C362D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MicrosoftCognitiveDecoder.cpp,
+			);
+			target = BF459CD421F7D5C700CED59D /* PopMondegreen_MacosFramework */;
+		};
+		BF235C372D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MicrosoftCognitiveDecoder.cpp,
+			);
+			target = BF1D95DF2850CB69008E3758 /* PopMondegreen_MacosDylib */;
+		};
+		BF235C392D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MicrosoftCognitiveDecoder.cpp,
+			);
+			target = BF1FA6BE28759C7E002F03C5 /* PopMondegreen_MacosStatic */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BF235C312D762AD500020751 /* Source */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BF235C362D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, BF235C372D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, BF235C392D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Source; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		BF151FD62384786600A70EBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -284,6 +300,7 @@
 				BF44AAB2249FB65500C9D982 /* AVFoundation.framework in Frameworks */,
 				BF172B672B09458400B545CF /* ShazamKit.framework in Frameworks */,
 				BFDB2BB62449F569009EC370 /* VideoToolbox.framework in Frameworks */,
+				BF235C452D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
 				BFDB2BB42449F54F009EC370 /* CoreVideo.framework in Frameworks */,
 				BF151FF02384789700A70EBF /* CoreMedia.framework in Frameworks */,
 				BF51B8B1256A72A4004DE4C7 /* UIKit.framework in Frameworks */,
@@ -297,7 +314,9 @@
 				BF172B662B09457E00B545CF /* ShazamKit.framework in Frameworks */,
 				BF1D960C2850CCE0008E3758 /* CoreMedia.framework in Frameworks */,
 				BF1D960A2850CCD7008E3758 /* AVFoundation.framework in Frameworks */,
+				BF235C442D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
 				BF1D960B2850CCDC008E3758 /* VideoToolbox.framework in Frameworks */,
+				BF235B062D762A6E00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
 				BF1D960D2850CCE4008E3758 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +329,7 @@
 				BF1FA6E628759C7E002F03C5 /* CoreMedia.framework in Frameworks */,
 				BF1FA6E728759C7E002F03C5 /* AVFoundation.framework in Frameworks */,
 				BF1FA6E828759C7E002F03C5 /* VideoToolbox.framework in Frameworks */,
+				BF235C432D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
 				BF1FA6E928759C7E002F03C5 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +350,7 @@
 				BFC4719724477DEF00A2DA70 /* AVFoundation.framework in Frameworks */,
 				BFC4719524477DE500A2DA70 /* VideoToolbox.framework in Frameworks */,
 				BFC4719324477DDE00A2DA70 /* CoreVideo.framework in Frameworks */,
+				BF235C4D2D7640EC00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
 				BF459D1A21F7DB9900CED59D /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +359,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF235C462D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +367,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF235C422D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,30 +375,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF235C482D7638BC00020751 /* PopMondegreen_Macos.framework in Frameworks */,
 				BF172B752B0A78A500B545CF /* ShazamKit.framework in Frameworks */,
 				BF99369B2930F4D900B9739C /* AVFoundation.framework in Frameworks */,
 				BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */,
 				BFFBE9762458390900E9BE1B /* AppKit.framework in Frameworks */,
-				BF9936932930F49100B9739C /* libPopMondegreen_MacosStatic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF172B322B09262200B545CF /* Whisper */ = {
-			isa = PBXGroup;
-			children = (
-				BF172B352B09264700B545CF /* whisper-decoder-impl.h */,
-				BF172B342B09264700B545CF /* whisper-decoder-impl.m */,
-				BF172B362B09264700B545CF /* whisper-encoder-impl.h */,
-				BF172B332B09264700B545CF /* whisper-encoder-impl.m */,
-				BF172B382B09264700B545CF /* whisper-encoder.h */,
-				BF172B372B09264700B545CF /* whisper-encoder.mm */,
-			);
-			path = Whisper;
-			sourceTree = "<group>";
-		};
 		BF172B792B0AAAAF00B545CF /* TestData */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +432,8 @@
 		BF4A6A0B1EA16D7C00613A64 = {
 			isa = PBXGroup;
 			children = (
+				BF235C312D762AD500020751 /* Source */,
+				BF235B032D76297E00020751 /* Readme.md */,
 				BF5D726B2B3E17E800D90721 /* .gitignore */,
 				BF5D726A2B3E165100D90721 /* PopMondegreen.UnityPackage */,
 				BFE87C1E25E7EE9E00224AB0 /* .github */,
@@ -503,6 +515,7 @@
 		BFCAA1CE2ADC1A2C00160FAA /* Source_Apple */ = {
 			isa = PBXGroup;
 			children = (
+				BF235B042D762A5C00020751 /* MicrosoftCognitiveServicesSpeech.framework */,
 				BFCAA2062ADC1FF700160FAA /* Apple.xcconfig */,
 				BFCAA2022ADC1FF700160FAA /* BuildUniversal.sh */,
 				BFCAA20E2ADC1FF700160FAA /* Ios_Framework_Info.plist */,
@@ -522,6 +535,7 @@
 		BFD6076D1EA16ED20035C814 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BF235C402D7637AA00020751 /* MicrosoftCognitiveServicesSpeech.framework */,
 				BF5D725D2B3DFA8800D90721 /* Json11 */,
 				BFCAA1E72ADC1C7000160FAA /* Decoder.cpp */,
 				BFCAA1E82ADC1C7000160FAA /* Decoder.hpp */,
@@ -543,7 +557,6 @@
 				BF172B772B0A8B5B00B545CF /* Timecode.hpp */,
 				BF172B7B2B0AB48800B545CF /* WaveDecoder.cpp */,
 				BF172B7C2B0AB48800B545CF /* WaveDecoder.hpp */,
-				BF172B322B09262200B545CF /* Whisper */,
 				BF172B302B09261700B545CF /* WhisperDecoder.cpp */,
 				BF172B312B09261700B545CF /* WhisperDecoder.hpp */,
 			);
@@ -663,6 +676,7 @@
 				BF1FA6BF28759C7E002F03C5 /* Headers */,
 				BF1FA6C028759C7E002F03C5 /* Sources */,
 				BF1FA6E528759C7E002F03C5 /* Frameworks */,
+				BF235C3E2D762E1400020751 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -698,6 +712,7 @@
 				BF459CD021F7D5C700CED59D /* Headers */,
 				BF459CD121F7D5C700CED59D /* Sources */,
 				BF459CD221F7D5C700CED59D /* Frameworks */,
+				BF235C4F2D7640EC00020751 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -748,12 +763,10 @@
 				BFC4716E24474FFA00A2DA70 /* Frameworks */,
 				BFC4716F24474FFA00A2DA70 /* CopyFiles */,
 				BFBD252E25D955E50076C307 /* Resources */,
-				BF9936972930F49100B9739C /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BF9936962930F49100B9739C /* PBXTargetDependency */,
 			);
 			name = PopMondegreen_MacosTestApp;
 			productName = PopH264_TestApp;
@@ -860,6 +873,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF235C492D76403900020751 /* MicrosoftCognitiveServicesSpeech.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,9 +912,6 @@
 				BF172B5E2B09451200B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D682ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E152ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
-				BF172B3F2B09264D00B545CF /* whisper-encoder-impl.m in Sources */,
-				BF172B402B09264D00B545CF /* whisper-decoder-impl.m in Sources */,
-				BF172B412B09264D00B545CF /* whisper-encoder.mm in Sources */,
 				BF172B6F2B09617400B545CF /* Microphone_Apple.mm in Sources */,
 				BF172B7F2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */,
 			);
@@ -916,9 +927,6 @@
 				BF172B5D2B09451200B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6B2ADC3F7E00AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E142ADC29F5003BB81B /* PopMondegreen.cpp in Sources */,
-				BF172B3C2B09264D00B545CF /* whisper-encoder-impl.m in Sources */,
-				BF172B3D2B09264D00B545CF /* whisper-decoder-impl.m in Sources */,
-				BF172B3E2B09264D00B545CF /* whisper-encoder.mm in Sources */,
 				BF172B702B09617500B545CF /* Microphone_Apple.mm in Sources */,
 				BF172B7E2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */,
 			);
@@ -935,9 +943,6 @@
 				BF172B612B09451600B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6C2ADC3F8000AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E162ADC29F7003BB81B /* PopMondegreen.cpp in Sources */,
-				BF172B482B09265200B545CF /* whisper-encoder-impl.m in Sources */,
-				BF172B492B09265200B545CF /* whisper-decoder-impl.m in Sources */,
-				BF172B4A2B09265200B545CF /* whisper-encoder.mm in Sources */,
 				BF172B722B09617700B545CF /* Microphone_Apple.mm in Sources */,
 				BF172B822B0AB49000B545CF /* WaveDecoder.cpp in Sources */,
 			);
@@ -949,11 +954,8 @@
 			files = (
 				BF270E132ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
 				BF172B602B09451500B545CF /* ShazamDecoder.mm in Sources */,
-				BF172B442B09265000B545CF /* whisper-encoder.mm in Sources */,
 				BF5D72652B3DFA9F00D90721 /* json11.cpp in Sources */,
-				BF172B432B09265000B545CF /* whisper-decoder-impl.m in Sources */,
 				BF270E262ADC2EDE003BB81B /* gtest-all.cc in Sources */,
-				BF172B422B09265000B545CF /* whisper-encoder-impl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,9 +970,6 @@
 				BF172B5C2B09451100B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D672ADC3F7800AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BFCAA1E92ADC1C7400160FAA /* Decoder.cpp in Sources */,
-				BF172B392B09264D00B545CF /* whisper-encoder-impl.m in Sources */,
-				BF172B3A2B09264D00B545CF /* whisper-decoder-impl.m in Sources */,
-				BF172B3B2B09264D00B545CF /* whisper-encoder.mm in Sources */,
 				BF172B6E2B09617400B545CF /* Microphone_Apple.mm in Sources */,
 				BF172B7D2B0AB48C00B545CF /* WaveDecoder.cpp in Sources */,
 			);
@@ -987,9 +986,6 @@
 				BF172B622B09451700B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6D2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E172ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
-				BF172B4B2B09265200B545CF /* whisper-encoder-impl.m in Sources */,
-				BF172B4C2B09265200B545CF /* whisper-decoder-impl.m in Sources */,
-				BF172B4D2B09265200B545CF /* whisper-encoder.mm in Sources */,
 				BF172B732B09617700B545CF /* Microphone_Apple.mm in Sources */,
 				BF172B802B0AB48F00B545CF /* WaveDecoder.cpp in Sources */,
 			);
@@ -1006,9 +1002,6 @@
 				BF172B632B09451700B545CF /* ShazamDecoder.mm in Sources */,
 				BF770D6E2ADC3F8100AC2AF5 /* FakeDecoder.cpp in Sources */,
 				BF270E182ADC29F8003BB81B /* PopMondegreen.cpp in Sources */,
-				BF172B4E2B09265300B545CF /* whisper-encoder-impl.m in Sources */,
-				BF172B4F2B09265300B545CF /* whisper-decoder-impl.m in Sources */,
-				BF172B502B09265300B545CF /* whisper-encoder.mm in Sources */,
 				BF172B742B09617800B545CF /* Microphone_Apple.mm in Sources */,
 				BF172B812B0AB49000B545CF /* WaveDecoder.cpp in Sources */,
 			);
@@ -1020,11 +1013,8 @@
 			files = (
 				BF270E122ADC298D003BB81B /* PopMondegreen_TestApp.cpp in Sources */,
 				BF172B5F2B09451400B545CF /* ShazamDecoder.mm in Sources */,
-				BF172B472B09265100B545CF /* whisper-encoder.mm in Sources */,
 				BF5D72662B3DFA9F00D90721 /* json11.cpp in Sources */,
-				BF172B462B09265100B545CF /* whisper-decoder-impl.m in Sources */,
 				BF270E252ADC2EDE003BB81B /* gtest-all.cc in Sources */,
-				BF172B452B09265100B545CF /* whisper-encoder-impl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,11 +1027,6 @@
 			target = BF985EB42876E95700F04399 /* PopMondegreen_IosStatic */;
 			targetProxy = BF270E102ADC2939003BB81B /* PBXContainerItemProxy */;
 		};
-		BF9936962930F49100B9739C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF1FA6BE28759C7E002F03C5 /* PopMondegreen_MacosStatic */;
-			targetProxy = BF9936952930F49100B9739C /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1051,6 +1036,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1070,6 +1059,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1087,6 +1080,11 @@
 			baseConfigurationReference = BFCAA2032ADC1FF700160FAA /* Macos_Dylib.xcconfig */;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				SKIP_INSTALL = YES;
 			};
@@ -1097,6 +1095,11 @@
 			baseConfigurationReference = BFCAA2032ADC1FF700160FAA /* Macos_Dylib.xcconfig */;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				SKIP_INSTALL = YES;
 			};
@@ -1106,6 +1109,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA2092ADC1FF700160FAA /* Macos_Static.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
@@ -1114,6 +1122,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA2092ADC1FF700160FAA /* Macos_Static.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
@@ -1190,6 +1203,11 @@
 			baseConfigurationReference = BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
@@ -1199,6 +1217,11 @@
 			baseConfigurationReference = BFCAA20A2ADC1FF700160FAA /* Macos_Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
@@ -1219,7 +1242,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = .;
-				LLVM_LTO = YES;
+				LLVM_LTO = NO;
 				OBJROOT = "$(SYMROOT)$(EFFECTIVE_PLATFORM_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1267,6 +1290,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				LLVM_LTO = NO;
 				SKIP_INSTALL = YES;
 			};
@@ -1276,6 +1303,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA20C2ADC1FF700160FAA /* Ios.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1284,6 +1315,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA2082ADC1FF700160FAA /* Tvos.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				LLVM_LTO = NO;
 				SKIP_INSTALL = YES;
 			};
@@ -1293,6 +1328,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFCAA2082ADC1FF700160FAA /* Tvos.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1301,6 +1340,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
@@ -1309,6 +1353,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
+					"$(PROJECT_DIR)/Source_Apple",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
