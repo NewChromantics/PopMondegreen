@@ -32,8 +32,9 @@ jobs:
           project: PopMondegreen
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           # tsdk: these env vars are set in each of the actions
           name: ${{ env.UPLOAD_NAME }}
           path: ${{ env.UPLOAD_DIR }}
+          if-no-files-found: error

@@ -34,7 +34,8 @@ jobs:
       run: PopMondegreen.Emscripten/Build.sh PopMondegreen.Emscripten/ release
       
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: PopMondegreen.Wasm
         path: PopMondegreen.Emscripten/Build
+          if-no-files-found: error

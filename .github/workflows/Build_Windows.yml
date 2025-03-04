@@ -61,7 +61,7 @@ jobs:
           OutputDirectory: ${{ github.workspace }}\${{ matrix.config.OutputDirectory }}\ # need an absolute path here, must end with trailing slash
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           # gr: newer versions of build action use outputs
           #name: ${{ steps.Build.outputs.UPLOAD_NAME }}
