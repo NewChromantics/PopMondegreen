@@ -7,8 +7,6 @@ on:
     branches:
       - main
 
-env:
-  project: PopMondegreen
 
 jobs:
   Build:
@@ -20,27 +18,27 @@ jobs:
          - name: Windows Dll x64
            BuildPlatform: x64
            BuildConfiguration: Release
-           OutputDirectory: Windows/${{env.project}}_Release_x64
+           OutputDirectory: Windows/PopMondegreen_Release_x64
 
          - name: Windows Static x64
            BuildPlatform: x64
            BuildConfiguration: Static
-           OutputDirectory: Windows/${{env.project}}_Static_x64
+           OutputDirectory: Windows/PopMondegreen_Static_x64
 
          - name: Windows Uwp x64
            BuildPlatform: "x64 Uwp" # Solution platform
            BuildConfiguration: Release
-           OutputDirectory: Windows/${{env.project}}_Uwp_Release_x64
+           OutputDirectory: Windows/PopMondegreen_Uwp_Release_x64
 
          - name: Windows Uwp Arm64
            BuildPlatform: "ARM64 Uwp" # solution platform
            BuildConfiguration: Release
-           OutputDirectory: Windows/${{env.project}}_Uwp_Arm64
+           OutputDirectory: Windows/PopMondegreen_Uwp_Arm64
 
          - name: Windows Uwp Arm
            BuildPlatform: "ARM Uwp" # solution platform
            BuildConfiguration: Release
-           OutputDirectory: Windows/${{env.project}}_Uwp_Arm
+           OutputDirectory: Windows/PopMondegreen_Uwp_Arm
 
     
     steps:
@@ -55,7 +53,7 @@ jobs:
         id: Build
         uses: NewChromantics/PopAction_BuildWindows@v1.3.0
         with:
-          BuildSolution: ${{env.project}}.visualstudio/${{env.project}}.sln
+          BuildSolution: PopMondegreen.visualstudio/PopMondegreen.sln
           BuildPlatform: ${{ matrix.config.BuildPlatform }}
           BuildConfiguration: ${{ matrix.config.BuildConfiguration }}
           OutputDirectory: ${{ github.workspace }}\${{ matrix.config.OutputDirectory }}\ # need an absolute path here, must end with trailing slash

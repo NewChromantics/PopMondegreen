@@ -1,8 +1,5 @@
 name: Build Apple
 
-env:
-  project: PopMondegreen
-
 on:
   pull_request:
   workflow_dispatch:
@@ -29,8 +26,8 @@ jobs:
       - name: Build Universal
         uses: NewChromantics/PopAction_BuildApple@v1.0.11
         with:
-          BuildScheme: ${{ env.project }}_Universal
-          project: ${{ env.project }}
+          BuildScheme: PopMondegreen_Universal
+          project: PopMondegreen
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2

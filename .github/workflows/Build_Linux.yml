@@ -1,8 +1,5 @@
 name: Build Linux
 
-env:
-  project: PopMondegreen
-
 
 on:
   pull_request:
@@ -41,7 +38,7 @@ jobs:
         uses: NewChromantics/PopAction_BuildLinux@v1
         with:
           os: ${{ matrix.config.os }}
-          project: ${{ env.project }}
+          project: PopMondegreen
           arch: ${{ matrix.config.arch }}
           flag: ${{ matrix.config.flag }}
 

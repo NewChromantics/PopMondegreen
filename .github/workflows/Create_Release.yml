@@ -1,7 +1,5 @@
 name: Create Release
 
-env:
-  project: PopMondegreen
 
 on:
   #pull_request:
@@ -46,62 +44,62 @@ jobs:
             runs_on: windows-latest
             BuildPlatform: x64
             BuildConfiguration: Release
-            OutputDirectory: Windows/${{ env.project }}_Release_x64
+            OutputDirectory: Windows/PopMondegreen_Release_x64
             experimental: true
 
           - name: Windows Static x64
             runs_on: windows-latest
             BuildPlatform: x64
             BuildConfiguration: Static
-            OutputDirectory: Windows/${{ env.project }}_Static_x64
+            OutputDirectory: Windows/PopMondegreen_Static_x64
             experimental: true
 
           - name: Windows Uwp x64
             runs_on: windows-latest
             BuildPlatform: "x64 Uwp" # Solution platform
             BuildConfiguration: Release
-            OutputDirectory: Windows/${{ env.project }}_Uwp_Release_x64
+            OutputDirectory: Windows/PopMondegreen_Uwp_Release_x64
             experimental: true
             
           - name: Windows Uwp Arm64
             runs_on: windows-latest
             BuildPlatform: "ARM64 Uwp" # solution platform
             BuildConfiguration: Release
-            OutputDirectory: Windows/${{ env.project }}_Uwp_Arm64
+            OutputDirectory: Windows/PopMondegreen_Uwp_Arm64
             experimental: true
             
           - name: Windows Uwp Arm
             runs_on: windows-latest
             BuildPlatform: "ARM Uwp" # solution platform
             BuildConfiguration: Release
-            OutputDirectory: Windows/${{ env.project }}_Uwp_Arm
+            OutputDirectory: Windows/PopMondegreen_Uwp_Arm
             experimental: true
 
           - name: Apple Universal
             runs_on: macos-12
-            scheme: ${{ env.project }}_Universal
+            scheme: PopMondegreen_Universal
             destination: "platform=macOS" # has no effect, but gets passed to xcodebuild so will fail if empty (todo: fix in action!)
 
           - name: Ios Framework
             runs_on: macos-latest
-            scheme: ${{ env.project }}_IosFramework
+            scheme: PopMondegreen_IosFramework
             destination: "generic/platform=iOS"
 
           - name: Tvos Static
             runs_on: macos-latest
-            scheme: ${{ env.project }}_TvosStatic
+            scheme: PopMondegreen_TvosStatic
             destination: "generic/platform=tvOS"
             experimental: true
             
           - name: Macos Static
             runs_on: macos-latest
-            scheme: ${{ env.project }}_MacosStatic
+            scheme: PopMondegreen_MacosStatic
             destination: "generic/platform=macOS"
             experimental: true
             
           - name: Macos Dylib
             runs_on: macos-latest
-            scheme: ${{ env.project }}_MacosDylib
+            scheme: PopMondegreen_MacosDylib
             destination: "generic/platform=macOS"
             experimental: true
             
@@ -125,7 +123,7 @@ jobs:
         if: matrix.config.BuildConfiguration != ''
         uses: NewChromantics/PopAction_BuildWindows@v1.3.0
         with:
-          BuildSolution: ${{ env.project }}.visualstudio/${{ env.project }}.sln
+          BuildSolution: PopMondegreen.visualstudio/PopMondegreen.sln
           BuildPlatform: ${{ matrix.config.BuildPlatform }}
           BuildConfiguration: ${{ matrix.config.BuildConfiguration }}
           OutputDirectory: ${{ github.workspace }}\${{ matrix.config.OutputDirectory }}\ # need an absolute path here, must end with trailing slash
@@ -144,7 +142,7 @@ jobs:
         uses: NewChromantics/PopAction_BuildApple@v1.2.2
         with:
           BuildScheme: ${{matrix.config.scheme}}
-          project: ${{ env.project }}
+          project: PopMondegreen
           destination: ${{ matrix.config.destination }}
 
       - name: Build Linux ${{ matrix.config.linux_target }}
@@ -153,7 +151,7 @@ jobs:
         uses: NewChromantics/PopAction_BuildLinux@v1.0.1
         with:
           os: ${{ matrix.config.linux_target }}
-          project: ${{ env.project }}
+          project: PopMondegreen
           arch: ${{ matrix.config.arch }}
           
       - name: Build Android Lib
@@ -161,8 +159,8 @@ jobs:
         if: matrix.config.type == 'Android'
         uses: NewChromantics/PopAction_BuildAndroid@v2.0.1
         with:
-          buildtargetname: ${{ env.project }}
-          buildpath: ${{ env.project }}.Android/lib${{ env.project }}
+          buildtargetname: PopMondegreen
+          buildpath: PopMondegreen.Android/libPopMondegreen
 
       - name: Wasm setup emscripten
         if: matrix.config.type == 'Wasm'
@@ -174,14 +172,14 @@ jobs:
         id: Wasm
         if: matrix.config.type == 'Wasm'
         env: 
-          BUILD_TARGET_NAME: ${{ env.project }}
-        run: ${{ env.project }}.Emscripten/Build.sh ${{ env.project }}.Emscripten/ release
+          BUILD_TARGET_NAME: PopMondegreen
+        run: PopMondegreen.Emscripten/Build.sh PopMondegreen.Emscripten/ release
 
       - name: Wasm set artifact output vars
         if: matrix.config.type == 'Wasm'
         run: |
-          echo "UPLOAD_NAME=${{ env.project }}.Wasm" >> $GITHUB_OUTPUT
-          echo "UPLOAD_DIR=${{ env.project }}.Emscripten/Build" >> $GITHUB_OUTPUT
+          echo "UPLOAD_NAME=PopMondegreen.Wasm" >> $GITHUB_OUTPUT
+          echo "UPLOAD_DIR=PopMondegreen.Emscripten/Build" >> $GITHUB_OUTPUT
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
@@ -203,19 +201,19 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v2
         with:
-          path: ${{ env.project }}.Package/
+          path: PopMondegreen.Package/
 
       # copy files we want in the release/package into the package dir
       # we use this to collate ALL the final files!
       - name: Copy files for packaging
         run: |
          echo Copying files into $PACKAGE_DIR
-         echo Project is ${{ env.project }}
+         echo Project is PopMondegreen
          cp Readme.md $PACKAGE_DIR
          cp Source_CSharp/* $PACKAGE_DIR
-         rsync -avP --exclude ${{ env.project }}.xcframework/* $PACKAGE_DIR
+         rsync -avP --exclude PopMondegreen.xcframework/* $PACKAGE_DIR
         env:
-          PACKAGE_DIR: ${{ env.project }}.Package/
+          PACKAGE_DIR: PopMondegreen.Package/
 
 
       # make a release
@@ -226,5 +224,5 @@ jobs:
         uses: fnkr/github-action-ghr@v1   
         env:
          GHR_COMPRESS: zip
-         GHR_PATH: ${{ env.project }}.Package/
+         GHR_PATH: PopMondegreen.Package/
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

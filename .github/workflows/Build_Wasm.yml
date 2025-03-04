@@ -1,7 +1,5 @@
 name: Build Wasm
 
-env:
-  project: PopMondegreen
 
 
 on:
@@ -30,11 +28,11 @@ jobs:
         
     - name: Build wasm
       env: 
-        BUILD_TARGET_NAME: PopH264
-      run: PopH264.Emscripten/Build.sh PopH264.Emscripten/ release
+        BUILD_TARGET_NAME: PopMondegreen
+      run: PopMondegreen.Emscripten/Build.sh PopMondegreen.Emscripten/ release
       
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
-        name: PopH264.Wasm
-        path: PopH264.Emscripten/Build
+        name: PopMondegreen.Wasm
+        path: PopMondegreen.Emscripten/Build

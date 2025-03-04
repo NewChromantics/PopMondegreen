@@ -1,8 +1,5 @@
 name: Build Ios Static
 
-env:
-  project: PopMondegreen
-
 on:
   pull_request:
   workflow_dispatch:
@@ -24,8 +21,8 @@ jobs:
         id: BuildIosStatic
         uses: NewChromantics/PopAction_BuildApple@v1.2.0
         with:
-          BuildScheme: ${{ env.project }}_IosStatic
-          project: ${{ env.project }}
+          BuildScheme: PopMondegreen_IosStatic
+          project: PopMondegreen
           Destination: "generic/platform=iOS"
 
       - name: Upload artifacts

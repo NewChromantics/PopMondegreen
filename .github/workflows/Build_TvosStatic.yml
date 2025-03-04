@@ -1,7 +1,5 @@
 name: Build Tvos Static
 
-env:
-  project: PopMondegreen
 
 on:
   pull_request:
@@ -23,8 +21,8 @@ jobs:
         id: BuildTvosStatic
         uses: NewChromantics/PopAction_BuildApple@v1.2.0
         with:
-          BuildScheme: ${{ env.project }}_TvosStatic
-          project: ${{ env.project }}
+          BuildScheme: PopMondegreen_TvosStatic
+          project: PopMondegreen
           Destination: "generic/platform=tvOS"
 
       - name: Upload artifacts

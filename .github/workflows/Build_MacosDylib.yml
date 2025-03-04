@@ -1,7 +1,5 @@
 name: Build Macos Dylib
 
-env:
-  project: PopMondegreen
 
 on:
   pull_request:
@@ -24,8 +22,8 @@ jobs:
         uses: NewChromantics/PopAction_BuildApple@v1.3.0
         id: Build
         with:
-          BuildScheme: ${{ env.project }}_MacosDylib
-          Project: ${{ env.project }}
+          BuildScheme: PopMondegreen_MacosDylib
+          Project: PopMondegreen
           Destination: "platform=macOS"
 
       - name: Upload artifacts
