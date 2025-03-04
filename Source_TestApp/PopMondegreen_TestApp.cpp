@@ -14,19 +14,7 @@
 #include "WaveDecoder.hpp"
 #include <thread>
 
-void PopMondegreen_Run(PopJson::ViewBase_t& Options)
-{
-	auto Listener = Options.GetValue("Listener").GetString();
-	auto Decoder = Options.GetValue("Decoder").GetString();
-	
-}
 
-
-void PopMondegreen_Run(std::string_view SourceName,std::string_view DecoderName)
-{
-	//auto Listener
-	
-}
 
 
 int main()
@@ -142,9 +130,12 @@ TEST(PopMondegreen, CreateMicrosoftCognitiveInstance)
 		std::string_view Json( JsonBuffer.data(), std::strlen(JsonBuffer.data()) );
 		
 		PopJson::Json_t Data(Json);
-		auto Error = Data.GetValue("Error").GetString();
-		if ( !Error.empty() )
-			DecoderError = Error;
+		if ( Data.HasKey("Error") )
+		{
+			auto Error = Data.GetValue("Error").GetString();
+			if ( !Error.empty() )
+				DecoderError = Error;
+		}
 		
 		throw std::runtime_error( std::string("handle json; ") + std::string(Json) );
 	}

@@ -15,7 +15,7 @@ MicrosoftCogninitiveDecoder_t::MicrosoftCogninitiveDecoder_t(DecoderParams_t Par
 	
 	// Creates an instance of a speech config with specified subscription key and service region.
 	// Replace with your own subscription key and service region (e.g., "westus").
-	auto SpeechConfig = mscog::SpeechConfig::FromSubscription("YourSubscriptionKey", "YourServiceRegion");
+	auto SpeechConfig = mscog::SpeechConfig::FromSubscription( Params.mApiKey, Params.mApiRegion );
 	
 	// Creates a speech recognizer
 	auto AudioConfig = mscog::Audio::AudioConfig::FromDefaultMicrophoneInput();
