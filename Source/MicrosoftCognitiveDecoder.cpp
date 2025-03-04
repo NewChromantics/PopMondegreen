@@ -145,9 +145,19 @@ void MicrosoftCogninitiveDecoder_t::OnSpeechRecognised(const mscog::SpeechRecogn
 	if ( !pResult )
 		return;
 	auto& Result = *pResult;
-	if ( Result.Reason != mscog::ResultReason::RecognizedSpeech)
+	
+	//	detect non errr results
+	switch ( Result.Reason )
 	{
-		return;
+		case mscog::ResultReason::RecognizingSpeech:
+		case mscog::ResultReason::RecognizedSpeech:
+		case mscog::ResultReason::RecognizingIntent:
+		case mscog::ResultReason::RecognizingKeyword:
+		case mscog::ResultReason::RecognizedKeyword:
+			break;
+			
+		default:
+			return;
 	}
 	
 	auto& Text = Result.Text;
@@ -155,6 +165,9 @@ void MicrosoftCogninitiveDecoder_t::OnSpeechRecognised(const mscog::SpeechRecogn
 	auto Duration100Nanos = Result.Duration();
 	auto TimeOffsetMs = Nano100sToMilliseconds(TimeOffset100Nanos);
 	auto DurationMs = Nano100sToMilliseconds(Duration100Nanos);
+	
+	//	align to user's input time
+	TimeOffsetMs.mMilliseconds += this->mFirstInputTime.mMilliseconds;
 	
 	OutputData_t Output;
 	Output.mStartTime = TimeOffsetMs;
@@ -174,7 +187,12 @@ void MicrosoftCogninitiveDecoder_t::PushData(AudioDataView_t<int16_t> Data)
 		throw std::runtime_error("PushData to decoder with no input stream");
 	
 	if ( !mFirstInputTime.IsValid() )
+	{
+		if ( !Data.mTime.IsValid() )
+			throw std::runtime_error("Input time must be valid");
+		
 		mFirstInputTime = Data.mTime;
+	}
 	
 	//	gr: docs call this "size", do not say if this is length or bytes
 	auto Size = Data.mSamples.size_bytes();
