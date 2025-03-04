@@ -1,6 +1,7 @@
 #include "Decoder.hpp"
 #include <mutex>
 #include "PopMondegreen.h"
+#include <iostream>
 
 DecoderParams_t::DecoderParams_t(PopJson::Json_t& Params)
 {
@@ -29,6 +30,7 @@ void Decoder_t::OnOutputData(OutputData_t Data)
 		Data.mOutputTime = PopMondegreen::EventTime_t::Now();
 	}
 
+	std::cerr << "Got output @" << Data.mStartTime.mMilliseconds << "ms; " << Data.mData << std::endl;
 	std::scoped_lock Lock(mOutputLock);
 	mOutputs.push_back( Data );
 }

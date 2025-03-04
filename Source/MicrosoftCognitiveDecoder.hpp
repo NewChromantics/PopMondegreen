@@ -21,6 +21,8 @@ public:
 
 private:
 	void				StopRecogniser();
+	void				OnSpeechRecognised(const Microsoft::CognitiveServices::Speech::SpeechRecognitionEventArgs& Event);
+	void				OnRecogniseCancelled(const Microsoft::CognitiveServices::Speech::SpeechRecognitionCanceledEventArgs& Event);
 	
 	
 	std::future<void>	mRecogniseFuture;

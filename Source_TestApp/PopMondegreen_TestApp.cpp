@@ -122,7 +122,7 @@ TEST(PopMondegreen, CreateMicrosoftCognitiveInstance)
 	
 	//	read from decoder
 	std::string DecoderError;
-	while ( DecoderError.empty() )
+	for ( int it=0;	it<100;	it++ )
 	{
 		std::vector<char> JsonBuffer;
 		JsonBuffer.resize( 1024 * 1024 * 1 );
@@ -134,10 +134,14 @@ TEST(PopMondegreen, CreateMicrosoftCognitiveInstance)
 		{
 			auto Error = Data.GetValue("Error").GetString();
 			if ( !Error.empty() )
+			{
 				DecoderError = Error;
+				break;
+			}
 		}
 		
-		throw std::runtime_error( std::string("handle json; ") + std::string(Json) );
+		std::cerr << "Output json; " << std::string(Json) << std::endl;
+		std::this_thread::sleep_for( std::chrono::milliseconds(100) );
 	}
 	
 	PopMondegreen_FreeInstance( Decoder );
