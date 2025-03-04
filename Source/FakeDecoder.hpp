@@ -12,7 +12,7 @@ public:
 	~FakeDecoder_t();
 	
 	virtual std::string	GetName() override	{	return Name;	}
-	virtual void		PushData(AudioDataView_t Data) override;
+	virtual void		PushData(AudioDataView_t<int16_t> Data) override;
 	virtual void		PushEndOfStream() override;
 	
 private:

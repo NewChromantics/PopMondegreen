@@ -2,9 +2,8 @@
 
 #include <chrono>
 #include <span>
+#include "AudioDataView.hpp"
 
-
-class AudioDataView_t;
 
 namespace PopMondegreen
 {
@@ -43,4 +42,5 @@ private:
 
 
 //	c++ interface to c funcs
-void	PopMondegreen_PushData(int32_t Instance,AudioDataView_t& Data);
+void	PopMondegreen_PushData(int32_t Instance,AudioDataView_t<int16_t>& Data);
+void	PopMondegreen_PushData(int32_t Instance,AudioDataView_t<float>& Data);

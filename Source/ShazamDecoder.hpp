@@ -14,7 +14,7 @@ public:
 	ShazamDecoder_t(DecoderParams_t Params);
 	
 	virtual std::string	GetName() override	{	return Name;	}
-	virtual void		PushData(AudioDataView_t Data) override;
+	virtual void		PushData(AudioDataView_t<int16_t> Data) override;
 
 private:
 	std::shared_ptr<ShazamSession_t>	mSession;	//	obj-c container

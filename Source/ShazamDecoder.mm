@@ -10,7 +10,7 @@ public:
 	ShazamSession_t();
 	~ShazamSession_t();
 	
-	void			PushData(AudioDataView_t Data);
+	void			PushData(AudioDataView_t<int16_t> Data);
 
 	SHSession*		mSession = nullptr;
 };
@@ -48,10 +48,10 @@ ShazamSession_t::~ShazamSession_t()
 {
 }
 
-void ShazamSession_t::PushData(AudioDataView_t Samples)
+void ShazamSession_t::PushData(AudioDataView_t<int16_t> Samples)
 {
 	AVAudioChannelCount ChannelCount = Samples.mChannelCount;
-	double SampleRate = Samples.mSampleRate;
+	double SampleRate = Samples.mSamplesPerSecond;
 	AVAudioCommonFormat DataFormat = AVAudioPCMFormatFloat32;
 	bool Interleaved = true;
 	auto* Format = [[AVAudioFormat alloc] initWithCommonFormat:DataFormat sampleRate:SampleRate channels:ChannelCount interleaved:Interleaved];
@@ -74,7 +74,7 @@ ShazamDecoder_t::ShazamDecoder_t(DecoderParams_t Params) :
 	mSession.reset( new ShazamSession_t );
 }
 
-void ShazamDecoder_t::PushData(AudioDataView_t Data)
+void ShazamDecoder_t::PushData(AudioDataView_t<int16_t> Data)
 {
 	mSession->PushData( Data );
 }

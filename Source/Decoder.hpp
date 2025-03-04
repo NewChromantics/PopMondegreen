@@ -5,19 +5,8 @@
 #include <string>
 #include "PopJson/PopJson.hpp"
 #include "Timecode.hpp"
+#include "AudioDataView.hpp"
 
-
-
-class AudioDataView_t
-{
-public:
-	int					mSampleRate = 0;
-	int					mChannelCount = 0;
-	std::span<float>	mSamples;
-	
-	//	whilst not part of audio data... it goes along with it!
-	Timecode_t			mTime;
-};
 
 
 class OutputData_t
@@ -39,6 +28,8 @@ class DecoderParams_t
 public:
 	DecoderParams_t(PopJson::Json_t& Params);
 	
+	bool			mUseApiMicrophone = false;	//	for any API with built in mic support
+	
 	//	for whisper
 	std::string		mModelUrl;
 	
@@ -57,7 +48,8 @@ public:
 	
 	virtual std::string	GetName()=0;
 	
-	virtual void		PushData(AudioDataView_t Data)=0;
+	virtual void		PushData(AudioDataView_t<int16_t> Data)=0;
+	//virtual void		PushData(AudioDataView_t<float> Data)=0;
 	virtual void		PushEndOfStream()=0;
 	OutputData_t		PopData();
 

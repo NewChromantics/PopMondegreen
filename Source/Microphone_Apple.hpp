@@ -7,13 +7,13 @@
 class AudioSource_t
 {
 public:
-	AudioSource_t(std::function<void(AudioDataView_t)> OnSamples);
+	AudioSource_t(std::function<void(AudioDataView_t<float>)> OnSamples);
 	
 protected:
-	void		OnSamples(AudioDataView_t Data);
+	void		OnSamples(AudioDataView_t<float> Data);
 	
 private:
-	std::function<void(AudioDataView_t)>	mOnSamples;
+	std::function<void(AudioDataView_t<float>)>	mOnSamples;
 };
 
 
@@ -25,7 +25,7 @@ class Microphone_t : public AudioSource_t
 public:
 	static constexpr auto	Name = "Microphone";
 public:
-	Microphone_t(std::function<void(AudioDataView_t)> OnSamples);
+	Microphone_t(std::function<void(AudioDataView_t<float>)> OnSamples);
 		
 protected:
 	std::shared_ptr<AvfAudioSource>	mAvfSource;

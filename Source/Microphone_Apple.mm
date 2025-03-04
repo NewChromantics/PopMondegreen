@@ -8,12 +8,12 @@
 
 
 
-AudioSource_t::AudioSource_t(std::function<void(AudioDataView_t)> OnSamples) :
+AudioSource_t::AudioSource_t(std::function<void(AudioDataView_t<float>)> OnSamples) :
 	mOnSamples	( OnSamples )
 {
 }
 
-void AudioSource_t::OnSamples(AudioDataView_t Data)
+void AudioSource_t::OnSamples(AudioDataView_t<float> Data)
 {
 	mOnSamples( Data );
 }
@@ -24,7 +24,7 @@ void AudioSource_t::OnSamples(AudioDataView_t Data)
 class AvfAudioSource
 {
 public:
-	AvfAudioSource(std::function<void(AudioDataView_t)> OnSamples);
+	AvfAudioSource(std::function<void(AudioDataView_t<float>)> OnSamples);
 	
 	AVAudioEngine*	mAudioEngine = nullptr;
 	bool			mWaitingForPermission = false;
@@ -34,7 +34,7 @@ public:
 
 
 
-AvfAudioSource::AvfAudioSource(std::function<void(AudioDataView_t)> OnSamples)
+AvfAudioSource::AvfAudioSource(std::function<void(AudioDataView_t<float>)> OnSamples)
 {
 	//AVAudioFormat* format = [[AVAudioFormat alloc] init
 	AVAudioChannelCount Channels = 1;
@@ -56,8 +56,8 @@ AvfAudioSource::AvfAudioSource(std::function<void(AudioDataView_t)> OnSamples)
 		auto FrameCount = buffer.frameLength;
 		std::cerr << "Got PCM buffer FrameCount=" << FrameCount << std::endl;
 		
-		AudioDataView_t Data;
-		Data.mSampleRate = buffer.format.sampleRate * 1000.0;
+		AudioDataView_t<float> Data;
+		Data.mSamplesPerSecond = buffer.format.sampleRate * 1000.0;
 		Data.mChannelCount = buffer.format.channelCount;
 		
 		auto SampleCount = buffer.frameLength * buffer.format.channelCount;
@@ -112,10 +112,10 @@ AvfAudioSource::AvfAudioSource(std::function<void(AudioDataView_t)> OnSamples)
 
 
 
-Microphone_t::Microphone_t(std::function<void(AudioDataView_t)> OnSamples) :
+Microphone_t::Microphone_t(std::function<void(AudioDataView_t<float>)> OnSamples) :
 	AudioSource_t	( OnSamples )
 {
-	auto OnAvfSamples = [this](AudioDataView_t Audio)
+	auto OnAvfSamples = [this](AudioDataView_t<float> Audio)
 	{
 		this->OnSamples( Audio );
 	};

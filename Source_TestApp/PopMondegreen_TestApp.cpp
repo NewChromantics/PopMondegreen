@@ -97,7 +97,7 @@ TEST(PopMondegreen, CreateMicrosoftCognitiveInstance)
 		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
 	}
 	
-	auto OnWaveData = [&](AudioDataView_t Data,bool Eof)
+	auto OnWaveData = [&](AudioDataView_t<int16_t> Data,bool Eof)
 	{
 		PopMondegreen_PushData( Decoder, Data );
 		if ( Eof )
@@ -156,7 +156,7 @@ TEST(PopMondegreen, CreateFakeInstance)
 	std::array<char,1000> ErrorBuffer;
 	auto Instance = PopMondegreen_CreateInstance(Params, ErrorBuffer.data(), ErrorBuffer.size() );
 	
-	PopMondegreen_PushData( Instance, 1000, nullptr, 0, 0, 0, nullptr );
+	PopMondegreen_PushData16( Instance, 1000, nullptr, 0, 0, 0, nullptr );
 	
 	//	this should keep popping data
 	for ( int it=0;	it<10;	it++ )
@@ -193,7 +193,7 @@ TEST(PopMondegreen, CreateWhisperInstance)
 		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
 	}
 	
-	auto OnWaveData = [&](AudioDataView_t Data,bool Eof)
+	auto OnWaveData = [&](AudioDataView_t<int16_t> Data,bool Eof)
 	{
 		PopMondegreen_PushData( Decoder, Data );
 		if ( Eof )

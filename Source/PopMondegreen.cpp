@@ -98,7 +98,7 @@ void Soy::StringToBuffer(const char* Source,char* Buffer,size_t BufferSize)
 
 decltype(PopMondegreen::DecoderInstanceManager)::Instance_t PopMondegreen::AllocDecoder(PopJson::Json_t& Params)
 {
-	auto DecoderName = Params.GetValue("Name").GetString();
+	auto DecoderName = Params.GetValue(PopMondegreen_OptionKey_DecoderName).GetString();
 	
 	DecoderParams_t DecoderParams(Params);
 	
@@ -150,7 +150,7 @@ std::vector<uint8_t> PopMondegreen::ReadFile(std::string_view Filename)
 	return FileContents;
 }
 
-void PopMondegreen_PushData(int32_t Instance,AudioDataView_t& Data)
+void PopMondegreen_PushData(int32_t Instance,AudioDataView_t<int16_t>& Data)
 {
 	try
 	{
@@ -163,8 +163,22 @@ void PopMondegreen_PushData(int32_t Instance,AudioDataView_t& Data)
 	}
 }
 
+void PopMondegreen_PushData(int32_t Instance,AudioDataView_t<float>& Data)
+{
+	try
+	{
+		auto pInstance = PopMondegreen::DecoderInstanceManager.GetInstance(Instance);
+		//pInstance->PushData(Data);
+		throw std::runtime_error("todo: handle float sample data into decoder");
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
 
-__export void PopMondegreen_PushData(int32_t Instance,uint32_t TimestampMs,float* SampleData,int SampleCount,int ChannelCount,int SampleHz,const char* SampleMeta)
+
+__export void PopMondegreen_PushDataFloat(int32_t Instance,uint32_t TimestampMs,float* SampleData,int SampleCount,int ChannelCount,int SampleHz,const char* SampleMeta)
 {
 	try
 	{
@@ -176,9 +190,34 @@ __export void PopMondegreen_PushData(int32_t Instance,uint32_t TimestampMs,float
 		//if ( SampleCount == 0 )
 		//	return;
 		
-		AudioDataView_t DataView;
+		AudioDataView_t<float> DataView;
 		DataView.mChannelCount = ChannelCount;
-		DataView.mSampleRate = SampleHz;
+		DataView.mSamplesPerSecond = SampleHz;
+		DataView.mTime = Timecode_t(TimestampMs);
+		DataView.mSamples = std::span( SampleData, SampleCount );
+		PopMondegreen_PushData( Instance, DataView );
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << __FUNCTION__ << " exception; " << e.what() << std::endl;
+	}
+}
+
+__export void PopMondegreen_PushData16(int32_t Instance,uint32_t TimestampMs,int16_t* SampleData,int SampleCount,int ChannelCount,int SampleHz,const char* SampleMeta)
+{
+	try
+	{
+		if ( SampleData == nullptr && SampleCount != 0 )
+			throw std::runtime_error("Null sample data, but count != 0");
+		
+		//	nothing to do
+		//	gr: we allow pushing nothing for fake, which just needs a timecode
+		//if ( SampleCount == 0 )
+		//	return;
+		
+		AudioDataView_t<int16_t> DataView;
+		DataView.mChannelCount = ChannelCount;
+		DataView.mSamplesPerSecond = SampleHz;
 		DataView.mTime = Timecode_t(TimestampMs);
 		DataView.mSamples = std::span( SampleData, SampleCount );
 		PopMondegreen_PushData( Instance, DataView );

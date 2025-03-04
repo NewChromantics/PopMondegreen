@@ -7,6 +7,9 @@ DecoderParams_t::DecoderParams_t(PopJson::Json_t& Params)
 {
 	mApiKey = Params[PopMondegreen_OptionKey_ApiKey].GetString();
 	mApiRegion = Params[PopMondegreen_OptionKey_ApiRegion].GetString();
+	
+	if ( Params.HasKey(PopMondegreen_OptionKey_UseApiMicrophone) )
+		mUseApiMicrophone = Params[PopMondegreen_OptionKey_UseApiMicrophone].GetBool();
 }
 
 Decoder_t::Decoder_t(DecoderParams_t Params) :
