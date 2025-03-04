@@ -1,14 +1,14 @@
 name: Build Windows
 
-env:
-  project: PopMondegreen
-
 on:
   pull_request:
   workflow_dispatch:
   push:
     branches:
       - main
+
+env:
+  project: PopMondegreen
 
 jobs:
   Build:
