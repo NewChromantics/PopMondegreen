@@ -78,7 +78,7 @@ jobs:
             experimental: true
 
           - name: Apple Universal
-            runs_on: macos-12
+            runs_on: macos-latest
             scheme: PopMondegreen_Universal
             destination: "platform=macOS" # has no effect, but gets passed to xcodebuild so will fail if empty (todo: fix in action!)
 
