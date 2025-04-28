@@ -26,6 +26,7 @@ enum { PopMondegreen_NullInstance=0 };
 #define PopMondegreen_OptionKey_ApiKey				"ApiKey"
 #define PopMondegreen_OptionKey_ApiRegion			"ApiRegion"
 #define PopMondegreen_OptionKey_UseApiMicrophone	"UseApiMicrophone"	//	if the api has built in microphone support, use it instead of pushing PCM data
+#define PopMondegreen_OptionKey_ModelUrl			"ModelUrl"
 
 
 __export int32_t			PopMondegreen_GetVersionThousand();	//	1.23.456 = 100230456

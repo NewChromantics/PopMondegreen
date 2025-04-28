@@ -19,7 +19,7 @@ public:
 	virtual void		PushEndOfStream() override;
 
 private:
-	void				CreateContext();
+	void				CreateContext(std::string_view ModelUrl);
 	bool				ThreadIteration();
 
 	std::mutex			mContextLock;	//	this stops us trying to run two inferences at once

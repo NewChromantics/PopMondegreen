@@ -4,6 +4,38 @@
 
 
 
+void Audio16ToFloat(AudioDataView_t<int16_t>& Audio16,std::vector<float>& Floats)
+{
+	Floats.reserve( Audio16.mSamples.size() );
+	
+	for ( auto i=0;	i<Audio16.mSamples.size();	i++ )
+	{
+		auto Value16 = Audio16.mSamples[i];
+		auto Valuef = static_cast<float>(Value16) / static_cast<float>( std::numeric_limits<int16_t>::max() );
+		Floats.push_back(Valuef);
+	}
+}
+
+void AudioFloatTo16(AudioDataView_t<float>& AudioFloats,std::vector<int16_t>& Values16)
+{
+	Values16.reserve( AudioFloats.mSamples.size() );
+	
+	for ( auto i=0;	i<AudioFloats.mSamples.size();	i++ )
+	{
+		auto Valuef = AudioFloats.mSamples[i];
+		auto Value16 = Valuef * static_cast<float>( std::numeric_limits<int16_t>::max() );
+		Values16.push_back(Valuef);
+	}
+}
+
+
+void AudioFloatResample(AudioDataView_t<float>& Audio,std::vector<float>& Storage)
+{
+	//	if reducing samples, we can drop (hacky, but works!)
+	throw std::runtime_error("todo; Resample wave");
+}
+
+
 
 bool IsFourccAscii(uint8_t v)
 {

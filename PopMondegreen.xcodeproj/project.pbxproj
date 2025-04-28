@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 73;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -123,6 +123,15 @@
 			files = (
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF2A35942DC01CFD001AB402 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BFC4716F24474FFA00A2DA70 /* CopyFiles */ = {
@@ -277,8 +286,21 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		BF2A35962DC01D1F001AB402 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = BF2A35942DC01CFD001AB402 /* CopyFiles */;
+			membershipExceptions = (
+				"ggml-tiny-q5_1.bin",
+				"ggml-tiny-q8_0.bin",
+				"ggml-tiny.en.bin",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BF235C312D762AD500020751 /* Source */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BF235C362D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, BF235C372D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, BF235C5A2D77365600020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, BF235C392D762B0D00020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, BF235C5B2D77365600020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, BF235C5C2D77365600020751 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Source; sourceTree = "<group>"; };
+		BF2A35932DC01C5C001AB402 /* WhisperModels */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BF2A35962DC01D1F001AB402 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = WhisperModels; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +456,7 @@
 		BF4A6A0B1EA16D7C00613A64 = {
 			isa = PBXGroup;
 			children = (
+				BF2A35932DC01C5C001AB402 /* WhisperModels */,
 				BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */,
 				BF7976C72DC0117E00134086 /* whisper.xcframework */,
 				BF235C312D762AD500020751 /* Source */,
@@ -652,6 +675,7 @@
 				BF459CD121F7D5C700CED59D /* Sources */,
 				BF459CD221F7D5C700CED59D /* Frameworks */,
 				BF235C4F2D7640EC00020751 /* Embed Frameworks */,
+				BF2A35942DC01CFD001AB402 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -773,7 +797,6 @@
 				};
 			};
 			buildConfigurationList = BF4A6A0F1EA16D7C00613A64 /* Build configuration list for PBXProject "PopMondegreen" */;
-			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -781,6 +804,7 @@
 				Base,
 			);
 			mainGroup = BF4A6A0B1EA16D7C00613A64;
+			preferredProjectObjectVersion = 46;
 			productRefGroup = BF4A6A151EA16D7D00613A64 /* Products */;
 			projectDirPath = "";
 			projectReferences = (

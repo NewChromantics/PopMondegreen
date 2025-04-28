@@ -5,6 +5,7 @@
 #include "PopJson/PopJson.hpp"
 
 #include "../Data/Wave/lana_loves_the_llama.h"
+#include "../Data/Wave/lana_loves_the_llama_16000.h"
 #include "Json11/json11.hpp"
 
 
@@ -126,6 +127,13 @@ void PopMondegreen::ReadFile(std::string_view Filename,std::function<void(std::s
 	if ( Filename == "test:LanaLovesTheLlama.wav" )
 	{
 		std::span File( LanaLovesTheLama );
+		OnChunk(File,true);
+		return;
+	}
+	
+	if ( Filename == "test:LanaLovesTheLlama_16000.wav" )
+	{
+		std::span File( __lana_loves_the_llama_16000_wav );
 		OnChunk(File,true);
 		return;
 	}

@@ -10,6 +10,8 @@ DecoderParams_t::DecoderParams_t(PopJson::Json_t& Params)
 	
 	if ( Params.HasKey(PopMondegreen_OptionKey_UseApiMicrophone) )
 		mUseApiMicrophone = Params[PopMondegreen_OptionKey_UseApiMicrophone].GetBool();
+
+	mModelUrl = Params[PopMondegreen_OptionKey_ModelUrl].GetString();
 }
 
 Decoder_t::Decoder_t(DecoderParams_t Params) :
@@ -50,12 +52,29 @@ OutputData_t Decoder_t::PopData()
 	return First;
 }
 
-void Decoder_t::PushData(AudioDataView_t<int16_t> Data)
+void Decoder_t::PushData(AudioDataView_t<int16_t> AudioData16)
 {
-	throw std::runtime_error("todo: convert audio data to float");
+	std::vector<float> DataFloats;
+	AudioData16.ConvertSamples(DataFloats);
+	
+	AudioDataView_t<float> AudioDataFloat;
+	AudioDataFloat.mSamples = DataFloats;
+	AudioDataFloat.mSamplesPerSecond = AudioData16.mSamplesPerSecond;
+	AudioDataFloat.mChannelCount = AudioData16.mChannelCount;
+	AudioDataFloat.mTime = AudioData16.mTime;
+
+	PushData( AudioDataFloat );
 }
 
-void Decoder_t::PushData(AudioDataView_t<float> Data)
+void Decoder_t::PushData(AudioDataView_t<float> AudioDataFloat)
 {
-	throw std::runtime_error("todo: convert audio data to 16bit");
-}
+	std::vector<int16_t> Data16s;
+	AudioDataFloat.ConvertSamples(Data16s);
+	
+	AudioDataView_t<int16_t> AudioData16;
+	AudioData16.mSamples = Data16s;
+	AudioData16.mSamplesPerSecond = AudioDataFloat.mSamplesPerSecond;
+	AudioData16.mChannelCount = AudioDataFloat.mChannelCount;
+	AudioData16.mTime = AudioDataFloat.mTime;
+	
+	PushData( AudioData16 );}

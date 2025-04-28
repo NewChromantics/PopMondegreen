@@ -4,10 +4,26 @@
 #include "Timecode.hpp"
 
 
+template<typename TYPE>
+class AudioDataView_t;
+
+
+//	in WaveDecoder.cpp
+void Audio16ToFloat(AudioDataView_t<int16_t>& Audio,std::vector<float>& Storage);
+void AudioFloatTo16(AudioDataView_t<float>& Audio,std::vector<int16_t>& Storage);
+void AudioFloatResample(AudioDataView_t<float>& Audio,std::vector<float>& Storage);
+
+
 
 template<typename TYPE>
 class AudioDataView_t
 {
+public:
+	template<typename TARGETTYPE>
+	void				ConvertSamples(std::vector<TARGETTYPE>& Storage);
+	
+	void				Resample(int NewSamplesPerSecond,std::vector<TYPE>& Storage);
+	
 public:
 	std::span<TYPE>		mSamples;
 
@@ -18,3 +34,25 @@ public:
 	//	whilst not part of audio data... it goes along with it!
 	Timecode_t			mTime;
 };
+
+
+template<>
+template<>
+inline void AudioDataView_t<int16_t>::ConvertSamples(std::vector<float>& Storage)
+{
+	Audio16ToFloat( *this, Storage );
+}
+
+
+template<>
+template<>
+inline void AudioDataView_t<float>::ConvertSamples(std::vector<int16_t>& Storage)
+{
+	AudioFloatTo16( *this, Storage );
+}
+
+template<>
+inline void AudioDataView_t<float>::Resample(int NewSamplesPerSecond,std::vector<float>& Storage)
+{
+	AudioFloatResample( *this, Storage );
+}

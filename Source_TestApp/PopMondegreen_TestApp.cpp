@@ -88,12 +88,15 @@ TEST(PopMondegreen, CreateDefaultInstance)
 TEST(PopMondegreen, CreateWhisperInstance)
 {
 	//	create audio decoder
-	auto* DecoderParams = "{\"Name\":\"Whisper\"}";
+	auto* DecoderParams = "{\"Name\":\"Whisper\",\"ModelUrl\":\"PopMondegreen_Macos.framework/Resources/ggml-tiny.en.bin\"}";
+	//auto* DecoderParams = "{\"Name\":\"Whisper\",\"ModelUrl\":\"PopMondegreen_Macos.framework/Resources/ggml-tiny-q5_1.bin\"}";
+	//auto* DecoderParams = "{\"Name\":\"Whisper\",\"ModelUrl\":\"PopMondegreen_Macos.framework/Resources/ggml-tiny-q8_0.bin\"}";
 	std::array<char,1000> ErrorBuffer;
 	auto Decoder = PopMondegreen_CreateInstance( DecoderParams, ErrorBuffer.data(), ErrorBuffer.size() );
 	{
 		std::string Error(ErrorBuffer.data());
-		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+		if ( !Error.empty() )
+			GTEST_FAIL() << "Failed to create instance; " << Error;
 	}
 	
 	auto OnWaveData = [&](AudioDataView_t<int16_t> Data,bool Eof)
@@ -115,7 +118,7 @@ TEST(PopMondegreen, CreateWhisperInstance)
 	
 	//	load wav file
 	{
-		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama.wav");
+		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama_16000.wav");
 		OnFileData( Wav, true );
 	}
 	
@@ -157,6 +160,7 @@ TEST(PopMondegreen, CreateMicrosoftCognitiveInstance)
 	{
 		std::string Error(ErrorBuffer.data());
 		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+		GTEST_FAIL() << "Failed to create instance";
 	}
 	
 	auto OnWaveData = [&](AudioDataView_t<int16_t> Data,bool Eof)

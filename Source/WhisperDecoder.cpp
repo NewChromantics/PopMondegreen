@@ -18,7 +18,7 @@ void DownloadFileTask(std::string_view Filename,size_t LengthFromBack,std::funct
 	if ( !File )
 	{
 		std::stringstream Error;
-		Error << "Failed to open file " << Filename;
+		Error << "Failed to open file \"" << Filename << "\"";
 		throw std::runtime_error(Error.str());
 	}
 	
@@ -85,7 +85,7 @@ void DownloadFileTask(std::string_view Filename,size_t LengthFromBack,std::funct
 std::vector<uint8_t> DownloadFileBlocking(std::string_view Url)
 {
 	std::vector<uint8_t> FileContents;
-	
+
 	auto OnChunk = [&](std::span<uint8_t> Chunk)
 	{
 		std::copy( Chunk.begin(), Chunk.end(), std::back_inserter(FileContents) );
@@ -100,15 +100,62 @@ std::vector<uint8_t> DownloadFileBlocking(std::string_view Url)
 WhisperDecoder_t::WhisperDecoder_t(DecoderParams_t Params) :
 	Decoder_t		( Params )
 {
-	//	load model
-	mModelData = DownloadFileBlocking( Params.mModelUrl );
-	CreateContext();
+	if ( Params.mModelUrl.empty() )
+		throw std::runtime_error("Whisper missing model url");
+	
+	CreateContext(Params.mModelUrl);
 }
 
-void WhisperDecoder_t::CreateContext()
+void WhisperDecoder_t::CreateContext(std::string_view ModelUrl)
 {
 	std::scoped_lock Lock(mContextLock,mDataLock);
-	mContext = whisper_init_from_buffer( mModelData.data(), mModelData.size() );
+
+	//	load model
+	//mModelData = DownloadFileBlocking( ModelUrl );
+	//mContext = whisper_init_from_buffer( mModelData.data(), mModelData.size() );
+
+	std::string Filename0(ModelUrl);
+	std::ifstream File(Filename0.c_str(), std::ios::binary);
+	if ( !File.is_open() )
+	{
+		std::stringstream Error;
+		Error << "Failed to open file " << Filename0;
+		throw std::runtime_error(Error.str());
+	}
+	File.seekg( 0, std::ios::beg );
+	if ( File.fail() )
+		throw std::runtime_error("Read file; seek to end failed");
+	
+	auto Read = [](void * ctx, void * output, size_t read_size)
+	{
+		auto& File = *reinterpret_cast<std::ifstream*>(ctx);
+		auto* output8 = reinterpret_cast<char*>(output);
+		File.read( output8, read_size );
+		auto BytesRead =  File.gcount();
+		return static_cast<size_t>(BytesRead);
+	};
+	
+	auto IsEof = [](void* ctx)
+	{
+		auto& File = *reinterpret_cast<std::ifstream*>(ctx);
+		return File.eof();
+	};
+	
+	auto Close = [](void* ctx)
+	{
+		//auto& File = *reinterpret_cast<std::ifstream*>(ctx);
+	};
+	
+	//	read directly from filesystem
+	whisper_model_loader Loader;
+	Loader.context = &File;
+	Loader.read = Read;
+	Loader.eof = IsEof;
+	Loader.close = Close;
+	mContext = whisper_init( &Loader );
+	
+	
+	
 	if ( !mContext )
 		throw std::runtime_error("Failed to create whisper context");
 	
@@ -136,11 +183,15 @@ void WhisperDecoder_t::PushEndOfStream()
 
 void WhisperDecoder_t::PushData(AudioDataView_t<float> AudioData)
 {
+	std::vector<float> ResampledData;
 	if ( AudioData.mSamplesPerSecond != WHISPER_SAMPLE_RATE )
 	{
+		AudioData.Resample( WHISPER_SAMPLE_RATE, ResampledData );
+		/*
 		std::stringstream Error;
 		Error << "Whisper requires audio sample rate " << WHISPER_SAMPLE_RATE << " but data is " << AudioData.mSamplesPerSecond;
 		throw std::runtime_error(Error.str());
+		*/
 	}
 	
 	std::scoped_lock Lock(mContextLock);
