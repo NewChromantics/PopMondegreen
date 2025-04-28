@@ -44,8 +44,18 @@
 		BF44AAB2249FB65500C9D982 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF44AAB1249FB65500C9D982 /* AVFoundation.framework */; };
 		BF459D1A21F7DB9900CED59D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
 		BF51B8B1256A72A4004DE4C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF51B8B0256A72A4004DE4C7 /* UIKit.framework */; };
-		BF79765D2DBFD88400134086 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976562DBFD83300134086 /* MicrosoftCognitiveServicesSpeech.framework */; };
-		BF79768C2DBFDC5900134086 /* MicrosoftCognitiveServicesSpeech.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF7976562DBFD83300134086 /* MicrosoftCognitiveServicesSpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF7976C82DC0118800134086 /* whisper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976C72DC0117E00134086 /* whisper.xcframework */; };
+		BF7976C92DC0118800134086 /* whisper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976C72DC0117E00134086 /* whisper.xcframework */; };
+		BF7976CA2DC0118800134086 /* whisper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976C72DC0117E00134086 /* whisper.xcframework */; };
+		BF7976CB2DC0118800134086 /* whisper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976C72DC0117E00134086 /* whisper.xcframework */; };
+		BF7976CC2DC0118800134086 /* whisper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976C72DC0117E00134086 /* whisper.xcframework */; };
+		BF7976CD2DC0118800134086 /* whisper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976C72DC0117E00134086 /* whisper.xcframework */; };
+		BF7976CF2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
+		BF7976D02DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
+		BF7976D12DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
+		BF7976D22DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
+		BF7976D32DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
+		BF7976D42DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
 		BF9936982930F4C100B9739C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF459CED21F7D73B00CED59D /* CoreMedia.framework */; };
 		BF99369B2930F4D900B9739C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719624477DEF00A2DA70 /* AVFoundation.framework */; };
 		BFC4719324477DDE00A2DA70 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC4719224477DDE00A2DA70 /* CoreVideo.framework */; };
@@ -121,7 +131,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				BF79768C2DBFDC5900134086 /* MicrosoftCognitiveServicesSpeech.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +164,6 @@
 		BF65D707256573A700B3EE9A /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		BF7972D42DBFD76100134086 /* whisper.objc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = whisper.objc.xcodeproj; sourceTree = "<group>"; };
 		BF7972EF2DBFD76100134086 /* whisper.swiftui.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = whisper.swiftui.xcodeproj; sourceTree = "<group>"; };
-		BF7976562DBFD83300134086 /* MicrosoftCognitiveServicesSpeech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftCognitiveServicesSpeech.framework; path = "MicrosoftCognitiveServicesSpeech.SwiftPackage/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64/MicrosoftCognitiveServicesSpeech.framework"; sourceTree = "<group>"; };
 		BF79767D2DBFDB5000134086 /* Apple.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Apple.xcconfig; sourceTree = "<group>"; };
 		BF79767F2DBFDB5000134086 /* Ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Ios.xcconfig; sourceTree = "<group>"; };
 		BF7976822DBFDB5000134086 /* Macos_Dylib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_Dylib.xcconfig; sourceTree = "<group>"; };
@@ -164,6 +172,8 @@
 		BF7976882DBFDB5000134086 /* Tvos.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tvos.xcconfig; sourceTree = "<group>"; };
 		BF7976892DBFDB5000134086 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		BF79768A2DBFDB5000134086 /* VersionRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VersionRelease.xcconfig; sourceTree = "<group>"; };
+		BF7976C72DC0117E00134086 /* whisper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = whisper.xcframework; path = "WhisperCpp.SwiftPackage/build-apple/whisper.xcframework"; sourceTree = "<group>"; };
+		BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MicrosoftCognitiveServicesSpeech.xcframework; path = "MicrosoftCognitiveServicesSpeech.SwiftPackage/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework"; sourceTree = "<group>"; };
 		BF985EB52876E95700F04399 /* libPopMondegreen_Ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPopMondegreen_Ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9C1E502ADC246E0051A5D5 /* PopMondegreen_TestApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopMondegreen_TestApp.cpp; sourceTree = "<group>"; };
 		BF9C1E512ADC246E0051A5D5 /* Macos_TestApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Macos_TestApp.xcconfig; sourceTree = "<group>"; };
@@ -197,6 +207,7 @@
 				PopMondegreen.cpp,
 				PopMondegreen.h,
 				WaveDecoder.cpp,
+				WhisperDecoder.cpp,
 			);
 			target = BF459CD421F7D5C700CED59D /* PopMondegreen_MacosFramework */;
 		};
@@ -209,6 +220,7 @@
 				PopMondegreen.cpp,
 				PopMondegreen.h,
 				WaveDecoder.cpp,
+				WhisperDecoder.cpp,
 			);
 			target = BF1D95DF2850CB69008E3758 /* PopMondegreen_MacosDylib */;
 		};
@@ -221,6 +233,7 @@
 				PopMondegreen.cpp,
 				PopMondegreen.h,
 				WaveDecoder.cpp,
+				WhisperDecoder.cpp,
 			);
 			target = BF1FA6BE28759C7E002F03C5 /* PopMondegreen_MacosStatic */;
 		};
@@ -236,6 +249,7 @@
 				PopMondegreen.cpp,
 				PopMondegreen.h,
 				WaveDecoder.cpp,
+				WhisperDecoder.cpp,
 			);
 			target = BF151FD82384786600A70EBF /* PopMondegreen_IosFramework */;
 		};
@@ -246,6 +260,7 @@
 				FileReader.cpp,
 				PopMondegreen.cpp,
 				WaveDecoder.cpp,
+				WhisperDecoder.cpp,
 			);
 			target = BF985EB42876E95700F04399 /* PopMondegreen_IosStatic */;
 		};
@@ -256,6 +271,7 @@
 				FileReader.cpp,
 				PopMondegreen.cpp,
 				WaveDecoder.cpp,
+				WhisperDecoder.cpp,
 			);
 			target = BFAD0A8F29C6706100CF7EA6 /* PopMondegreen_TvosStatic */;
 		};
@@ -273,7 +289,9 @@
 				BF44AAB2249FB65500C9D982 /* AVFoundation.framework in Frameworks */,
 				BF172B672B09458400B545CF /* ShazamKit.framework in Frameworks */,
 				BFDB2BB62449F569009EC370 /* VideoToolbox.framework in Frameworks */,
+				BF7976CA2DC0118800134086 /* whisper.xcframework in Frameworks */,
 				BFDB2BB42449F54F009EC370 /* CoreVideo.framework in Frameworks */,
+				BF7976D42DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 				BF151FF02384789700A70EBF /* CoreMedia.framework in Frameworks */,
 				BF51B8B1256A72A4004DE4C7 /* UIKit.framework in Frameworks */,
 			);
@@ -287,7 +305,9 @@
 				BF1D960C2850CCE0008E3758 /* CoreMedia.framework in Frameworks */,
 				BF1D960A2850CCD7008E3758 /* AVFoundation.framework in Frameworks */,
 				BF1D960B2850CCDC008E3758 /* VideoToolbox.framework in Frameworks */,
+				BF7976C92DC0118800134086 /* whisper.xcframework in Frameworks */,
 				BF1D960D2850CCE4008E3758 /* CoreVideo.framework in Frameworks */,
+				BF7976CF2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +319,9 @@
 				BF1FA6E628759C7E002F03C5 /* CoreMedia.framework in Frameworks */,
 				BF1FA6E728759C7E002F03C5 /* AVFoundation.framework in Frameworks */,
 				BF1FA6E828759C7E002F03C5 /* VideoToolbox.framework in Frameworks */,
+				BF7976CB2DC0118800134086 /* whisper.xcframework in Frameworks */,
 				BF1FA6E928759C7E002F03C5 /* CoreVideo.framework in Frameworks */,
+				BF7976D32DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +340,9 @@
 				BF172B652B09456500B545CF /* ShazamKit.framework in Frameworks */,
 				BFC4719724477DEF00A2DA70 /* AVFoundation.framework in Frameworks */,
 				BFC4719524477DE500A2DA70 /* VideoToolbox.framework in Frameworks */,
+				BF7976C82DC0118800134086 /* whisper.xcframework in Frameworks */,
 				BFC4719324477DDE00A2DA70 /* CoreVideo.framework in Frameworks */,
-				BF79765D2DBFD88400134086 /* MicrosoftCognitiveServicesSpeech.framework in Frameworks */,
+				BF7976D02DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 				BF459D1A21F7DB9900CED59D /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +351,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7976CC2DC0118800134086 /* whisper.xcframework in Frameworks */,
+				BF7976D12DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +360,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7976CD2DC0118800134086 /* whisper.xcframework in Frameworks */,
+				BF7976D22DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +434,8 @@
 		BF4A6A0B1EA16D7C00613A64 = {
 			isa = PBXGroup;
 			children = (
-				BF7976562DBFD83300134086 /* MicrosoftCognitiveServicesSpeech.framework */,
+				BF7976CE2DC0122900134086 /* MicrosoftCognitiveServicesSpeech.xcframework */,
+				BF7976C72DC0117E00134086 /* whisper.xcframework */,
 				BF235C312D762AD500020751 /* Source */,
 				BF235B032D76297E00020751 /* Readme.md */,
 				BF5D726B2B3E17E800D90721 /* .gitignore */,
@@ -1105,12 +1133,6 @@
 			baseConfigurationReference = BF7976842DBFDB5000134086 /* Macos_Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Distribution";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
-					"$(PROJECT_DIR)/Source_Apple",
-					"$(PROJECT_DIR)/MicrosoftCognitiveServicesSpeech.SwiftPackage/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
@@ -1120,12 +1142,6 @@
 			baseConfigurationReference = BF7976842DBFDB5000134086 /* Macos_Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Distribution";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Source_Apple/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
-					"$(PROJECT_DIR)/Source_Apple",
-					"$(PROJECT_DIR)/MicrosoftCognitiveServicesSpeech.SwiftPackage/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;

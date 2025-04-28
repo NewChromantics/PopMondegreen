@@ -5,3 +5,4 @@ PRODUCT_NAME = PopMondegreen
 
 INFOPLIST_FILE = $(SRCROOT)/Source_Apple/Macos_Dylib_Info.plist
 
+HEADER_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Source/

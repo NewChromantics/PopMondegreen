@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <thread>
-#include "Whisper/whisper.h"
+#include "whisper/whisper.h"
 #include <iostream>
 
 void DownloadFileTask(std::string_view Filename,size_t LengthFromBack,std::function<void(std::span<uint8_t>)> OnChunk)
@@ -97,8 +97,8 @@ std::vector<uint8_t> DownloadFileBlocking(std::string_view Url)
 
 
 
-WhisperDecoder_t::WhisperDecoder_t(ListenerParams_t Params) :
-	Listener_t		( Params )
+WhisperDecoder_t::WhisperDecoder_t(DecoderParams_t Params) :
+	Decoder_t		( Params )
 {
 	//	load model
 	mModelData = DownloadFileBlocking( Params.mModelUrl );
@@ -114,7 +114,7 @@ void WhisperDecoder_t::CreateContext()
 	
 	std::cerr << "Created whsiper context" << std::endl;
 }
-
+/*
 bool WhisperDecoder_t::ThreadIteration()
 {
 	//	waiting for context...
@@ -127,20 +127,19 @@ bool WhisperDecoder_t::ThreadIteration()
 	
 	return true;
 }
+*/
 
-void WhisperDecoder_t::PushSamples(const AudioData_t& AudioData)
+void WhisperDecoder_t::PushEndOfStream()
 {
-	//	need to do something here to build up samples
-	std::scoped_lock DataLock(mDataLock);
-	mPendingSamples = AudioData;
+	throw std::runtime_error("todo: WhisperDecoder_t::PushEndOfStream");
 }
 
-void WhisperDecoder_t::ProcessSamples(const AudioData_t& AudioData)
+void WhisperDecoder_t::PushData(AudioDataView_t<float> AudioData)
 {
-	if ( AudioData.mSampleRate != WHISPER_SAMPLE_RATE )
+	if ( AudioData.mSamplesPerSecond != WHISPER_SAMPLE_RATE )
 	{
 		std::stringstream Error;
-		Error << "Whisper requires audio sample rate " << WHISPER_SAMPLE_RATE << " but data is " << AudioData.mSampleRate;
+		Error << "Whisper requires audio sample rate " << WHISPER_SAMPLE_RATE << " but data is " << AudioData.mSamplesPerSecond;
 		throw std::runtime_error(Error.str());
 	}
 	
@@ -165,12 +164,12 @@ void WhisperDecoder_t::ProcessSamples(const AudioData_t& AudioData)
 	wparams.n_threads        = 1;
 
 	wparams.audio_ctx        = AudioContextSize;
-	wparams.speed_up         = Speedup;
+	//wparams.speed_up         = Speedup;
 
 	// disable temperature fallback
 	wparams.temperature_inc  = -1.0f;
 
-	auto StartTime = EventTime_t::Now();
+	auto StartTime = PopMondegreen::EventTime_t::Now();
 	
 	//	this is to try and help audio between segments, i think
 	//wparams.prompt_tokens    = params.no_context ? nullptr : prompt_tokens.data();
@@ -193,9 +192,13 @@ void WhisperDecoder_t::ProcessSamples(const AudioData_t& AudioData)
 	for ( auto s=0;	s<SegmentCount;	s++ )
 	{
 		auto Text = whisper_full_get_segment_text( mContext, s );
-		mOutputText.push_back( Text );
+		//whisper_get_timings( mContext );
+		OutputData_t Output;
+		Output.mData = Text;
+		Output.mOutputTime = PopMondegreen::EventTime_t::Now();
+		OnOutputData( Output );
 	}
 	
-	auto FinishTime = EventTime_t::Now();
-	auto ProcessDurationMs = FinishTime.mTimeMs - StartTime.mTimeMs;
+	//auto FinishTime = EventTime_t::Now();
+	//auto ProcessDurationMs = FinishTime.mTimeMs - StartTime.mTimeMs;
 }

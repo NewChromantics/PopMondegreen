@@ -11,3 +11,5 @@ MACH_O_TYPE = staticlib
 
 //	signing
 ENABLE_HARDENED_RUNTIME = YES
+
+HEADER_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Source/

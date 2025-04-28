@@ -9,7 +9,7 @@
 
 
 #include "FakeDecoder.hpp"
-//#include "WhisperDecoder.hpp"
+#include "WhisperDecoder.hpp"
 #include "MicrosoftCognitiveDecoder.hpp"
 
 
@@ -111,11 +111,11 @@ decltype(PopMondegreen::DecoderInstanceManager)::Instance_t PopMondegreen::Alloc
 	{
 		return PopMondegreen::DecoderInstanceManager.Alloc<MicrosoftCogninitiveDecoder_t>(DecoderParams);
 	}
-	/*
+
 	if ( DecoderName == WhisperDecoder_t::Name )
 	{
 		return PopMondegreen::DecoderInstanceManager.Alloc<WhisperDecoder_t>(DecoderParams);
-	}*/
+	}
 	
 	throw std::runtime_error("Don't know how to make Decoder");
 }
@@ -168,8 +168,7 @@ void PopMondegreen_PushData(int32_t Instance,AudioDataView_t<float>& Data)
 	try
 	{
 		auto pInstance = PopMondegreen::DecoderInstanceManager.GetInstance(Instance);
-		//pInstance->PushData(Data);
-		throw std::runtime_error("todo: handle float sample data into decoder");
+		pInstance->PushData(Data);
 	}
 	catch(std::exception& e)
 	{

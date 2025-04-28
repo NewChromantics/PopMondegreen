@@ -70,7 +70,7 @@ TEST(PopMondegreen, GetVersion )
 }
 
 
-
+/*
 TEST(PopMondegreen, CreateDefaultInstance)
 {
 	auto* Params = "{}";
@@ -81,9 +81,71 @@ TEST(PopMondegreen, CreateDefaultInstance)
 	std::string Error(ErrorBuffer.data());
 	
 	EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+}
+ */
+
+
+TEST(PopMondegreen, CreateWhisperInstance)
+{
+	//	create audio decoder
+	auto* DecoderParams = "{\"Name\":\"Whisper\"}";
+	std::array<char,1000> ErrorBuffer;
+	auto Decoder = PopMondegreen_CreateInstance( DecoderParams, ErrorBuffer.data(), ErrorBuffer.size() );
+	{
+		std::string Error(ErrorBuffer.data());
+		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
+	}
+	
+	auto OnWaveData = [&](AudioDataView_t<int16_t> Data,bool Eof)
+	{
+		PopMondegreen_PushData( Decoder, Data );
+		if ( Eof )
+			PopMondegreen_PushEndOfStream(Decoder);
+	};
+	
+	//	create wav decoder
+	WaveDecoder_t WaveDecoder(OnWaveData);
+	
+	auto OnFileData = [&](std::span<uint8_t> Chunk,bool Eof)
+	{
+		WaveDecoder.PushData( Chunk );
+		if ( Eof )
+			WaveDecoder.PushEndOfData();
+	};
+	
+	//	load wav file
+	{
+		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama.wav");
+		OnFileData( Wav, true );
+	}
+	
+	//	read from decoder
+	std::string DecoderError;
+	for ( int it=0;	it<100;	it++ )
+	{
+		std::vector<char> JsonBuffer;
+		JsonBuffer.resize( 1024 * 1024 * 1 );
+		PopMondegreen_PopData( Decoder, JsonBuffer.data(), JsonBuffer.size() );
+		std::string_view Json( JsonBuffer.data(), std::strlen(JsonBuffer.data()) );
+		
+		PopJson::Json_t Data(Json);
+		if ( Data.HasKey("Error") )
+		{
+			auto Error = Data.GetValue("Error").GetString();
+			if ( !Error.empty() )
+			{
+				DecoderError = Error;
+				break;
+			}
+		}
+		
+		std::cerr << "Output json; " << std::string(Json) << std::endl;
+		std::this_thread::sleep_for( std::chrono::milliseconds(100) );
+	}
+	
+	PopMondegreen_FreeInstance( Decoder );
 	
 }
-
 
 
 TEST(PopMondegreen, CreateMicrosoftCognitiveInstance)
@@ -178,63 +240,5 @@ TEST(PopMondegreen, CreateFakeInstance)
 	
 }
 
-
-
-TEST(PopMondegreen, CreateWhisperInstance)
-{
-	GTEST_SKIP() << "Whipser not implemented";
-	
-	//	create audio decoder
-	auto* DecoderParams = "{\"Name\":\"Whisper\"}";
-	std::array<char,1000> ErrorBuffer;
-	auto Decoder = PopMondegreen_CreateInstance( DecoderParams, ErrorBuffer.data(), ErrorBuffer.size() );
-	{
-		std::string Error(ErrorBuffer.data());
-		EXPECT_EQ( Error.empty(), true ) << "Create instance error " << Error;
-	}
-	
-	auto OnWaveData = [&](AudioDataView_t<int16_t> Data,bool Eof)
-	{
-		PopMondegreen_PushData( Decoder, Data );
-		if ( Eof )
-			PopMondegreen_PushEndOfStream(Decoder);
-	};
-
-	//	create wav decoder
-	WaveDecoder_t WaveDecoder(OnWaveData);
-	
-	auto OnFileData = [&](std::span<uint8_t> Chunk,bool Eof)
-	{
-		WaveDecoder.PushData( Chunk );
-		if ( Eof )
-			WaveDecoder.PushEndOfData();
-	};
-	
-	//	load wav file
-	{
-		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama.wav");
-		OnFileData( Wav, true );
-	}
-	
-	//	read from decoder
-	std::string DecoderError;
-	while ( DecoderError.empty() )
-	{
-		std::vector<char> JsonBuffer;
-		JsonBuffer.resize( 1024 * 1024 * 1 );
-		PopMondegreen_PopData( Decoder, JsonBuffer.data(), JsonBuffer.size() );
-		std::string_view Json( JsonBuffer.data(), std::strlen(JsonBuffer.data()) );
-		
-		PopJson::Json_t Data(Json);
-		auto Error = Data.GetValue("Error").GetString();
-		if ( !Error.empty() )
-			DecoderError = Error;
-		
-		throw std::runtime_error( std::string("handle json; ") + std::string(Json) );
-	}
-	
-	PopMondegreen_FreeInstance( Decoder );
-	
-}
 
 

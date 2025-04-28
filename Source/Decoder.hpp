@@ -48,8 +48,10 @@ public:
 	
 	virtual std::string	GetName()=0;
 	
-	virtual void		PushData(AudioDataView_t<int16_t> Data)=0;
-	//virtual void		PushData(AudioDataView_t<float> Data)=0;
+	//	gr: find a nice way to detect if a processor isn't implemented?
+	//		pass functors to constructor and auto fill auto conversion?
+	virtual void		PushData(AudioDataView_t<int16_t> Data);
+	virtual void		PushData(AudioDataView_t<float> Data);
 	virtual void		PushEndOfStream()=0;
 	OutputData_t		PopData();
 

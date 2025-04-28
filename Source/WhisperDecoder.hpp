@@ -15,16 +15,19 @@ public:
 	
 	virtual std::string	GetName() override	{	return Name;	}
 	
+	virtual void		PushData(AudioDataView_t<float> Data) override;
+	virtual void		PushEndOfStream() override;
+
 private:
 	void				CreateContext();
 	bool				ThreadIteration();
-	
+
 	std::mutex			mContextLock;	//	this stops us trying to run two inferences at once
 	whisper_context*	mContext = nullptr;
 	
 	std::vector<uint8_t>	mModelData;
 	std::mutex				mDataLock;
-	AudioData_t				mPendingSamples;
+	AudioDataView_t<float>	mPendingSamples;
 };
 
 /*

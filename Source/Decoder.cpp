@@ -50,3 +50,12 @@ OutputData_t Decoder_t::PopData()
 	return First;
 }
 
+void Decoder_t::PushData(AudioDataView_t<int16_t> Data)
+{
+	throw std::runtime_error("todo: convert audio data to float");
+}
+
+void Decoder_t::PushData(AudioDataView_t<float> Data)
+{
+	throw std::runtime_error("todo: convert audio data to 16bit");
+}

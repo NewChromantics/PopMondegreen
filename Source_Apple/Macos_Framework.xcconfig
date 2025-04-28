@@ -16,3 +16,5 @@ DEFINES_MODULE = YES
 FRAMEWORK_VERSION = A
 
 
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/MicrosoftCognitiveServicesSpeech.SwiftPackage/MicrosoftCognitiveServicesSpeech-MacOSXCFramework-1.42.0/MicrosoftCognitiveServicesSpeech.xcframework/macos-arm64_x86_64
+HEADER_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Source/
