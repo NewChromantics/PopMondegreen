@@ -108,12 +108,13 @@ WhisperDecoder_t::WhisperDecoder_t(DecoderParams_t Params) :
 
 void WhisperDecoder_t::CreateContext(std::string_view ModelUrl)
 {
-	std::scoped_lock Lock(mContextLock,mDataLock);
+	std::scoped_lock Lock(mContextLock);
 
 	//	load model
 	//mModelData = DownloadFileBlocking( ModelUrl );
 	//mContext = whisper_init_from_buffer( mModelData.data(), mModelData.size() );
 
+	//	make a custom loader to read data instantly
 	std::string Filename0(ModelUrl);
 	std::ifstream File(Filename0.c_str(), std::ios::binary);
 	if ( !File.is_open() )
@@ -238,12 +239,12 @@ void WhisperDecoder_t::PushData(AudioDataView_t<float> AudioData)
 	}
 	
 	//	get text out
-	std::scoped_lock DataLock(mDataLock);
+	auto Timings = whisper_get_timings( mContext );
+
 	auto SegmentCount = whisper_full_n_segments( mContext );
 	for ( auto s=0;	s<SegmentCount;	s++ )
 	{
 		auto Text = whisper_full_get_segment_text( mContext, s );
-		//whisper_get_timings( mContext );
 		OutputData_t Output;
 		Output.mData = Text;
 		Output.mOutputTime = PopMondegreen::EventTime_t::Now();
