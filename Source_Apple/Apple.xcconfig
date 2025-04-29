@@ -24,9 +24,9 @@ GCC_PREPROCESSOR_DEFINITIONS = $(inherited) $(TARGET_ARCH)
 //ENABLE_BITCODE = YES
 //BITCODE_GENERATION_MODE = bitcode
 
-//	gr: NO bitcode from 2021
-OTHER_CFLAGS = -Wno-ambiguous-macro
+OTHER_CFLAGS = -Wno-ambiguous-macro -Werror=return-type
 OTHER_LDFLAGS =
+//	gr: NO bitcode from 2021
 ENABLE_BITCODE = NO
 
 CLANG_CXX_LANGUAGE_STANDARD = c++20
