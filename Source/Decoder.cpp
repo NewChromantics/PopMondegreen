@@ -54,27 +54,82 @@ OutputData_t Decoder_t::PopData()
 
 void Decoder_t::PushData(AudioDataView_t<int16_t> AudioData16)
 {
-	std::vector<float> DataFloats;
-	AudioData16.ConvertSamples(DataFloats);
+	try
+	{
+		PushAudioData(AudioData16);
+		return;
+	}
+	catch(UnsupportedAudioFormatException& e)
+	{
+		//	fall through to below
+	}
+	catch(std::runtime_error& e)
+	{
+		OnError(e.what());
+		throw;
+	}
+	catch(...)
+	{
+		OnError("Unknown exception in PushData<16>");
+		throw;
+	}
 	
-	AudioDataView_t<float> AudioDataFloat;
-	AudioDataFloat.mSamples = DataFloats;
-	AudioDataFloat.mSamplesPerSecond = AudioData16.mSamplesPerSecond;
-	AudioDataFloat.mChannelCount = AudioData16.mChannelCount;
-	AudioDataFloat.mTime = AudioData16.mTime;
-
-	PushData( AudioDataFloat );
+	try
+	{
+		std::vector<float> DataFloats;
+		auto AudioDataFloat = AudioData16.ConvertSamples(DataFloats);
+		PushAudioData( AudioDataFloat );
+		return;
+	}
+	catch(std::runtime_error& e)
+	{
+		OnError(e.what());
+		throw;
+	}
+	catch(...)
+	{
+		OnError("Unknown exception in PushData<16>");
+		throw;
+	}
 }
 
 void Decoder_t::PushData(AudioDataView_t<float> AudioDataFloat)
 {
-	std::vector<int16_t> Data16s;
-	AudioDataFloat.ConvertSamples(Data16s);
+	try
+	{
+		PushAudioData(AudioDataFloat);
+		return;
+	}
+	catch(UnsupportedAudioFormatException& e)
+	{
+		//	fall through to below
+	}
+	catch(std::runtime_error& e)
+	{
+		OnError(e.what());
+		throw;
+	}
+	catch(...)
+	{
+		OnError("Unknown exception in PushData<float>");
+		throw;
+	}
 	
-	AudioDataView_t<int16_t> AudioData16;
-	AudioData16.mSamples = Data16s;
-	AudioData16.mSamplesPerSecond = AudioDataFloat.mSamplesPerSecond;
-	AudioData16.mChannelCount = AudioDataFloat.mChannelCount;
-	AudioData16.mTime = AudioDataFloat.mTime;
-	
-	PushData( AudioData16 );}
+	try
+	{
+		std::vector<int16_t> Data16s;
+		auto AudioData16 = AudioDataFloat.ConvertSamples(Data16s);
+		PushAudioData( AudioData16 );
+		return;
+	}
+	catch(std::runtime_error& e)
+	{
+		OnError(e.what());
+		throw;
+	}
+	catch(...)
+	{
+		OnError("Unknown exception in PushData<16>");
+		throw;
+	}
+}

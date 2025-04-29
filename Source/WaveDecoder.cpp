@@ -4,7 +4,7 @@
 
 
 
-void Audio16ToFloat(AudioDataView_t<int16_t>& Audio16,std::vector<float>& Floats)
+AudioDataView_t<float> Audio16ToFloat(AudioDataView_t<int16_t>& Audio16,std::vector<float>& Floats)
 {
 	Floats.reserve( Audio16.mSamples.size() );
 	
@@ -14,9 +14,17 @@ void Audio16ToFloat(AudioDataView_t<int16_t>& Audio16,std::vector<float>& Floats
 		auto Valuef = static_cast<float>(Value16) / static_cast<float>( std::numeric_limits<int16_t>::max() );
 		Floats.push_back(Valuef);
 	}
+	
+	AudioDataView_t<float> AudioDataFloat;
+	AudioDataFloat.mSamples = Floats;
+	AudioDataFloat.mSamplesPerSecond = Audio16.mSamplesPerSecond;
+	AudioDataFloat.mChannelCount = Audio16.mChannelCount;
+	AudioDataFloat.mTime = Audio16.mTime;
+
+	return AudioDataFloat;
 }
 
-void AudioFloatTo16(AudioDataView_t<float>& AudioFloats,std::vector<int16_t>& Values16)
+AudioDataView_t<int16_t> AudioFloatTo16(AudioDataView_t<float>& AudioFloats,std::vector<int16_t>& Values16)
 {
 	Values16.reserve( AudioFloats.mSamples.size() );
 	
@@ -26,10 +34,18 @@ void AudioFloatTo16(AudioDataView_t<float>& AudioFloats,std::vector<int16_t>& Va
 		auto Value16 = Valuef * static_cast<float>( std::numeric_limits<int16_t>::max() );
 		Values16.push_back(Valuef);
 	}
+	
+	AudioDataView_t<int16_t> AudioData16;
+	AudioData16.mSamples = Values16;
+	AudioData16.mSamplesPerSecond = AudioFloats.mSamplesPerSecond;
+	AudioData16.mChannelCount = AudioFloats.mChannelCount;
+	AudioData16.mTime = AudioFloats.mTime;
+	
+	return AudioData16;
 }
 
 
-void AudioFloatResample(AudioDataView_t<float>& Audio,std::vector<float>& Storage)
+AudioDataView_t<float> AudioFloatResample(AudioDataView_t<float>& Audio,std::vector<float>& Storage)
 {
 	//	if reducing samples, we can drop (hacky, but works!)
 	throw std::runtime_error("todo; Resample wave");

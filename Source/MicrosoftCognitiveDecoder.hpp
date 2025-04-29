@@ -16,7 +16,7 @@ public:
 	virtual ~MicrosoftCogninitiveDecoder_t();
 	
 	virtual std::string	GetName() override	{	return Name;	}
-	virtual void		PushData(AudioDataView_t<int16_t> Data) override;
+	virtual void		PushAudioData(AudioDataView_t<int16_t> Data) override;
 	virtual void		PushEndOfStream() override;
 
 private:

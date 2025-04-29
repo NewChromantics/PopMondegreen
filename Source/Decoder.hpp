@@ -12,6 +12,13 @@
 class OutputData_t
 {
 public:
+	//	we can have a blank string with valid times (or should we?)
+	bool			HasData()
+	{
+		return mStartTime.IsValid() || mEndTime.IsValid() || !mData.empty();	
+	}
+	
+public:
 	Timecode_t		mStartTime;
 	Timecode_t		mEndTime;
 	std::string		mData;
@@ -39,6 +46,15 @@ public:
 };
 
 
+//	throw this i
+class UnsupportedAudioFormatException : public std::runtime_error
+{
+public:
+	UnsupportedAudioFormatException() :
+		std::runtime_error("Audio format unsupported")
+	{
+	}
+};
 
 
 class Decoder_t
@@ -48,14 +64,14 @@ public:
 	
 	virtual std::string	GetName()=0;
 	
-	//	gr: find a nice way to detect if a processor isn't implemented?
-	//		pass functors to constructor and auto fill auto conversion?
-	virtual void		PushData(AudioDataView_t<int16_t> Data);
-	virtual void		PushData(AudioDataView_t<float> Data);
+	virtual void		PushData(AudioDataView_t<int16_t> Data) final;
+	virtual void		PushData(AudioDataView_t<float> Data) final;
 	virtual void		PushEndOfStream()=0;
 	OutputData_t		PopData();
 
 protected:
+	virtual void		PushAudioData(AudioDataView_t<int16_t> Data)	{	throw UnsupportedAudioFormatException();	}
+	virtual void		PushAudioData(AudioDataView_t<float> Data)		{	throw UnsupportedAudioFormatException();	}
 	void				OnOutputData(OutputData_t Data);
 	void				OnError(std::string_view Error);
 	

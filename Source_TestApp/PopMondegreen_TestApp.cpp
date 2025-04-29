@@ -118,7 +118,7 @@ TEST(PopMondegreen, CreateWhisperInstance)
 	
 	//	load wav file
 	{
-		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama_16000.wav");
+		auto Wav = PopMondegreen::ReadFile("test:LanaLovesTheLlama.wav");
 		OnFileData( Wav, true );
 	}
 	
@@ -148,6 +148,8 @@ TEST(PopMondegreen, CreateWhisperInstance)
 	
 	PopMondegreen_FreeInstance( Decoder );
 	
+	if ( !DecoderError.empty() )
+		GTEST_FAIL() << "Decoder error; " << DecoderError;
 }
 
 

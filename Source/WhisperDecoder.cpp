@@ -182,7 +182,7 @@ void WhisperDecoder_t::PushEndOfStream()
 	throw std::runtime_error("todo: WhisperDecoder_t::PushEndOfStream");
 }
 
-void WhisperDecoder_t::PushData(AudioDataView_t<float> AudioData)
+void WhisperDecoder_t::PushAudioData(AudioDataView_t<float> AudioData)
 {
 	std::vector<float> ResampledData;
 	if ( AudioData.mSamplesPerSecond != WHISPER_SAMPLE_RATE )
@@ -201,7 +201,6 @@ void WhisperDecoder_t::PushData(AudioDataView_t<float> AudioData)
 
 	//	https://github.com/ggerganov/whisper.cpp/blob/master/examples/stream/stream.cpp#L91
 	auto AudioContextSize = 0;
-	auto Speedup = false;	//	speed up audio by x2 (reduced accuracy
 	whisper_full_params wparams = whisper_full_default_params(WHISPER_SAMPLING_GREEDY);
 
 	wparams.print_progress   = true;
@@ -216,7 +215,6 @@ void WhisperDecoder_t::PushData(AudioDataView_t<float> AudioData)
 	wparams.n_threads        = 1;
 
 	wparams.audio_ctx        = AudioContextSize;
-	//wparams.speed_up         = Speedup;
 
 	// disable temperature fallback
 	wparams.temperature_inc  = -1.0f;

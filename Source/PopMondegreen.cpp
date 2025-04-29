@@ -252,9 +252,15 @@ json11::Json::object OutputDataToJson(OutputData_t& OutputData)
 {
 	json11::Json::object Output;
 	
-	Output["StartTime"] = static_cast<int>(OutputData.mStartTime.mMilliseconds);
-	Output["EndTime"] = static_cast<int>(OutputData.mEndTime.mMilliseconds);
-	Output["Data"] = OutputData.mData;
+	if ( !OutputData.mError.empty() )
+		Output["Error"] = OutputData.mError;
+
+	if ( OutputData.HasData() )
+	{
+		Output["StartTime"] = static_cast<int>(OutputData.mStartTime.mMilliseconds);
+		Output["EndTime"] = static_cast<int>(OutputData.mEndTime.mMilliseconds);
+		Output["Data"] = OutputData.mData;
+	}
 	
 	return Output;
 }

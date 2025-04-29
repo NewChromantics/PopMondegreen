@@ -177,7 +177,7 @@ void MicrosoftCogninitiveDecoder_t::OnSpeechRecognised(const mscog::SpeechRecogn
 	this->OnOutputData(Output);
 }
 
-void MicrosoftCogninitiveDecoder_t::PushData(AudioDataView_t<int16_t> Data)
+void MicrosoftCogninitiveDecoder_t::PushAudioData(AudioDataView_t<int16_t> Data)
 {
 	//	todo: verify we're using 16bit data
 	if ( !mRecogniser )

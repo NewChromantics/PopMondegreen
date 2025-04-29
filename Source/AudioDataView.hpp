@@ -9,9 +9,9 @@ class AudioDataView_t;
 
 
 //	in WaveDecoder.cpp
-void Audio16ToFloat(AudioDataView_t<int16_t>& Audio,std::vector<float>& Storage);
-void AudioFloatTo16(AudioDataView_t<float>& Audio,std::vector<int16_t>& Storage);
-void AudioFloatResample(AudioDataView_t<float>& Audio,std::vector<float>& Storage);
+AudioDataView_t<float>		Audio16ToFloat(AudioDataView_t<int16_t>& Audio,std::vector<float>& Storage);
+AudioDataView_t<int16_t>	AudioFloatTo16(AudioDataView_t<float>& Audio,std::vector<int16_t>& Storage);
+AudioDataView_t<float>		AudioFloatResample(AudioDataView_t<float>& Audio,std::vector<float>& Storage);
 
 
 
@@ -20,9 +20,9 @@ class AudioDataView_t
 {
 public:
 	template<typename TARGETTYPE>
-	void				ConvertSamples(std::vector<TARGETTYPE>& Storage);
+	AudioDataView_t<TARGETTYPE>		ConvertSamples(std::vector<TARGETTYPE>& Storage);
 	
-	void				Resample(int NewSamplesPerSecond,std::vector<TYPE>& Storage);
+	AudioDataView_t<TYPE>			Resample(int NewSamplesPerSecond,std::vector<TYPE>& Storage);
 	
 public:
 	std::span<TYPE>		mSamples;
@@ -38,21 +38,21 @@ public:
 
 template<>
 template<>
-inline void AudioDataView_t<int16_t>::ConvertSamples(std::vector<float>& Storage)
+inline AudioDataView_t<float> AudioDataView_t<int16_t>::ConvertSamples(std::vector<float>& Storage)
 {
-	Audio16ToFloat( *this, Storage );
+	return Audio16ToFloat( *this, Storage );
 }
 
 
 template<>
 template<>
-inline void AudioDataView_t<float>::ConvertSamples(std::vector<int16_t>& Storage)
+inline AudioDataView_t<int16_t> AudioDataView_t<float>::ConvertSamples(std::vector<int16_t>& Storage)
 {
-	AudioFloatTo16( *this, Storage );
+	return AudioFloatTo16( *this, Storage );
 }
 
 template<>
-inline void AudioDataView_t<float>::Resample(int NewSamplesPerSecond,std::vector<float>& Storage)
+inline AudioDataView_t<float> AudioDataView_t<float>::Resample(int NewSamplesPerSecond,std::vector<float>& Storage)
 {
-	AudioFloatResample( *this, Storage );
+	return AudioFloatResample( *this, Storage );
 }

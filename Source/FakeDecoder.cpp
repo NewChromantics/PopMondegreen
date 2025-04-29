@@ -17,7 +17,7 @@ FakeDecoder_t::~FakeDecoder_t()
 }
 	
 
-void FakeDecoder_t::PushData(AudioDataView_t<int16_t> Data)
+void FakeDecoder_t::PushAudioData(AudioDataView_t<int16_t> Data)
 {
 	//	output dummy data to say stuff has arrived
 	Start( Data.mTime );

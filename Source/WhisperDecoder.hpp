@@ -15,7 +15,7 @@ public:
 	
 	virtual std::string	GetName() override	{	return Name;	}
 	
-	virtual void		PushData(AudioDataView_t<float> Data) override;
+	virtual void		PushAudioData(AudioDataView_t<float> Data) override;
 	virtual void		PushEndOfStream() override;
 
 private:
